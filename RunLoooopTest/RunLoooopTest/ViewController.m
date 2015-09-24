@@ -20,10 +20,10 @@
     // Do any additional setup after loading the view, typically from a nib.
     //**********************测试效果的方法：当控制台输出4时不停拖动tableview************************
     
-    //这种方法的timer会被scrollview的滑动阻断
+    //这种方法的timer会被scrollview的滑动暂停
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(printLog:) userInfo:nil repeats:YES];
     
-    //这种方法的timer不会被scrollview的滑动阻断
+    //这种方法的timer不会被scrollview的滑动暂停
     NSTimer * timer = [NSTimer timerWithTimeInterval:5 target:self selector:@selector(testURLConnection:) userInfo:nil repeats:NO];
     [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     
