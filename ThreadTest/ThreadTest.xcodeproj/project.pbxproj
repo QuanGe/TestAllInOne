@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		98E806EE1BB839CB008C9F53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806ED1BB839CB008C9F53 /* main.m */; };
 		98E806F11BB839CB008C9F53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806F01BB839CB008C9F53 /* AppDelegate.m */; };
-		98E806F41BB839CB008C9F53 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806F31BB839CB008C9F53 /* ViewController.m */; };
+		98E806F41BB839CB008C9F53 /* TTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806F31BB839CB008C9F53 /* TTHomeViewController.m */; };
 		98E806F71BB839CB008C9F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E806F51BB839CB008C9F53 /* Main.storyboard */; };
 		98E806F91BB839CB008C9F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E806F81BB839CB008C9F53 /* Assets.xcassets */; };
 		98E806FC1BB839CB008C9F53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E806FA1BB839CB008C9F53 /* LaunchScreen.storyboard */; };
+		98E807081BB83D90008C9F53 /* TTNSThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,14 @@
 		98E806ED1BB839CB008C9F53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98E806EF1BB839CB008C9F53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		98E806F01BB839CB008C9F53 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		98E806F21BB839CB008C9F53 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		98E806F31BB839CB008C9F53 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		98E806F21BB839CB008C9F53 /* TTHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TTHomeViewController.h; sourceTree = "<group>"; };
+		98E806F31BB839CB008C9F53 /* TTHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TTHomeViewController.m; sourceTree = "<group>"; };
 		98E806F61BB839CB008C9F53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98E806F81BB839CB008C9F53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		98E806FB1BB839CB008C9F53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98E806FD1BB839CB008C9F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98E807061BB83D90008C9F53 /* TTNSThreadTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTNSThreadTestViewController.h; sourceTree = "<group>"; };
+		98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTNSThreadTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,13 +63,15 @@
 			children = (
 				98E806EF1BB839CB008C9F53 /* AppDelegate.h */,
 				98E806F01BB839CB008C9F53 /* AppDelegate.m */,
-				98E806F21BB839CB008C9F53 /* ViewController.h */,
-				98E806F31BB839CB008C9F53 /* ViewController.m */,
+				98E806F21BB839CB008C9F53 /* TTHomeViewController.h */,
+				98E806F31BB839CB008C9F53 /* TTHomeViewController.m */,
 				98E806F51BB839CB008C9F53 /* Main.storyboard */,
 				98E806F81BB839CB008C9F53 /* Assets.xcassets */,
 				98E806FA1BB839CB008C9F53 /* LaunchScreen.storyboard */,
 				98E806FD1BB839CB008C9F53 /* Info.plist */,
 				98E806EC1BB839CB008C9F53 /* Supporting Files */,
+				98E807061BB83D90008C9F53 /* TTNSThreadTestViewController.h */,
+				98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */,
 			);
 			path = ThreadTest;
 			sourceTree = "<group>";
@@ -149,9 +154,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98E806F41BB839CB008C9F53 /* ViewController.m in Sources */,
+				98E806F41BB839CB008C9F53 /* TTHomeViewController.m in Sources */,
 				98E806F11BB839CB008C9F53 /* AppDelegate.m in Sources */,
 				98E806EE1BB839CB008C9F53 /* main.m in Sources */,
+				98E807081BB83D90008C9F53 /* TTNSThreadTestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
