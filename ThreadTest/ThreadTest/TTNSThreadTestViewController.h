@@ -7,6 +7,14 @@
 //
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger,TTThreadLockType){
+    TTThreadLockTypeNone,
+    TTThreadLockTypeNSCondition,
+    TTThreadLockTypeNSLock,
+    TTThreadLockTypeSynchronized
+    
+};
+
 @interface TTNSThreadTestViewController : UIViewController
 
 @end

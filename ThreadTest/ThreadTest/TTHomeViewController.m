@@ -16,7 +16,8 @@
 
 - (NSDictionary *)tableData
 {
-    return @{@"NSThread":@"TTNSThreadTestViewController"};
+    return @{@"NSThread加锁":@"TTNSThreadTestViewController",
+             @"NSOperation和GCD的本质":@"TTRealObjectUIViewController"};
     
 }
 
