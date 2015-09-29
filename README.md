@@ -3,20 +3,21 @@
 
 例子中模拟了scrollView滑动会影响scheduledTimerWithTimeInterval创建的NSTimer及initWithRequest创建的NSURLConnection，并在例子中给出了解决方案
 
-~~~
+```objective-c
 //这种方法的timer不会被scrollview的滑动暂停
 NSTimer * timer = [NSTimer timerWithTimeInterval:5 target:self selector:@selector(testURLConnection:) userInfo:nil repeats:NO];
 [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-~~~
+```
 
 
-~~~
+
+```objective-c
 //这种方式的的NSURLConnection会被scrollview暂停 但是可以进行取消操作
 NSURLConnection * connection = [[NSURLConnection alloc] initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://code.csdn.net"] ]delegate:self startImmediately:NO];
 //加上这句话就不会被scrollView暂停
 //[connection scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
 [connection start];
-~~~
+```
 
 ##ThreadTest
 
@@ -26,13 +27,14 @@ NSURLConnection * connection = [[NSURLConnection alloc] initWithRequest:[NSURLRe
 
 2、NSOperation 三种使用的方法（NSBlockOperation、NSInvocationOperation、NSOperation子类继承，重载main函数）、依赖关系添加：可以用来控制线程顺序、1000个线程并发测试：线程并发数量受设备性能影响较大，模拟器只能同步并发65左右
 
-~~~
+
+```objective-c
 //如果调用start 就相当于同步，会线程阻塞
 //[operation start];
 
 //设置的数量并不是可以无限大，如果超出iphone设备的性能，则基本等于没有设置，或相当于设置了NSOperationQueueDefaultMaxConcurrentOperationCount，代码中设为3有效，但是如果设为kThreadMaxNum则无效 模拟器最大并发数约为64左右
 operationQueue.maxConcurrentOperationCount = kThreadMaxNum;
-~~~
+```
 
 
 
@@ -40,7 +42,8 @@ operationQueue.maxConcurrentOperationCount = kThreadMaxNum;
 
 4、GCD并行队列 和 串行队列 、group 和 dispatch_barrier_async的使用
 
-~~~
+
+```objective-c
 //---------------------------GCD之dispatch_queue_create并行队列测试---------------------------------
 //并行队列 线程数量受设备影响 模拟器最多开启63左右
 dispatch_queue_t concurrentQueue = dispatch_queue_create("并行队列", DISPATCH_QUEUE_CONCURRENT);
@@ -111,5 +114,5 @@ NSLog(@"GCD产生子线程%@",@(i).stringValue);
 dispatch_group_notify(group, dispatch_get_main_queue(), ^{
 
 });
-~~~
+```
 
