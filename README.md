@@ -1,4 +1,4 @@
-＃iOS充电教程所有测试的例子
+#iOS充电教程所有测试的例子
 ##RunLoooopTest
 
 例子中模拟了scrollView滑动会影响scheduledTimerWithTimeInterval创建的NSTimer及initWithRequest创建的NSURLConnection，并在例子中给出了解决方案
