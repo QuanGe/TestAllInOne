@@ -20,6 +20,7 @@ NSURLConnection * connection = [[NSURLConnection alloc] initWithRequest:[NSURLRe
 ```
 
 ##ThreadTest
+个人猜测，这NSThread、NSOperation、GCD三种方式的代码实现 都是用了libpthread,因为我们可以从 [libdispatch](http://opensource.apple.com/tarballs/libdispatch/)的源码中可以看到`private.h`头文件中`#include <pthread.h>`,而且代码中有`pthread_create`创建线程
 
 例子中 介绍了
 1、NSThread 线程同步如何操作 及 三种加锁的方法`NSLock`、`NSCondition`和`@synchronized(self)`,如果不加锁数据会有异常
@@ -38,9 +39,9 @@ operationQueue.maxConcurrentOperationCount = kThreadMaxNum;
 
 
 
-3、NSThread 1000个线程并发测试
+3、NSThread 1000个线程并发测试会同时并发，轻量级，真的会1000个同时并发哦
 
-4、GCD并行队列 和 串行队列 、group 和 dispatch_barrier_async的使用
+4、GCD并行队列 和 串行队列 、group 和 dispatch_barrier_async的使用，1000个子线程并发测试 ：线程并发数量受设备性能影响较大，模拟器只能同步并发65左右
 
 
 ```objective-c
