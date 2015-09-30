@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TTRealObjectUIViewController : UIViewController
+@interface TTRealObjectViewController : UIViewController
 
 @end

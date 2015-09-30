@@ -6,10 +6,10 @@
 //  Copyright © 2015年 QuanGe. All rights reserved.
 //
 
-#import "TTRealObjectUIViewController.h"
+#import "TTRealObjectViewController.h"
 #import "TTSubOperation.h"
 #define kThreadMaxNum 1000
-@implementation TTRealObjectUIViewController
+@implementation TTRealObjectViewController
 
 - (void)viewDidLoad
 {
@@ -84,7 +84,7 @@
     }
     */
     
-    /*
+    
     //---------------------------GCD之dispatch_queue_create并行队列测试---------------------------------
     //并行队列 线程数量受设备影响 模拟器最多开启63左右
     dispatch_queue_t concurrentQueue = dispatch_queue_create("并行队列", DISPATCH_QUEUE_CONCURRENT);
@@ -102,7 +102,7 @@
             });
         
      }
-    */
+    
     
     /*
     //---------------------------GCD之dispatch_queue_create串行队列测试---------------------------------

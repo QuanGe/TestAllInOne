@@ -15,7 +15,9 @@
 		98E806FC1BB839CB008C9F53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E806FA1BB839CB008C9F53 /* LaunchScreen.storyboard */; };
 		98E807081BB83D90008C9F53 /* TTNSThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */; settings = {ASSET_TAGS = (); }; };
 		98F0F6CA1BBA3C6A00B722DF /* TTSubOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F0F6C91BBA3C6A00B722DF /* TTSubOperation.m */; settings = {ASSET_TAGS = (); }; };
-		98F6A67D1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98F0F6CD1BBA7D8F00B722DF /* TTBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F0F6CC1BBA7D8F00B722DF /* TTBlockViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98F6A67D1BB8D0E8001FF5E9 /* TTRealObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98F9E6E91BBB736E00F0498C /* TTBlockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F9E6E81BBB736E00F0498C /* TTBlockObject.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,8 +35,12 @@
 		98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTNSThreadTestViewController.m; sourceTree = "<group>"; };
 		98F0F6C81BBA3C6A00B722DF /* TTSubOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTSubOperation.h; sourceTree = "<group>"; };
 		98F0F6C91BBA3C6A00B722DF /* TTSubOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTSubOperation.m; sourceTree = "<group>"; };
-		98F6A67B1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRealObjectUIViewController.h; sourceTree = "<group>"; };
-		98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRealObjectUIViewController.m; sourceTree = "<group>"; };
+		98F0F6CB1BBA7D8F00B722DF /* TTBlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBlockViewController.h; sourceTree = "<group>"; };
+		98F0F6CC1BBA7D8F00B722DF /* TTBlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBlockViewController.m; sourceTree = "<group>"; };
+		98F6A67B1BB8D0E8001FF5E9 /* TTRealObjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTRealObjectViewController.h; sourceTree = "<group>"; };
+		98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTRealObjectViewController.m; sourceTree = "<group>"; };
+		98F9E6E71BBB736E00F0498C /* TTBlockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTBlockObject.h; sourceTree = "<group>"; };
+		98F9E6E81BBB736E00F0498C /* TTBlockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTBlockObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,10 +84,14 @@
 				98E806EC1BB839CB008C9F53 /* Supporting Files */,
 				98E807061BB83D90008C9F53 /* TTNSThreadTestViewController.h */,
 				98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */,
-				98F6A67B1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.h */,
-				98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.m */,
+				98F9E6E71BBB736E00F0498C /* TTBlockObject.h */,
+				98F9E6E81BBB736E00F0498C /* TTBlockObject.m */,
+				98F6A67B1BB8D0E8001FF5E9 /* TTRealObjectViewController.h */,
+				98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectViewController.m */,
 				98F0F6C81BBA3C6A00B722DF /* TTSubOperation.h */,
 				98F0F6C91BBA3C6A00B722DF /* TTSubOperation.m */,
+				98F0F6CB1BBA7D8F00B722DF /* TTBlockViewController.h */,
+				98F0F6CC1BBA7D8F00B722DF /* TTBlockViewController.m */,
 			);
 			path = ThreadTest;
 			sourceTree = "<group>";
@@ -166,7 +176,9 @@
 			files = (
 				98F0F6CA1BBA3C6A00B722DF /* TTSubOperation.m in Sources */,
 				98E806F41BB839CB008C9F53 /* TTHomeViewController.m in Sources */,
-				98F6A67D1BB8D0E8001FF5E9 /* TTRealObjectUIViewController.m in Sources */,
+				98F0F6CD1BBA7D8F00B722DF /* TTBlockViewController.m in Sources */,
+				98F6A67D1BB8D0E8001FF5E9 /* TTRealObjectViewController.m in Sources */,
+				98F9E6E91BBB736E00F0498C /* TTBlockObject.m in Sources */,
 				98E806F11BB839CB008C9F53 /* AppDelegate.m in Sources */,
 				98E806EE1BB839CB008C9F53 /* main.m in Sources */,
 				98E807081BB83D90008C9F53 /* TTNSThreadTestViewController.m in Sources */,

@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1703" y="367"/>
         </scene>
-        <!--Real ObjectUI View Controller-->
+        <!--Real Object View Controller-->
         <scene sceneID="J6G-BW-dc2">
             <objects>
-                <viewController storyboardIdentifier="TTRealObjectUIViewController" id="Ow0-f6-t4r" customClass="TTRealObjectUIViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TTRealObjectViewController" id="Ow0-f6-t4r" customClass="TTRealObjectViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AOB-xd-TnI"/>
                         <viewControllerLayoutGuide type="bottom" id="F2B-6j-9n5"/>
@@ -98,6 +98,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buW-Hx-aEc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1700" y="1042"/>
+        </scene>
+        <!--Block View Controller-->
+        <scene sceneID="820-rK-Bnl">
+            <objects>
+                <viewController storyboardIdentifier="TTBlockViewController" id="Ewx-Yk-K0Q" customClass="TTBlockViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LLh-Ii-1eJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="qi2-ga-7tw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a4B-Sd-4Yl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E5n-uu-ZXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="1734"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yES-H8-H4t">
