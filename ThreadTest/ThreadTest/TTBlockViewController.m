@@ -30,36 +30,41 @@
     [super viewDidLoad];
     self.title = @"Block相关";
     
-    
+    //栈内变量如果在block中只是使用可以不加__block 但是如果修改就必须加上__block
     __block NSInteger someVar = 100;
+    //带参数的block声明
     void(^anyBlock)(int);
+    //带参数的block赋值
     anyBlock = ^(int i)
     {
+        //这里修改了栈内变量
         someVar++;
         NSLog(@"block传参数%@",@(i+someVar));
     };
+    //调用block 和函数指针一样哦
     anyBlock(10);
     
+    //无参数block的声明和赋值
     void(^anyNoArg)()=^{
         NSLog(@"无参block");
-        
     };
+    //调用block
     anyNoArg();
     
-    [self testBlock:^(NSInteger one, NSInteger two) {
-        NSLog(@"函数回调%@",@(one+two+self.view.tag++));
-    }];
     
-    __weak TTBlockViewController * weakself = self;
+    
+    __weak __typeof(self) weakself = self;
     self.blockProperty = ^(NSInteger one,NSInteger two)
     {
-        NSLog(@"函数回调%@,当前view的tag是%@",@(one+two+weakself.view.tag++),@(weakself.view.tag));
+        __strong __typeof(weakself) strongself = weakself;
+        NSLog(@"函数回调%@,当前view的tag是%@",@(one+two+weakself.view.tag++),@(strongself.view.tag));
     };
     
     self.blockObject = [[TTBlockObject alloc] init];
     self.blockObject.logBlock = ^{
-        weakself.view.tag++;
-        NSLog(@"当前view的tag是：%@",@(weakself.view.tag));
+        __strong __typeof(weakself) strongself = weakself;
+        strongself.view.tag++;
+        NSLog(@"当前view的tag是：%@",@(strongself.view.tag));
         
     };
     [self.blockObject doSomething];
@@ -68,12 +73,19 @@
         self.view.tag++;
     }];
     
+    
+    //带block参数的函数使用时
+    [self testBlock:^(NSInteger one, NSInteger two) {
+        
+        NSLog(@"函数回调%@",@(one+two+self.view.tag++));
+    }];
+    
     self.blockProperty(20,30);
 }
 
 - (void)testBlock:(void(^)(NSInteger one,NSInteger two))args
 {
-    
+    [self.blockObject doSomething];
     args(10,11);
 }
 @end
