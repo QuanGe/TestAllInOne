@@ -10,7 +10,8 @@
 #import "TTBlockObject.h"
 @interface TTBlockViewController ()
 
-@property (nonatomic,readwrite,assign) void(^blockProperty)(NSInteger one,NSInteger two);
+//block作为属性时必须用copy，因为最初block是创建在栈中需要拷贝到堆里
+@property (nonatomic,readwrite,copy) void(^blockProperty)(NSInteger one,NSInteger two);
 @property (nonatomic,readwrite,strong) TTBlockObject *blockObject;
 
 - (void)testBlock:(void(^)(NSInteger one,NSInteger two))args;
@@ -52,7 +53,7 @@
     anyNoArg();
     
     
-    
+    //当self所在的block作为属性拷贝到堆里时需要用weak弱引用声明
     __weak __typeof(self) weakself = self;
     self.blockProperty = ^(NSInteger one,NSInteger two)
     {
@@ -68,6 +69,8 @@
         
     };
     [self.blockObject doSomething];
+    
+    //带block参数的函数使用时
     [self.blockObject fetchSometheingFromUrlSting:@"http://www.csdn.net" success:^(NSString *result) {
         NSLog(@"%@",[result substringToIndex:100]);
         self.view.tag++;
