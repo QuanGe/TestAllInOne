@@ -1,0 +1,93 @@
+PODS:
+  - AFNetworking (2.6.1):
+    - AFNetworking/NSURLConnection (= 2.6.1)
+    - AFNetworking/NSURLSession (= 2.6.1)
+    - AFNetworking/Reachability (= 2.6.1)
+    - AFNetworking/Security (= 2.6.1)
+    - AFNetworking/Serialization (= 2.6.1)
+    - AFNetworking/UIKit (= 2.6.1)
+  - AFNetworking/NSURLConnection (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.1)
+  - AFNetworking/Security (2.6.1)
+  - AFNetworking/Serialization (2.6.1)
+  - AFNetworking/UIKit (2.6.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - FXBlurView (1.6.4)
+  - Mantle (1.5.6):
+    - Mantle/extobjc (= 1.5.6)
+  - Mantle/extobjc (1.5.6)
+  - Masonry (0.6.1)
+  - MBProgressHUD (0.9.1)
+  - pop (1.0.8)
+  - QGOCCategory (0.1.1)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+  - Shimmer (1.0.2)
+  - SVPullToRefresh (0.4.1)
+  - UALogger (0.3)
+  - UMengAnalytics-NO-IDFA (3.6.5)
+
+DEPENDENCIES:
+  - AFNetworking
+  - FXBlurView
+  - Mantle (~> 1.5)
+  - Masonry (from `https://github.com/QuanGe/Masonry`)
+  - MBProgressHUD
+  - pop
+  - QGOCCategory (from `https://github.com/QuanGe/QGOCCategory`)
+  - ReactiveViewModel
+  - Shimmer
+  - SVPullToRefresh (from `https://github.com/QuanGe/SVPullToRefresh`)
+  - UALogger
+  - UMengAnalytics-NO-IDFA
+
+EXTERNAL SOURCES:
+  Masonry:
+    :git: https://github.com/QuanGe/Masonry
+  QGOCCategory:
+    :git: https://github.com/QuanGe/QGOCCategory
+  SVPullToRefresh:
+    :git: https://github.com/QuanGe/SVPullToRefresh
+
+CHECKOUT OPTIONS:
+  Masonry:
+    :commit: b8a95662ea756a4c62be5c6e98058a47bc72f01f
+    :git: https://github.com/QuanGe/Masonry
+  QGOCCategory:
+    :commit: 0c13fb1374d53d6309d559567482135b7e09323f
+    :git: https://github.com/QuanGe/QGOCCategory
+  SVPullToRefresh:
+    :commit: f59232fac54b675088e23f5117aa2fb9c8ba222c
+    :git: https://github.com/QuanGe/SVPullToRefresh
+
+SPEC CHECKSUMS:
+  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  Mantle: a197db93e0f1e36194b1fdbc078219a8492eaef2
+  Masonry: a102f9a1a9c1c705c6c2f4e6f9f71159b0a1d1e7
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  pop: bb773ae2c791ca2629de13b347e7a8b450fa6a57
+  QGOCCategory: 437e1845b71e1c33b987a82b722ef0056c7747ac
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  UALogger: ccc041e5982dbd274ab5805f914076fef9bf29cf
+  UMengAnalytics-NO-IDFA: 279e28990a08efb56cff1821d2954bb00aa6975a
+
+COCOAPODS: 0.38.2
