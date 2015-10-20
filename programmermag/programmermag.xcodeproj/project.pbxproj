@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		985D4C0D1BD4F11C00B50D81 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 985D4C0C1BD4F11C00B50D81 /* main.m */; };
-		985D4C101BD4F11C00B50D81 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 985D4C0F1BD4F11C00B50D81 /* AppDelegate.m */; };
-		985D4C131BD4F11C00B50D81 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 985D4C121BD4F11C00B50D81 /* ViewController.m */; };
-		985D4C161BD4F11C00B50D81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985D4C141BD4F11C00B50D81 /* Main.storyboard */; };
-		985D4C181BD4F11C00B50D81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985D4C171BD4F11C00B50D81 /* Assets.xcassets */; };
-		985D4C1B1BD4F11C00B50D81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 985D4C191BD4F11C00B50D81 /* LaunchScreen.storyboard */; };
+		9877FCF41BD53669008995FC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9877FCF31BD53669008995FC /* libsqlite3.tbd */; };
+		98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CC81BD5CCCD00F6AA87 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98949CD41BD5CCEB00F6AA87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CCC1BD5CCEB00F6AA87 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		98949CD51BD5CCEB00F6AA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98949CCD1BD5CCEB00F6AA87 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
+		98949CD61BD5CCEB00F6AA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98949CCE1BD5CCEB00F6AA87 /* LaunchScreen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		98949CD71BD5CCEB00F6AA87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98949CD01BD5CCEB00F6AA87 /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		98949CD91BD5CCEB00F6AA87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CD31BD5CCEB00F6AA87 /* main.m */; settings = {ASSET_TAGS = (); }; };
+		98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE01BD5E08A00F6AA87 /* PMDBManager.m */; settings = {ASSET_TAGS = (); }; };
+		98949CE31BD5E11100F6AA87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98949CE21BD5E11100F6AA87 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		AA53AA47FAA1EAC8A4F6B1AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F408571131F82B3FCB0FBE /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B9B08EAEB0D25892467DB7F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		985D4C081BD4F11C00B50D81 /* programmermag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = programmermag.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		985D4C0C1BD4F11C00B50D81 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		985D4C0E1BD4F11C00B50D81 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		985D4C0F1BD4F11C00B50D81 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		985D4C111BD4F11C00B50D81 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		985D4C121BD4F11C00B50D81 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		985D4C151BD4F11C00B50D81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		985D4C171BD4F11C00B50D81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		985D4C1A1BD4F11C00B50D81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		985D4C1C1BD4F11C00B50D81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9877FCF31BD53669008995FC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		98949CC71BD5CCCD00F6AA87 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		98949CC81BD5CCCD00F6AA87 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		98949CCB1BD5CCEB00F6AA87 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		98949CCC1BD5CCEB00F6AA87 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		98949CCD1BD5CCEB00F6AA87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98949CCF1BD5CCEB00F6AA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		98949CD11BD5CCEB00F6AA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		98949CD31BD5CCEB00F6AA87 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98949CDF1BD5E08A00F6AA87 /* PMDBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDBManager.h; sourceTree = "<group>"; };
+		98949CE01BD5E08A00F6AA87 /* PMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDBManager.m; sourceTree = "<group>"; };
+		98949CE21BD5E11100F6AA87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6F408571131F82B3FCB0FBE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC41D9C9E200CE53B0788D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9877FCF41BD53669008995FC /* libsqlite3.tbd in Frameworks */,
 				AA53AA47FAA1EAC8A4F6B1AA /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +54,7 @@
 		2049387820C29415DCCABB01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9877FCF31BD53669008995FC /* libsqlite3.tbd */,
 				E6F408571131F82B3FCB0FBE /* libPods.a */,
 			);
 			name = Frameworks;
@@ -82,25 +90,67 @@
 		985D4C0A1BD4F11C00B50D81 /* programmermag */ = {
 			isa = PBXGroup;
 			children = (
-				985D4C0E1BD4F11C00B50D81 /* AppDelegate.h */,
-				985D4C0F1BD4F11C00B50D81 /* AppDelegate.m */,
-				985D4C111BD4F11C00B50D81 /* ViewController.h */,
-				985D4C121BD4F11C00B50D81 /* ViewController.m */,
-				985D4C141BD4F11C00B50D81 /* Main.storyboard */,
-				985D4C171BD4F11C00B50D81 /* Assets.xcassets */,
-				985D4C191BD4F11C00B50D81 /* LaunchScreen.storyboard */,
-				985D4C1C1BD4F11C00B50D81 /* Info.plist */,
-				985D4C0B1BD4F11C00B50D81 /* Supporting Files */,
+				98949CDE1BD5CD2100F6AA87 /* Model */,
+				98949CDA1BD5CD1200F6AA87 /* ViewModel */,
+				98949CCA1BD5CCEB00F6AA87 /* Config */,
+				98949CC41BD5CCCD00F6AA87 /* View */,
 			);
 			path = programmermag;
 			sourceTree = "<group>";
 		};
-		985D4C0B1BD4F11C00B50D81 /* Supporting Files */ = {
+		98949CC41BD5CCCD00F6AA87 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				985D4C0C1BD4F11C00B50D81 /* main.m */,
+				98949CC51BD5CCCD00F6AA87 /* View */,
+				98949CC61BD5CCCD00F6AA87 /* ViewController */,
 			);
-			name = "Supporting Files";
+			path = View;
+			sourceTree = "<group>";
+		};
+		98949CC51BD5CCCD00F6AA87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98949CC61BD5CCCD00F6AA87 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				98949CC71BD5CCCD00F6AA87 /* ViewController.h */,
+				98949CC81BD5CCCD00F6AA87 /* ViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		98949CCA1BD5CCEB00F6AA87 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				98949CE21BD5E11100F6AA87 /* Info.plist */,
+				98949CCB1BD5CCEB00F6AA87 /* AppDelegate.h */,
+				98949CCC1BD5CCEB00F6AA87 /* AppDelegate.m */,
+				98949CCD1BD5CCEB00F6AA87 /* Assets.xcassets */,
+				98949CCE1BD5CCEB00F6AA87 /* LaunchScreen.storyboard */,
+				98949CD01BD5CCEB00F6AA87 /* Main.storyboard */,
+				98949CD31BD5CCEB00F6AA87 /* main.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		98949CDA1BD5CD1200F6AA87 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				98949CDF1BD5E08A00F6AA87 /* PMDBManager.h */,
+				98949CE01BD5E08A00F6AA87 /* PMDBManager.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		98949CDE1BD5CD2100F6AA87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +212,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				985D4C1B1BD4F11C00B50D81 /* LaunchScreen.storyboard in Resources */,
-				985D4C181BD4F11C00B50D81 /* Assets.xcassets in Resources */,
-				985D4C161BD4F11C00B50D81 /* Main.storyboard in Resources */,
+				98949CE31BD5E11100F6AA87 /* Info.plist in Resources */,
+				98949CD51BD5CCEB00F6AA87 /* Assets.xcassets in Resources */,
+				98949CD71BD5CCEB00F6AA87 /* Main.storyboard in Resources */,
+				98949CD61BD5CCEB00F6AA87 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,29 +259,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				985D4C131BD4F11C00B50D81 /* ViewController.m in Sources */,
-				985D4C101BD4F11C00B50D81 /* AppDelegate.m in Sources */,
-				985D4C0D1BD4F11C00B50D81 /* main.m in Sources */,
+				98949CD91BD5CCEB00F6AA87 /* main.m in Sources */,
+				98949CD41BD5CCEB00F6AA87 /* AppDelegate.m in Sources */,
+				98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */,
+				98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		985D4C141BD4F11C00B50D81 /* Main.storyboard */ = {
+		98949CCE1BD5CCEB00F6AA87 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				985D4C151BD4F11C00B50D81 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		985D4C191BD4F11C00B50D81 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				985D4C1A1BD4F11C00B50D81 /* Base */,
+				98949CCF1BD5CCEB00F6AA87 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		98949CD01BD5CCEB00F6AA87 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98949CD11BD5CCEB00F6AA87 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -321,7 +373,7 @@
 			baseConfigurationReference = 0B9B08EAEB0D25892467DB7F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = programmermag/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/programmermag/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.csdn.programmermag;
@@ -334,7 +386,7 @@
 			baseConfigurationReference = EAC41D9C9E200CE53B0788D3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = programmermag/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/programmermag/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.csdn.programmermag;

@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "UALogger.h"
+#import "PMDBManager.h"
+#import "QGOCCategory.h"
 @interface ViewController ()
 
 @end
@@ -17,6 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    NSArray * allbook = [[PMDBManager getInstance] fetchAllBooks];
+    UALog(@"全部书为%@",allbook);
+    
+    return;
+    NSArray * mybook = [[PMDBManager getInstance] fetchMylBooks];
+    UALog(@"我的书为%@",allbook);
+   
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectoryPath = [paths objectAtIndex:0];
     documentsDirectoryPath = [documentsDirectoryPath stringByAppendingString:@"/issues100"];
@@ -32,6 +42,9 @@
         UALog(@"杂志目录为:%@",fileName);
         
     }
+    
+
+    
     
 
     
