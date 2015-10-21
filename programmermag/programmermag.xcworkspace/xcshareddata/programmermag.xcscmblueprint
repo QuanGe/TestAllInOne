@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "AC38E4AA8584092010293C10CF7507640DF583C8",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "B937649AFF0927DE7FAE80A1F0FE93F54F794835" : 0,
+    "AC38E4AA8584092010293C10CF7507640DF583C8" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D6D32CE8-44EC-4B99-8B4E-87DB04AC7670",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "B937649AFF0927DE7FAE80A1F0FE93F54F794835" : "TestAllInOne\/programmermag\/Lib\/AESCrypt-ObjC\/",
+    "AC38E4AA8584092010293C10CF7507640DF583C8" : "TestAllInOne\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "programmermag",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "programmermag\/programmermag.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/QuanGe\/TestAllInOne.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "AC38E4AA8584092010293C10CF7507640DF583C8"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Gurpartap\/AESCrypt-ObjC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B937649AFF0927DE7FAE80A1F0FE93F54F794835"
+    }
+  ]
+}

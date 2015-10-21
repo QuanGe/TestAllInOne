@@ -10,6 +10,8 @@
 #import "UALogger.h"
 #import "PMDBManager.h"
 #import "QGOCCategory.h"
+
+#import "PMAPIManager.h"
 @interface ViewController ()
 
 @end
@@ -19,6 +21,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [[[PMAPIManager sharedManager] fetchBookList] subscribeNext:^(id x) {
+        UALog(@"%@",x);
+    } error:^(NSError *error) {
+        UALog(@"%@",error);
+    }];
+    
     NSArray * allbook = [[PMDBManager getInstance] fetchAllBooks];
     UALog(@"全部书为%@",allbook);
     

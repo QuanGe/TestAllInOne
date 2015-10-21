@@ -86,7 +86,7 @@ static sqlite3 *contactDB = NULL;
             NSString * issueName = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 5)];
             NSString * issueDes = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 7)];
             NSData * package = [NSData dataWithBytes:sqlite3_column_blob(statement, 3) length:sqlite3_column_bytes(statement,3)];
-            
+           
             [downloadArray addObject:@{@"issueid":issueid,@"issueName":issueName,@"issueDes":issueDes,@"package":package}];
         }
         

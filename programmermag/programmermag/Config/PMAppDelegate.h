@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  PMAppDelegate.h
 //  programmermag
 //
 //  Created by 张如泉 on 15/10/19.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface PMAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
