@@ -41,6 +41,12 @@
         [testPop qgocc_configConstraintsWithParentView:self.view rect:CGRectMake(100, 400, 200, 100) marginRightAndBottom:CGPointZero];
     }
     
+    UIImageView * imageView = [[UIImageView alloc] init];
+    {
+        [imageView setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 17, 17, 17)]];
+        [self.view addSubview:imageView];
+        [imageView qgocc_configConstraintsWithParentView:self.view rect:CGRectMake(100, 100, 34, 34) marginRightAndBottom:CGPointZero];
+    }
     
 }
 

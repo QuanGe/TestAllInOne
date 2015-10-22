@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6DACA09C9D3502F3AF61B39B"
+               BlueprintIdentifier = "FE3A480F368BE8C8E21002CB"
                BuildableName = "libReactiveViewModel.a"
                BlueprintName = "ReactiveViewModel"
                ReferencedContainer = "container:Pods.xcodeproj">

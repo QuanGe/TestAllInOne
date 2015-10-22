@@ -101,4 +101,37 @@
     return image;
     
 }
+
+/**
+ *  裁减图片
+ *  @param  frame: 裁减部分位置大小
+ *  return  裁减后的图片
+ */
+- (UIImage *)qgocc_captureImageWithFrame:(CGRect)frame
+{
+    CGImageRef imageRef = nil;
+    imageRef = CGImageCreateWithImageInRect([self CGImage], frame);
+    return [UIImage imageWithCGImage:imageRef];
+    
+}
+
+/**
+ *  合并两个Image。
+ *  @param  image1、image2: 两张图片。
+ *  @param  frame1、frame2:两张图片放置的位置。
+ *  @param  size:返回图片的尺寸。
+ *  return  合并后的两个图片的Image。
+ */
++ (UIImage *)qgocc_mergeWithImage1:(UIImage *)image1 image2:(UIImage *)image2 frame1:(CGRect)frame1 frame2:(CGRect)frame2 size:(CGSize)size
+{
+    UIGraphicsBeginImageContext(size);
+    [image1 drawInRect:frame1 blendMode:kCGBlendModeLuminosity alpha:1.0];
+    [image2 drawInRect:frame2 blendMode:kCGBlendModeLuminosity alpha:0.2];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+
 @end

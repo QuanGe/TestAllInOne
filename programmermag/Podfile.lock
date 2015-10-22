@@ -69,7 +69,7 @@ CHECKOUT OPTIONS:
     :commit: b8a95662ea756a4c62be5c6e98058a47bc72f01f
     :git: https://github.com/QuanGe/Masonry
   QGOCCategory:
-    :commit: 0c13fb1374d53d6309d559567482135b7e09323f
+    :commit: f77c27a343bbe6d95a4d7c118d9ea4f0135b1f6d
     :git: https://github.com/QuanGe/QGOCCategory
   SVPullToRefresh:
     :commit: f59232fac54b675088e23f5117aa2fb9c8ba222c
