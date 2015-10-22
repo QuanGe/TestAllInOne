@@ -16,6 +16,7 @@
 		988ADCAC1BD7364900CE9212 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988ADCAB1BD7364900CE9212 /* CoreGraphics.framework */; };
 		988ADCC51BD77F7200CE9212 /* PMIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 988ADCC41BD77F7200CE9212 /* PMIssueModel.m */; settings = {ASSET_TAGS = (); }; };
 		989396D01BD88DD00063321B /* PMHomeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 989396CF1BD88DD00063321B /* PMHomeBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
+		989396D31BD8C7280063321B /* PMBookCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 989396D21BD8C7280063321B /* PMBookCollectionView.m */; settings = {ASSET_TAGS = (); }; };
 		98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CC81BD5CCCD00F6AA87 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		98949CD41BD5CCEB00F6AA87 /* PMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CCC1BD5CCEB00F6AA87 /* PMAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		98949CD51BD5CCEB00F6AA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98949CCD1BD5CCEB00F6AA87 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
@@ -50,6 +51,8 @@
 		988ADCC41BD77F7200CE9212 /* PMIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMIssueModel.m; sourceTree = "<group>"; };
 		989396CE1BD88DD00063321B /* PMHomeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMHomeBaseViewController.h; sourceTree = "<group>"; };
 		989396CF1BD88DD00063321B /* PMHomeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMHomeBaseViewController.m; sourceTree = "<group>"; };
+		989396D11BD8C7280063321B /* PMBookCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookCollectionView.h; sourceTree = "<group>"; };
+		989396D21BD8C7280063321B /* PMBookCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookCollectionView.m; sourceTree = "<group>"; };
 		98949CC71BD5CCCD00F6AA87 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		98949CC81BD5CCCD00F6AA87 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98949CCB1BD5CCEB00F6AA87 /* PMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAppDelegate.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 		98949CC51BD5CCCD00F6AA87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				989396D11BD8C7280063321B /* PMBookCollectionView.h */,
+				989396D21BD8C7280063321B /* PMBookCollectionView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				989396D31BD8C7280063321B /* PMBookCollectionView.m in Sources */,
 				988ADCC51BD77F7200CE9212 /* PMIssueModel.m in Sources */,
 				989396D01BD88DD00063321B /* PMHomeBaseViewController.m in Sources */,
 				988ADCA41BD734FA00CE9212 /* tinyxml2.cpp in Sources */,

@@ -28,5 +28,21 @@
         UIBarButtonItem *leftView = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
         [self.navigationItem setLeftBarButtonItem:leftView];
     }
+    
+    UICollectionViewFlowLayout *recommentLayout=[[UICollectionViewFlowLayout alloc] init];
+    {
+        [recommentLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
+        recommentLayout.headerReferenceSize = CGSizeMake(200, 50);
+        self.dataView = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
+        self.dataView.backgroundColor = [UIColor whiteColor];
+        [self.dataView setDataSource:self];
+        [self.dataView setDelegate:self];
+        [self.dataView registerClass:objc_getClass(kRecommentCellIdentifier) forCellWithReuseIdentifier:@kRecommentCellIdentifier];
+    
+        [self.view addSubview:self.dataView];
+        
+    }
+
+    
 }
 @end

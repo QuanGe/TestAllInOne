@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PMHomeBaseViewController : UIViewController
-
+@property (nonatomic,readwrite,strong) UICollectionView * dataView;
 @end
