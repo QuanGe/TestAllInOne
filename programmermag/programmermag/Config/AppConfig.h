@@ -53,7 +53,7 @@
 #define kTitleFontLarge              [UIFont boldSystemFontOfSize:25]//一级标题字号
 #define kTitleFontMiddle             [UIFont boldSystemFontOfSize:19]//二级标题字号
 #define kTitleFontSmall              [UIFont boldSystemFontOfSize:16]//三级标题字号
-
+#define kNavTitleFont                [UIFont boldSystemFontOfSize:18]//导航条字体
 
 //几个常用色彩
 
@@ -62,6 +62,8 @@
 #define kWhiteColor             [UIColor whiteColor]
 #define kBlackColor             [UIColor blackColor]
 #define kClearColor             [UIColor clearColor]
+#define kSegmentNormalColor     mRGBToColor(0x9B9B9B)
+#define kSegmentHighlightColor       mRGBToColor(0xE44624)
 
 #define kShadowColor mRGBToColor(0x8D8D8D)
 

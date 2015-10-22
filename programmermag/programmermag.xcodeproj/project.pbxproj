@@ -15,6 +15,7 @@
 		988ADCAA1BD7364100CE9212 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988ADCA91BD7364100CE9212 /* Foundation.framework */; };
 		988ADCAC1BD7364900CE9212 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 988ADCAB1BD7364900CE9212 /* CoreGraphics.framework */; };
 		988ADCC51BD77F7200CE9212 /* PMIssueModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 988ADCC41BD77F7200CE9212 /* PMIssueModel.m */; settings = {ASSET_TAGS = (); }; };
+		989396D01BD88DD00063321B /* PMHomeBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 989396CF1BD88DD00063321B /* PMHomeBaseViewController.m */; settings = {ASSET_TAGS = (); }; };
 		98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CC81BD5CCCD00F6AA87 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
 		98949CD41BD5CCEB00F6AA87 /* PMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CCC1BD5CCEB00F6AA87 /* PMAppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		98949CD51BD5CCEB00F6AA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98949CCD1BD5CCEB00F6AA87 /* Assets.xcassets */; settings = {ASSET_TAGS = (); }; };
@@ -24,6 +25,10 @@
 		98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE01BD5E08A00F6AA87 /* PMDBManager.m */; settings = {ASSET_TAGS = (); }; };
 		98949CE31BD5E11100F6AA87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98949CE21BD5E11100F6AA87 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		98949CE61BD6474A00F6AA87 /* PMAPIManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */; settings = {ASSET_TAGS = (); }; };
+		98DAEBEE1BD871E400359D2D /* PMBookStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBED1BD871E400359D2D /* PMBookStoreViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98DAEBF11BD8720E00359D2D /* PMMyBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBF01BD8720E00359D2D /* PMMyBookViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98DAEBF41BD874A500359D2D /* PMBookInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBF31BD874A500359D2D /* PMBookInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98DAEBF71BD874CA00359D2D /* PMBookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBF61BD874CA00359D2D /* PMBookDetailViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AA53AA47FAA1EAC8A4F6B1AA /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E6F408571131F82B3FCB0FBE /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +48,8 @@
 		988ADCAB1BD7364900CE9212 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		988ADCC31BD77F7200CE9212 /* PMIssueModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMIssueModel.h; sourceTree = "<group>"; };
 		988ADCC41BD77F7200CE9212 /* PMIssueModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMIssueModel.m; sourceTree = "<group>"; };
+		989396CE1BD88DD00063321B /* PMHomeBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMHomeBaseViewController.h; sourceTree = "<group>"; };
+		989396CF1BD88DD00063321B /* PMHomeBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMHomeBaseViewController.m; sourceTree = "<group>"; };
 		98949CC71BD5CCCD00F6AA87 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		98949CC81BD5CCCD00F6AA87 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		98949CCB1BD5CCEB00F6AA87 /* PMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +63,14 @@
 		98949CE21BD5E11100F6AA87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98949CE41BD6474A00F6AA87 /* PMAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAPIManager.h; sourceTree = "<group>"; };
 		98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PMAPIManager.mm; sourceTree = "<group>"; };
+		98DAEBEC1BD871E400359D2D /* PMBookStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookStoreViewController.h; sourceTree = "<group>"; };
+		98DAEBED1BD871E400359D2D /* PMBookStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookStoreViewController.m; sourceTree = "<group>"; };
+		98DAEBEF1BD8720E00359D2D /* PMMyBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMMyBookViewController.h; sourceTree = "<group>"; };
+		98DAEBF01BD8720E00359D2D /* PMMyBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMMyBookViewController.m; sourceTree = "<group>"; };
+		98DAEBF21BD874A500359D2D /* PMBookInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookInfoViewController.h; sourceTree = "<group>"; };
+		98DAEBF31BD874A500359D2D /* PMBookInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookInfoViewController.m; sourceTree = "<group>"; };
+		98DAEBF51BD874CA00359D2D /* PMBookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookDetailViewController.h; sourceTree = "<group>"; };
+		98DAEBF61BD874CA00359D2D /* PMBookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookDetailViewController.m; sourceTree = "<group>"; };
 		E6F408571131F82B3FCB0FBE /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EAC41D9C9E200CE53B0788D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +184,16 @@
 			children = (
 				98949CC71BD5CCCD00F6AA87 /* ViewController.h */,
 				98949CC81BD5CCCD00F6AA87 /* ViewController.m */,
+				98DAEBEC1BD871E400359D2D /* PMBookStoreViewController.h */,
+				98DAEBED1BD871E400359D2D /* PMBookStoreViewController.m */,
+				98DAEBEF1BD8720E00359D2D /* PMMyBookViewController.h */,
+				98DAEBF01BD8720E00359D2D /* PMMyBookViewController.m */,
+				98DAEBF21BD874A500359D2D /* PMBookInfoViewController.h */,
+				98DAEBF31BD874A500359D2D /* PMBookInfoViewController.m */,
+				98DAEBF51BD874CA00359D2D /* PMBookDetailViewController.h */,
+				98DAEBF61BD874CA00359D2D /* PMBookDetailViewController.m */,
+				989396CE1BD88DD00063321B /* PMHomeBaseViewController.h */,
+				989396CF1BD88DD00063321B /* PMHomeBaseViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -317,11 +342,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				988ADCC51BD77F7200CE9212 /* PMIssueModel.m in Sources */,
+				989396D01BD88DD00063321B /* PMHomeBaseViewController.m in Sources */,
 				988ADCA41BD734FA00CE9212 /* tinyxml2.cpp in Sources */,
+				98DAEBF71BD874CA00359D2D /* PMBookDetailViewController.m in Sources */,
+				98DAEBEE1BD871E400359D2D /* PMBookStoreViewController.m in Sources */,
 				98949CD91BD5CCEB00F6AA87 /* main.m in Sources */,
+				98DAEBF41BD874A500359D2D /* PMBookInfoViewController.m in Sources */,
 				98949CD41BD5CCEB00F6AA87 /* PMAppDelegate.m in Sources */,
 				98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */,
 				98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */,
+				98DAEBF11BD8720E00359D2D /* PMMyBookViewController.m in Sources */,
 				98949CE61BD6474A00F6AA87 /* PMAPIManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

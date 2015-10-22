@@ -17,6 +17,50 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    _window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //底部选项卡设置
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor],NSForegroundColorAttributeName,nil]forState:UIControlStateNormal];
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:kTabSelectColor,NSForegroundColorAttributeName,nil] forState:UIControlStateSelected];
+    [[UITabBar appearance] setItemWidth:30];
+    [[UITabBar appearance] setBarTintColor:mRGBColor(30, 30, 30)];
+    
+    //导航条设置
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:kNavTitleColor,
+                                                           NSFontAttributeName:kNavTitleFont}];
+    //[[UINavigationBar appearance] setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:0.8] size:CGSizeMake(1, 1)] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleDefault];
+    
+    //[[UINavigationBar appearance] setTranslucent:YES];
+    
+    // 创建
+    UITabBarController *homeTabBarController = [[UITabBarController alloc] init];
+    {
+        NSArray *titleArray = @[@"书店",@"我的书架"];
+        NSArray *classArray = @[@"PMBookStoreViewController",@"PMMyBookViewController"];
+        NSMutableArray *childControllers = [NSMutableArray arrayWithCapacity:0];
+        for(NSInteger i = 0;i<2;i++)
+        {
+            UIViewController *childViewController = [[ objc_getClass(((NSString*)classArray[i]).UTF8String) alloc] init];
+            childViewController.tabBarItem.title= titleArray[i];
+            childViewController.view.backgroundColor = [UIColor whiteColor];
+            childViewController.automaticallyAdjustsScrollViewInsets = NO;
+            childViewController.tabBarItem.image=[[[UIImage imageNamed:(i==0?@"store":@"library")] qgocc_imageMaskedWithColor:kWhiteColor]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            childViewController.tabBarItem.selectedImage=[ [[UIImage imageNamed:(i==0?@"store":@"library")] qgocc_imageMaskedWithColor:kTabSelectColor ] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+            
+            UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:childViewController];
+            [childControllers addObject:navController];
+        }
+        homeTabBarController.viewControllers = childControllers;
+        
+    }
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:homeTabBarController];
+    self.navigationController.navigationBarHidden = YES;
+    // Display the window
+    _window.rootViewController = _navigationController;
+    [_window makeKeyAndVisible];
+
     return YES;
 }
 
