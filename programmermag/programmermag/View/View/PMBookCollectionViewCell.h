@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface PMBookCollectionViewCell : UICollectionViewCell
-@property (nonatomic,readwrite,strong) UIImageView * issueImageView;
+@property (nonatomic,readwrite,strong) UIButton * issueImageBtn;
 @property (nonatomic,readwrite,strong) UILabel * issueTitleLable;
 @property (nonatomic,readwrite,strong) UILabel * issueEditionLable;
 @property (nonatomic,readwrite,strong) UILabel * issuePriceLable;
@@ -20,4 +20,5 @@
 @property (nonatomic,readwrite,strong) MASConstraint * issueImageViewWidth;
 - (void)updateDownloadProgress:(CGFloat)progress labelText:(NSAttributedString*)text;
 - (void)changeBig:(BOOL)big;
+- (void)changeDownBtnType:(NSInteger)type;
 @end

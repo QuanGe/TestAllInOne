@@ -68,6 +68,22 @@
     return [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone;
 }
 
+/**
+ *  判断是否为Retina屏幕
+ *  return  是否为Retina屏幕
+ */
++ (CGFloat)qgocc_isRetina
+{
+    CGFloat scale = 1.0;
+    
+    UIScreen *screen = [UIScreen mainScreen];
+    
+    if([screen respondsToSelector:@selector(scale)])
+        scale = screen.scale;
+    
+    return scale;
+}
+
 - (NSString *) macaddress{
     
     int                 mib[6];

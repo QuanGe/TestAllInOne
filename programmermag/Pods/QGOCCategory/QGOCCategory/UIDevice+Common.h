@@ -41,6 +41,12 @@
 + (BOOL)qgocc_isIPhone;
 
 /**
+*  判断是否为Retina屏幕
+*  return  是否为Retina屏幕
+*/
++ (CGFloat)qgocc_isRetina;
+
+/**
  *  获取设备唯一标示
  *  return  设备唯一标示
  */
@@ -57,5 +63,7 @@
  *  return  硬盘空闲容量(单位：M)
  */
 + (NSString *)qgocc_freeDiskSpaceBytes;
+
+
 
 @end

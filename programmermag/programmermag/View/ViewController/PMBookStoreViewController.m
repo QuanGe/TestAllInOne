@@ -19,23 +19,23 @@
     [super loadView];
     UIView * customBarButtonBox = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 40)];
     {
-        UIButton * changeUIBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 34, 34)];
+        UIButton * changeUIBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 10, 17, 17)];
         {
-            [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 17, 17)] forState:UIControlStateNormal];
-            [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 16, 17, 17)] forState:UIControlStateHighlighted];
+            [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateNormal];
+            [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 16*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
             changeUIBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
                 changeUIBtn.tag = changeUIBtn.tag == 0?1:0;
-                [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, changeUIBtn.tag == 0?0:32, 17, 17)] forState:UIControlStateNormal];
-                [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, changeUIBtn.tag == 0?17:51, 17, 17)] forState:UIControlStateHighlighted];
+                [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, changeUIBtn.tag == 0?0:32*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateNormal];
+                [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, changeUIBtn.tag == 0?17*[UIDevice qgocc_isRetina]:51*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
                 return [RACSignal empty];
             }];
             [customBarButtonBox addSubview:changeUIBtn];
         }
         
-        UIButton * reloadBtn = [[UIButton alloc] initWithFrame:CGRectMake(40, 0, 36, 36)];
+        UIButton * reloadBtn = [[UIButton alloc] initWithFrame:CGRectMake(40, 10, 18, 18)];
         {
-            [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 18, 18)] forState:UIControlStateNormal];
-            [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 18, 18, 18)] forState:UIControlStateHighlighted];
+            [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina])] forState:UIControlStateNormal];
+            [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
             reloadBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
                 [self.refreshView stopAnimating];
                 [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {

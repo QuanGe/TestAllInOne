@@ -9,6 +9,7 @@
 #import "PMHomeBaseViewController.h"
 #import "PMBookCollectionViewCell.h"
 #import "RFQuiltLayout.h"
+#import "UIKit+AFNetworking.h"
 @interface PMHomeBaseViewController()
 
 @end
@@ -48,7 +49,7 @@
         [self.view addSubview:self.dataView];
         [self.dataView mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.bottom.mas_equalTo(-60);
+            make.bottom.mas_equalTo(-10);
             make.left.mas_equalTo(0);
             make.right.mas_equalTo(0);
             make.top.mas_equalTo(60);
@@ -70,8 +71,31 @@
     cell.issueTitleLable.text = [self.viewModel titleOfBookWithIndex:indexPath.row];
     cell.issueEditionLable.text = [self.viewModel editionOfBookWithIndex:indexPath.row];
     cell.issueDesLable.text = [self.viewModel desOfBookWithIndex:indexPath.row];
-    cell.issuePriceLable.text = [self.viewModel priceOfBookWithIndex:indexPath.row];
+    NSString * price = [self.viewModel priceOfBookWithIndex:indexPath.row] ;
+    NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                                             NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+    NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                   NSFontAttributeName:[UIFont systemFontOfSize:12]}];
     
+    [priceFront appendAttributedString:priceA];
+    
+    if(price.integerValue == 0)
+        cell.issuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                            NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+    else
+        cell.issuePriceLable.attributedText = priceFront;
+    
+    [cell.issueImageBtn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(indexPath.row == 0 ?300:130, indexPath.row == 0 ?400:200)]];
+    
+    if(indexPath.row == 0)
+        [cell changeBig:YES];
+    else
+        [cell changeBig:NO];
+    
+    if(indexPath.row == 2 || indexPath.row == 4)
+        [cell changeDownBtnType:1];
+    else
+        [cell changeDownBtnType:0];
     return cell;
 }
 
@@ -81,8 +105,8 @@
 
 -(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout blockSizeForItemAtIndexPath:(NSIndexPath *)indexPath{
    if(indexPath.row == 0)
-       return CGSizeMake(2  , 4);
-    return CGSizeMake(1  , 2);
+       return CGSizeMake(2  , 4.0);
+    return CGSizeMake(1  , 2.0);
 }
 
 @end
