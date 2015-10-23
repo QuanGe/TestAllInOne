@@ -57,6 +57,33 @@
     }
 
     self.viewModel = [[PMBookViewModel alloc] init];
+    
+    UIPageControl * page = [[UIPageControl alloc] init];
+    {
+       
+        page.pageIndicatorTintColor = mRGBColor(180, 180, 180);
+        page.currentPageIndicatorTintColor = mRGBColor(220, 220, 220);
+        [self.view addSubview:page];
+        [page mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.bottom.mas_equalTo(-70);
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.height.mas_equalTo(30);
+        }];
+        [RACObserve(self.dataView, contentSize) subscribeNext:^(id x) {
+            CGSize size ;
+            [x getValue:&size];
+            page.numberOfPages = size.width/mScreenWidth;
+        }];
+        
+        [RACObserve(self.dataView, contentOffset) subscribeNext:^(id x) {
+            CGPoint p ;
+            [x getValue:&p];
+            page.currentPage = p.x /mScreenWidth;
+        }];
+        
+    }
 }
 
 #pragma mark --UICollectionView回调
