@@ -7,9 +7,10 @@
 //
 
 #import "PMBookStoreViewController.h"
-
+#import "UIViewController+MBProgressHUD.h"
 @interface PMBookStoreViewController ()
 @property (nonatomic,readwrite,strong) UIActivityIndicatorView *refreshView;
+
 @end
 
 @implementation PMBookStoreViewController
@@ -36,7 +37,13 @@
             [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 18, 18)] forState:UIControlStateNormal];
             [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 18, 18, 18)] forState:UIControlStateHighlighted];
             reloadBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-                
+                [self.refreshView stopAnimating];
+                [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {
+                    [self.dataView reloadData];
+                } error:^(NSError *error) {
+                    [self.refreshView stopAnimating];
+                    [self showLoadAlertView:NSLocalizedString([error userInfo][NSLocalizedDescriptionKey], nil) imageName:nil autoHide:YES];
+                }];
                 return [RACSignal empty];
             }];
             [customBarButtonBox addSubview:reloadBtn];
@@ -50,22 +57,37 @@
             [RACObserve(self.refreshView, hidden) subscribeNext:^(id x) {
                 reloadBtn.hidden = ![x boolValue];
             }];
-            [self.refreshView startAnimating];
+            
             
         }
         
         UIBarButtonItem *rightBtn = [[UIBarButtonItem alloc] initWithCustomView:customBarButtonBox];
         [self.navigationItem setRightBarButtonItem:rightBtn];
     }
+
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [[self.viewModel fetchLocalBookStoreList] subscribeNext:^(id x) {
+        [self.dataView reloadData];
+    }];
+    
+    [self.refreshView stopAnimating];
+    [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {
+        [self.dataView reloadData];
+    } error:^(NSError *error) {
+        [self.refreshView stopAnimating];
+        [self showLoadAlertView:NSLocalizedString([error userInfo][NSLocalizedDescriptionKey], nil) imageName:nil autoHide:YES];
+    }];
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 }
+
+
 @end

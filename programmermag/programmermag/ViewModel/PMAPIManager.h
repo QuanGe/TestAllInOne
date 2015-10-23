@@ -22,7 +22,7 @@ typedef NS_ENUM(NSInteger, PMAPIReturnType)
 
 @interface PMAPIManager : AFHTTPRequestOperationManager
 
-+ (instancetype)sharedManager;
++ (instancetype)getInstance;
 
 /**
  获取杂志列表

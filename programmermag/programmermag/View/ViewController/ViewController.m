@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    [[[PMAPIManager sharedManager] fetchBookList] subscribeNext:^(id x) {
+    [[[PMAPIManager getInstance] fetchBookList] subscribeNext:^(id x) {
         UALog(@"%@",x);
     } error:^(NSError *error) {
         UALog(@"%@",error);

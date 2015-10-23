@@ -6,13 +6,13 @@
 //  Copyright © 2015年 csdn. All rights reserved.
 //
 
-#import "PMBookCollectionView.h"
-@interface PMBookCollectionView()
+#import "PMBookCollectionViewCell.h"
+@interface PMBookCollectionViewCell()
 @property (nonatomic,readwrite,strong) UIImageView * tipImageView;
 @property (nonatomic,readwrite,strong) UIProgressView * downloadProgressView;
 @property (nonatomic,readwrite,strong) UILabel *downloadLabel;
 @end
-@implementation PMBookCollectionView
+@implementation PMBookCollectionViewCell
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -27,20 +27,35 @@
 
 - (void)buildChildView
 {
+    UIView * backgroundView = [[UIView alloc] init];
+    {
+        [self addSubview:backgroundView];
+        backgroundView.backgroundColor = mRGBColor(240, 240, 240);
+        
+        [backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(10);
+            make.top.mas_equalTo(10);
+            make.bottom.mas_equalTo(0);
+            make.right.mas_equalTo(-10);
+        }];
+
+        
+    }
+    
     self.issueImageView = [[UIImageView alloc] init];
     {
-        [self addSubview:self.issueImageView];
+        [backgroundView addSubview:self.issueImageView];
         [self.issueImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(0);
             make.top.mas_equalTo(0);
             make.bottom.mas_equalTo(0);
-            self.issueImageViewHeight = make.height.mas_equalTo(150);
+            self.issueImageViewWidth = make.width.mas_equalTo(100);
         }];
     }
     
     self.issueTitleLable = [[UILabel alloc] init];
     {
-        [self addSubview:self.issueTitleLable];
+        [backgroundView addSubview:self.issueTitleLable];
         self.issueTitleLable.textColor = kBlackColor;
         self.issueTitleLable.font = [UIFont systemFontOfSize:12];
         self.issueTitleLable.text = @"程序猿杂志";
@@ -56,7 +71,7 @@
     }
     self.issueEditionLable = [[UILabel alloc] init];
     {
-        [self addSubview:self.issueEditionLable];
+        [backgroundView addSubview:self.issueEditionLable];
         self.issueEditionLable.textColor = [UIColor grayColor];
         self.issueEditionLable.font = [UIFont systemFontOfSize:10];
         self.issueEditionLable.text = @"2015.10.a";
@@ -73,7 +88,7 @@
     
     self.issuePriceLable = [[UILabel alloc] init];
     {
-        [self addSubview:self.issuePriceLable];
+        [backgroundView addSubview:self.issuePriceLable];
         [self.issuePriceLable mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.issueEditionLable.mas_bottom).offset(10);
             make.right.mas_equalTo(0);
@@ -85,7 +100,8 @@
     
     self.issueDesLable = [[UILabel alloc] init];
     {
-        [self addSubview:self.issueDesLable];
+        [backgroundView addSubview:self.issueDesLable];
+        self.issueDesLable.hidden = YES;
         self.issueEditionLable.textColor = kBlackColor;
         self.issueEditionLable.font = [UIFont systemFontOfSize:10];
         [self.issueDesLable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -99,7 +115,8 @@
     
     self.tipImageView = [[UIImageView alloc] init];
     {
-        [self addSubview:self.tipImageView];
+        [backgroundView addSubview:self.tipImageView];
+        self.tipImageView.hidden = YES;
         [self.tipImageView setImage:[UIImage imageNamed:@"newtag60"]];
         [self.tipImageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(0);
@@ -111,8 +128,8 @@
 
     self.downloadProgressBoxView = [[UIView alloc] init];
     {
-        
-        [self addSubview:self.downloadProgressBoxView];
+        self.downloadProgressBoxView.hidden =YES;
+        [backgroundView addSubview:self.downloadProgressBoxView];
         self.downloadProgressView = [[UIProgressView alloc] init];
         {
         
@@ -140,7 +157,7 @@
         [self.downloadProgressBoxView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.right.mas_equalTo(0);
             make.bottom.mas_equalTo(-100);
-            make.right.mas_equalTo(60);
+            make.right.mas_equalTo(0);
             make.height.mas_equalTo(50);
         }];
     }

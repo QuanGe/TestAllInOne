@@ -14,4 +14,12 @@
     [super loadView];
     
 }
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [[self.viewModel fetchMyBookList] subscribeNext:^(id x) {
+        [self.dataView reloadData];
+    }];
+}
 @end

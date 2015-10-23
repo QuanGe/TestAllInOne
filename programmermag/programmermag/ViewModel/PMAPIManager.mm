@@ -11,7 +11,7 @@
 #import "PMIssueModel.h"
 @implementation PMAPIManager
 
-+ (instancetype)sharedManager
++ (instancetype)getInstance
 {
     static PMAPIManager *instance;
     static dispatch_once_t onceToken;
@@ -259,7 +259,7 @@
 {
     
     return [[self fetchDataWithURLString:mUrlString(@"")
-                                  params:@{@"errorReturnCache":@(YES)}
+                                  params:@{@"errorReturnCache":@(NO)}
                                  headers:nil
                               returnType:PMAPIManagerReturnTypeXML httpMethod:@"get"] map:^id(NSString* value) {
         tinyxml2::XMLDocument *pDoc = new tinyxml2::XMLDocument();

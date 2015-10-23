@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface PMHomeBaseViewController : UIViewController
+#import "PMBookViewModel.h"
+#import "RFQuiltLayout.h"
+@interface PMHomeBaseViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,RFQuiltLayoutDelegate>
 @property (nonatomic,readwrite,strong) UICollectionView * dataView;
+@property (nonatomic,readwrite,strong) PMBookViewModel * viewModel;
 @end
