@@ -92,7 +92,7 @@
 - (NSString *)imageUrlOfBookWithIndex:(NSInteger)index
 {
     PMIssueModel *mode = [self.dataArray objectAtIndex:index];
-    return index == 0?mode.coverSmall2x:mode.coverMedium2x;
+    return index == 0?mode.coverMedium2x:mode.coverSmall2x;
 }
 
 - (NSString *)issueIdOfBookWithIndex:(NSInteger)index

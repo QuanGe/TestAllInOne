@@ -7,8 +7,7 @@
 //
 
 #import "PMBookCollectionViewCell.h"
-#define kBigImageWidth 300
-#define kSmallImageWidth 130
+
 
 @interface PMBookCollectionViewCell()
 @property (nonatomic,readwrite,strong) UIImageView * tipImageView;

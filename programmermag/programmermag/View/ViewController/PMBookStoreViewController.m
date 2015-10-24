@@ -37,8 +37,9 @@
             [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina])] forState:UIControlStateNormal];
             [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
             reloadBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-                [self.refreshView stopAnimating];
+                [self.refreshView startAnimating];
                 [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {
+                    [self.refreshView stopAnimating];
                     [self.dataView reloadData];
                 } error:^(NSError *error) {
                     [self.refreshView stopAnimating];
@@ -74,9 +75,10 @@
         [self.dataView reloadData];
     }];
     
-    [self.refreshView stopAnimating];
+    [self.refreshView startAnimating];
     [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {
         [self.dataView reloadData];
+        [self.refreshView stopAnimating];
     } error:^(NSError *error) {
         [self.refreshView stopAnimating];
         [self showLoadAlertView:NSLocalizedString([error userInfo][NSLocalizedDescriptionKey], nil) imageName:nil autoHide:YES];

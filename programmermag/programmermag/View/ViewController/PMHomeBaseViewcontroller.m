@@ -112,7 +112,7 @@
     else
         cell.issuePriceLable.attributedText = priceFront;
     
-    [cell.issueImageBtn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(indexPath.row == 0 ?300:130, indexPath.row == 0 ?400:200)]];
+    [cell.issueImageBtn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(indexPath.row == 0 ?kBigImageWidth:kSmallImageWidth, indexPath.row == 0 ?400:200)]];
     
     if(indexPath.row == 0)
         [cell changeBig:YES];
