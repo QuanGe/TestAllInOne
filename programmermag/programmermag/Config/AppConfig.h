@@ -70,7 +70,8 @@
 
 //界面布局
 #define kLeftOrRightEdgeInset           50 //所有界面左右边距
-
+#define kBigImageWidth 400*940/1196.0
+#define kSmallImageWidth 200*306/390.0
 
 
 

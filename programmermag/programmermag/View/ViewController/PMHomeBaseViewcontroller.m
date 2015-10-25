@@ -11,7 +11,7 @@
 #import "RFQuiltLayout.h"
 #import "UIKit+AFNetworking.h"
 @interface PMHomeBaseViewController()
-
+@property (nonatomic,readwrite,assign) NSInteger uiType;
 @end
 @implementation PMHomeBaseViewController
 - (void)loadView
@@ -86,6 +86,12 @@
     }
 }
 
+- (void)changeUIType:(NSInteger)type
+{
+    self.uiType = type;
+    [self.dataView reloadData];
+}
+
 #pragma mark --UICollectionView回调
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
@@ -114,7 +120,7 @@
     
     [cell.issueImageBtn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(indexPath.row == 0 ?kBigImageWidth:kSmallImageWidth, indexPath.row == 0 ?400:200)]];
     
-    if(indexPath.row == 0)
+    if(indexPath.row == 0 &&self.uiType ==1)
         [cell changeBig:YES];
     else
         [cell changeBig:NO];
@@ -131,7 +137,7 @@
 }
 
 -(CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout blockSizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-   if(indexPath.row == 0)
+   if(indexPath.row == 0 &&self.uiType ==1)
        return CGSizeMake(2  , 4.0);
     return CGSizeMake(1  , 2.0);
 }

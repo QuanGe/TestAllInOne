@@ -12,4 +12,5 @@
 @interface PMHomeBaseViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,RFQuiltLayoutDelegate>
 @property (nonatomic,readwrite,strong) UICollectionView * dataView;
 @property (nonatomic,readwrite,strong) PMBookViewModel * viewModel;
+- (void)changeUIType:(NSInteger)type;
 @end

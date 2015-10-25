@@ -71,6 +71,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self changeUIType:1];
     [[self.viewModel fetchLocalBookStoreList] subscribeNext:^(id x) {
         [self.dataView reloadData];
     }];
