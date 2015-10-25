@@ -26,7 +26,7 @@
 
 - (NSString *)priceOfBookWithIndex:(NSInteger)index;
 
-- (NSString *)imageUrlOfBookWithIndex:(NSInteger)index;
+- (NSString *)imageUrlOfBookWithIndex:(NSInteger)index big:(BOOL)big;
 
 - (NSString *)issueIdOfBookWithIndex:(NSInteger)index;
 @end

@@ -89,10 +89,10 @@
     return mode.price;
 }
 
-- (NSString *)imageUrlOfBookWithIndex:(NSInteger)index
+- (NSString *)imageUrlOfBookWithIndex:(NSInteger)index  big:(BOOL)big
 {
     PMIssueModel *mode = [self.dataArray objectAtIndex:index];
-    return index == 0?mode.coverMedium2x:mode.coverSmall2x;
+    return big ?mode.coverMedium2x:mode.coverSmall2x;
 }
 
 - (NSString *)issueIdOfBookWithIndex:(NSInteger)index

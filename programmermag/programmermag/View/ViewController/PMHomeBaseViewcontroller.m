@@ -12,6 +12,8 @@
 #import "UIKit+AFNetworking.h"
 @interface PMHomeBaseViewController()
 @property (nonatomic,readwrite,assign) NSInteger uiType;
+@property (nonatomic,readwrite,strong) UIView * dataImageBox;
+
 @end
 @implementation PMHomeBaseViewController
 - (void)loadView
@@ -44,6 +46,7 @@
         self.dataView.pagingEnabled = YES;
         [self.dataView setDataSource:self];
         [self.dataView setDelegate:self];
+        
         [self.dataView registerClass:objc_getClass("PMBookCollectionViewCell") forCellWithReuseIdentifier:@"PMBookCollectionViewCell"];
         [self.dataView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"UICollectionReusableView"];
         [self.view addSubview:self.dataView];
@@ -84,11 +87,46 @@
         }];
         
     }
+    
+    self.dataImageBox = [[UIView alloc] init];
+    {
+        self.dataImageBox.hidden = YES;
+        self.dataImageBox.backgroundColor = kWhiteColor;
+        [self.view addSubview:self.dataImageBox ];
+        
+        UICollectionViewFlowLayout *recommentLayout=[[UICollectionViewFlowLayout alloc] init];
+        {
+            [recommentLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+            recommentLayout.headerReferenceSize = CGSizeMake(0, 0);
+            self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
+            self.dataImageCollection.backgroundColor = [UIColor whiteColor];
+            [self.dataImageCollection setDataSource:self];
+            [self.dataImageCollection setDelegate:self];
+            self.dataImageCollection.pagingEnabled = YES;
+            self.dataImageCollection.clipsToBounds = NO;
+            [self.dataImageCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"dataImageCollectionCell"];
+            [self.dataImageBox addSubview:self.dataImageCollection];
+            [self.dataImageCollection mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.height.mas_equalTo(800);
+                make.left.mas_equalTo(84);
+                make.width.mas_equalTo(600);
+                make.top.mas_equalTo(20);
+            }];
+        }
+        
+        [self.dataImageBox mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(-10);
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.top.mas_equalTo(60);
+        }];
+    }
 }
 
 - (void)changeUIType:(NSInteger)type
 {
     self.uiType = type;
+    self.dataImageBox.hidden = !(type==3);
     [self.dataView reloadData];
 }
 
@@ -99,37 +137,83 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    PMBookCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"PMBookCollectionViewCell" forIndexPath:indexPath];
-    
-    cell.issueTitleLable.text = [self.viewModel titleOfBookWithIndex:indexPath.row];
-    cell.issueEditionLable.text = [self.viewModel editionOfBookWithIndex:indexPath.row];
-    cell.issueDesLable.text = [self.viewModel desOfBookWithIndex:indexPath.row];
-    NSString * price = [self.viewModel priceOfBookWithIndex:indexPath.row] ;
-    NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
-                                                                                             NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-    NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
-                                                                                                   NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-    
-    [priceFront appendAttributedString:priceA];
-    
-    if(price.integerValue == 0)
-        cell.issuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
-                                                                                                            NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+    if([cv isEqual:self.dataView])
+    {
+        PMBookCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"PMBookCollectionViewCell" forIndexPath:indexPath];
+        
+        cell.issueTitleLable.text = [self.viewModel titleOfBookWithIndex:indexPath.row];
+        cell.issueEditionLable.text = [self.viewModel editionOfBookWithIndex:indexPath.row];
+        cell.issueDesLable.text = [self.viewModel desOfBookWithIndex:indexPath.row];
+        NSString * price = [self.viewModel priceOfBookWithIndex:indexPath.row] ;
+        NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                                                 NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+        NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                       NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+        
+        [priceFront appendAttributedString:priceA];
+        
+        if(price.integerValue == 0)
+            cell.issuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+        else
+            cell.issuePriceLable.attributedText = priceFront;
+        
+        [cell.issueImageBtn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:indexPath.row == 0]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(indexPath.row == 0 ?kBigImageWidth:kSmallImageWidth, indexPath.row == 0 ?400:200)]];
+        
+        if(indexPath.row == 0 &&self.uiType ==1)
+            [cell changeBig:YES];
+        else
+            [cell changeBig:NO];
+        
+        if(indexPath.row == 2 || indexPath.row == 4)
+            [cell changeDownBtnType:1];
+        else
+            [cell changeDownBtnType:0];
+        return cell;
+    }
     else
-        cell.issuePriceLable.attributedText = priceFront;
+    {
+        UICollectionViewCell * cell = [cv dequeueReusableCellWithReuseIdentifier:@"dataImageCollectionCell" forIndexPath:indexPath];
+        if(cell.contentView.subviews.count == 0)
+        {
+            UIImageView * imageview = [[UIImageView alloc]init];
+            {
+                [cell.contentView addSubview:imageview];
+                [imageview setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:YES]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(600,800)]];
+                [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(10);
+                    make.right.mas_equalTo(10);
+                    make.top.mas_equalTo(0);
+                    make.bottom.mas_equalTo(0);
+                }];
+            }
+            
+        }
+        else
+        {
+            UIImageView * image = (UIImageView *)cell.contentView.subviews.firstObject;
+            if(image)
+            [image setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:YES]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(580,800)]];
+
+        }
+        return cell;
+    }
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(600  , 800);
     
-    [cell.issueImageBtn setImageForState:UIControlStateNormal withURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(indexPath.row == 0 ?kBigImageWidth:kSmallImageWidth, indexPath.row == 0 ?400:200)]];
-    
-    if(indexPath.row == 0 &&self.uiType ==1)
-        [cell changeBig:YES];
-    else
-        [cell changeBig:NO];
-    
-    if(indexPath.row == 2 || indexPath.row == 4)
-        [cell changeDownBtnType:1];
-    else
-        [cell changeDownBtnType:0];
-    return cell;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(0, 0, 0, 0);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetsForItemAtIndexPath:(NSIndexPath *)indexPath {

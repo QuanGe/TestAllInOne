@@ -24,9 +24,11 @@
             [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 0, 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateNormal];
             [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, 16*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
             changeUIBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+                [self changeUIType:changeUIBtn.tag==0 ?3:1];
                 changeUIBtn.tag = changeUIBtn.tag == 0?1:0;
                 [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, changeUIBtn.tag == 0?0:32*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateNormal];
                 [changeUIBtn setImage:[[UIImage imageNamed:@"togglecovers"] qgocc_captureImageWithFrame:CGRectMake(0, changeUIBtn.tag == 0?17*[UIDevice qgocc_isRetina]:51*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina], 17*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
+                
                 return [RACSignal empty];
             }];
             [customBarButtonBox addSubview:changeUIBtn];
@@ -38,7 +40,9 @@
             [reloadBtn setImage:[[UIImage imageNamed:@"reload"] qgocc_captureImageWithFrame:CGRectMake(0, 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina], 18*[UIDevice qgocc_isRetina])] forState:UIControlStateHighlighted];
             reloadBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
                 [self.refreshView startAnimating];
+                @weakify(self)
                 [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {
+                    @strongify(self)
                     [self.refreshView stopAnimating];
                     [self.dataView reloadData];
                 } error:^(NSError *error) {
@@ -72,15 +76,21 @@
 {
     [super viewDidLoad];
     [self changeUIType:1];
+    @weakify(self)
     [[self.viewModel fetchLocalBookStoreList] subscribeNext:^(id x) {
+        @strongify(self)
         [self.dataView reloadData];
+        [self.dataImageCollection reloadData];
     }];
     
     [self.refreshView startAnimating];
     [[self.viewModel fetchBookStoreList] subscribeNext:^(id x) {
+        @strongify(self)
         [self.dataView reloadData];
+        [self.dataImageCollection reloadData];
         [self.refreshView stopAnimating];
     } error:^(NSError *error) {
+        @strongify(self)
         [self.refreshView stopAnimating];
         [self showLoadAlertView:NSLocalizedString([error userInfo][NSLocalizedDescriptionKey], nil) imageName:nil autoHide:YES];
     }];

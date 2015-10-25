@@ -18,7 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    @weakify(self)
     [[self.viewModel fetchMyBookList] subscribeNext:^(id x) {
+        @strongify(self)
         [self.dataView reloadData];
     }];
 }
