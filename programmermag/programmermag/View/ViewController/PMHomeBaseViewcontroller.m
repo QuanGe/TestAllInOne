@@ -13,7 +13,7 @@
 @interface PMHomeBaseViewController()
 @property (nonatomic,readwrite,assign) NSInteger uiType;
 @property (nonatomic,readwrite,strong) UIView * dataImageBox;
-
+@property (nonatomic,readwrite,assign) CGPoint lastPoint;
 @end
 @implementation PMHomeBaseViewController
 - (void)loadView
@@ -97,21 +97,36 @@
         UICollectionViewFlowLayout *recommentLayout=[[UICollectionViewFlowLayout alloc] init];
         {
             [recommentLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-            recommentLayout.headerReferenceSize = CGSizeMake(0, 0);
+            recommentLayout.headerReferenceSize = CGSizeMake((mScreenWidth - 470)/2+20, 0);
             self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
             self.dataImageCollection.backgroundColor = [UIColor whiteColor];
             [self.dataImageCollection setDataSource:self];
             [self.dataImageCollection setDelegate:self];
             self.dataImageCollection.pagingEnabled = YES;
             self.dataImageCollection.clipsToBounds = NO;
+            self.dataImageCollection.panGestureRecognizer.enabled = NO;
             [self.dataImageCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"dataImageCollectionCell"];
             [self.dataImageBox addSubview:self.dataImageCollection];
             [self.dataImageCollection mas_makeConstraints:^(MASConstraintMaker *make) {
-                make.height.mas_equalTo(800);
-                make.left.mas_equalTo(84);
-                make.width.mas_equalTo(600);
-                make.top.mas_equalTo(20);
+                make.height.mas_equalTo(598);
+                make.left.mas_equalTo(0);
+                make.right.mas_equalTo(0);
+                make.top.mas_equalTo(100);
             }];
+            
+            UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc] init];
+            {
+                [panGesture.rac_gestureSignal subscribeNext:^(UIPanGestureRecognizer * recognizer) {
+                    CGPoint point = [recognizer translationInView:self.dataImageCollection];
+                    if(recognizer.state == UIGestureRecognizerStateBegan)
+                        self.lastPoint = self.dataImageCollection.contentOffset;
+                    self.dataImageCollection.contentOffset = CGPointMake(self.lastPoint.x-point.x, 0);
+                    if (recognizer.state == UIGestureRecognizerStateEnded) {
+                        NSLog(@"结束拖动");
+                    }
+                }];
+                [self.dataImageCollection addGestureRecognizer:panGesture];
+            }
         }
         
         [self.dataImageBox mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -174,15 +189,16 @@
     else
     {
         UICollectionViewCell * cell = [cv dequeueReusableCellWithReuseIdentifier:@"dataImageCollectionCell" forIndexPath:indexPath];
+        cell.contentView.clipsToBounds = NO;
         if(cell.contentView.subviews.count == 0)
         {
             UIImageView * imageview = [[UIImageView alloc]init];
             {
                 [cell.contentView addSubview:imageview];
-                [imageview setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:YES]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(600,800)]];
+                [imageview setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:YES]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(430,598)]];
                 [imageview mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.left.mas_equalTo(10);
-                    make.right.mas_equalTo(10);
+                    make.left.mas_equalTo(0);
+                    make.right.mas_equalTo(-40);
                     make.top.mas_equalTo(0);
                     make.bottom.mas_equalTo(0);
                 }];
@@ -193,7 +209,7 @@
         {
             UIImageView * image = (UIImageView *)cell.contentView.subviews.firstObject;
             if(image)
-            [image setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:YES]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(580,800)]];
+            [image setImageWithURL:[NSURL URLWithString:[self.viewModel imageUrlOfBookWithIndex:indexPath.row big:YES]] placeholderImage:[UIImage qgocc_imageWithColor:[UIColor lightGrayColor] size:CGSizeMake(430,598)]];
 
         }
         return cell;
@@ -202,7 +218,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(600  , 800);
+    return CGSizeMake(470  , 598);
     
 }
 
