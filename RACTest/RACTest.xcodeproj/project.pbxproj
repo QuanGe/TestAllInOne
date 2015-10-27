@@ -286,13 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				986F5AEC1BDE208400408977 /* UIView+WillChange.m in Sources */,
-				986F5AE91BDE203200408977 /* UIView+Zero.m in Sources */,
 				986F5ACE1BDE1BE100408977 /* RACTAppDelegate.m in Sources */,
 				986F5AD31BDE1BE100408977 /* main.m in Sources */,
 				986F5ADA1BDE1BF800408977 /* RACTViewController.m in Sources */,
 				986F5AEF1BDE216000408977 /* UIButton+RACCommandSupport.m in Sources */,
 				986F5AE01BDE1D9600408977 /* UIView+SomeThing.m in Sources */,
+				986F5AE91BDE203200408977 /* UIView+Zero.m in Sources */,
+				986F5AEC1BDE208400408977 /* UIView+WillChange.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
