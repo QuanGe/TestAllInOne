@@ -10,6 +10,7 @@
 #import "PMBookCollectionViewCell.h"
 #import "RFQuiltLayout.h"
 #import "UIKit+AFNetworking.h"
+#import "PMImageCollectionFlowLayout.h"
 #define kImageCollectionOffsetX ((mScreenWidth - 470)/2+20)
 @interface PMHomeBaseViewController()
 @property (nonatomic,readwrite,assign) NSInteger uiType;
@@ -100,10 +101,11 @@
         self.dataImageBox.backgroundColor = kWhiteColor;
         [self.view addSubview:self.dataImageBox ];
         
-        UICollectionViewFlowLayout *recommentLayout=[[UICollectionViewFlowLayout alloc] init];
+        PMImageCollectionFlowLayout *recommentLayout=[[PMImageCollectionFlowLayout alloc] init];
         {
             [recommentLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
             recommentLayout.headerReferenceSize = CGSizeMake(kImageCollectionOffsetX, 0);
+            recommentLayout.itemSize = CGSizeMake(470  , 598);
             self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
             self.dataImageCollection.backgroundColor = [UIColor whiteColor];
             [self.dataImageCollection setDataSource:self];
@@ -119,7 +121,7 @@
                 make.right.mas_equalTo(0);
                 make.top.mas_equalTo(100);
             }];
-            
+            /*
             __block NSDate* tmpStartData = [NSDate date];
             UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc] init];
             {
@@ -152,8 +154,8 @@
                         self.curPageIndex = pageIndex+1;
                         NSLog(@"结束拖动%@",@(pageIndex+1));
                         self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
-                        self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex];
-                        self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex];
+                        self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
+                        self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
                         {
                             NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
                             NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
@@ -190,7 +192,8 @@
                         NSLog(@"轻扫手势");
                 }];
                 [self.dataImageCollection addGestureRecognizer:swipe];
-            }
+            }*/
+            
         }
         
         UIView * bottomView = [[UIView alloc] init];
@@ -288,8 +291,8 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
-    self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex];
-    self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex];
+    self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
+    self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
     {
         NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
         NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],

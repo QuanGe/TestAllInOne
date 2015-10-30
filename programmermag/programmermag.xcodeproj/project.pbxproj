@@ -30,6 +30,7 @@
 		98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE01BD5E08A00F6AA87 /* PMDBManager.m */; settings = {ASSET_TAGS = (); }; };
 		98949CE31BD5E11100F6AA87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98949CE21BD5E11100F6AA87 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		98949CE61BD6474A00F6AA87 /* PMAPIManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */; settings = {ASSET_TAGS = (); }; };
+		98D4EF691BE368A000216966 /* PMImageCollectionFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D4EF681BE368A000216966 /* PMImageCollectionFlowLayout.m */; settings = {ASSET_TAGS = (); }; };
 		98DAEBEE1BD871E400359D2D /* PMBookStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBED1BD871E400359D2D /* PMBookStoreViewController.m */; settings = {ASSET_TAGS = (); }; };
 		98DAEBF11BD8720E00359D2D /* PMMyBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBF01BD8720E00359D2D /* PMMyBookViewController.m */; settings = {ASSET_TAGS = (); }; };
 		98DAEBF41BD874A500359D2D /* PMBookInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DAEBF31BD874A500359D2D /* PMBookInfoViewController.m */; settings = {ASSET_TAGS = (); }; };
@@ -78,6 +79,8 @@
 		98949CE21BD5E11100F6AA87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98949CE41BD6474A00F6AA87 /* PMAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAPIManager.h; sourceTree = "<group>"; };
 		98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PMAPIManager.mm; sourceTree = "<group>"; };
+		98D4EF671BE368A000216966 /* PMImageCollectionFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMImageCollectionFlowLayout.h; sourceTree = "<group>"; };
+		98D4EF681BE368A000216966 /* PMImageCollectionFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMImageCollectionFlowLayout.m; sourceTree = "<group>"; };
 		98DAEBEC1BD871E400359D2D /* PMBookStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookStoreViewController.h; sourceTree = "<group>"; };
 		98DAEBED1BD871E400359D2D /* PMBookStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookStoreViewController.m; sourceTree = "<group>"; };
 		98DAEBEF1BD8720E00359D2D /* PMMyBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMMyBookViewController.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				989396D11BD8C7280063321B /* PMBookCollectionViewCell.h */,
 				989396D21BD8C7280063321B /* PMBookCollectionViewCell.m */,
+				98D4EF671BE368A000216966 /* PMImageCollectionFlowLayout.h */,
+				98D4EF681BE368A000216966 /* PMImageCollectionFlowLayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 				988ADCA41BD734FA00CE9212 /* tinyxml2.cpp in Sources */,
 				98DAEBF71BD874CA00359D2D /* PMBookDetailViewController.m in Sources */,
 				98DAEBEE1BD871E400359D2D /* PMBookStoreViewController.m in Sources */,
+				98D4EF691BE368A000216966 /* PMImageCollectionFlowLayout.m in Sources */,
 				98949CD91BD5CCEB00F6AA87 /* main.m in Sources */,
 				98DAEBF41BD874A500359D2D /* PMBookInfoViewController.m in Sources */,
 				989396DB1BD936140063321B /* RFQuiltLayout.m in Sources */,
