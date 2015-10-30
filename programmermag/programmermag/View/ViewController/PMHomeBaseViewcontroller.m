@@ -10,10 +10,16 @@
 #import "PMBookCollectionViewCell.h"
 #import "RFQuiltLayout.h"
 #import "UIKit+AFNetworking.h"
+#define kImageCollectionOffsetX ((mScreenWidth - 470)/2+20)
 @interface PMHomeBaseViewController()
 @property (nonatomic,readwrite,assign) NSInteger uiType;
 @property (nonatomic,readwrite,strong) UIView * dataImageBox;
 @property (nonatomic,readwrite,assign) CGPoint lastPoint;
+@property (nonatomic,readwrite,strong) UILabel* curIssueTitleLabel;
+@property (nonatomic,readwrite,strong) UILabel* curIssueEditionLable;
+@property (nonatomic,readwrite,strong) UILabel* curIssuePriceLable;
+@property (nonatomic,readwrite,strong) UILabel* pageNumAndIndeLabel;
+@property (nonatomic,readwrite,assign) NSInteger curPageIndex;
 @end
 @implementation PMHomeBaseViewController
 - (void)loadView
@@ -24,7 +30,7 @@
         [titleView setImage:[UIImage imageNamed:@"logo_s"]];
         [self.navigationItem setTitleView:titleView];
     }
-    
+    self.curPageIndex = 1;
     UIButton * leftBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 65 , 25)];
     {
         leftBtn.layer.backgroundColor = mRGBColor(235 , 235, 235).CGColor;
@@ -97,14 +103,14 @@
         UICollectionViewFlowLayout *recommentLayout=[[UICollectionViewFlowLayout alloc] init];
         {
             [recommentLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-            recommentLayout.headerReferenceSize = CGSizeMake((mScreenWidth - 470)/2+20, 0);
+            recommentLayout.headerReferenceSize = CGSizeMake(kImageCollectionOffsetX, 0);
             self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
             self.dataImageCollection.backgroundColor = [UIColor whiteColor];
             [self.dataImageCollection setDataSource:self];
             [self.dataImageCollection setDelegate:self];
             self.dataImageCollection.pagingEnabled = YES;
             self.dataImageCollection.clipsToBounds = NO;
-            self.dataImageCollection.panGestureRecognizer.enabled = NO;
+            //self.dataImageCollection.panGestureRecognizer.enabled = NO;
             [self.dataImageCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"dataImageCollectionCell"];
             [self.dataImageBox addSubview:self.dataImageCollection];
             [self.dataImageCollection mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -114,19 +120,152 @@
                 make.top.mas_equalTo(100);
             }];
             
+            __block NSDate* tmpStartData = [NSDate date];
             UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc] init];
             {
                 [panGesture.rac_gestureSignal subscribeNext:^(UIPanGestureRecognizer * recognizer) {
                     CGPoint point = [recognizer translationInView:self.dataImageCollection];
                     if(recognizer.state == UIGestureRecognizerStateBegan)
+                    {
                         self.lastPoint = self.dataImageCollection.contentOffset;
+                        tmpStartData = [NSDate date];
+                    }
                     self.dataImageCollection.contentOffset = CGPointMake(self.lastPoint.x-point.x, 0);
                     if (recognizer.state == UIGestureRecognizerStateEnded) {
-                        NSLog(@"结束拖动");
+                        
+                        double deltaTime = [[NSDate date] timeIntervalSinceDate:tmpStartData];
+                        
+                        int contentX = self.dataImageCollection.contentOffset.x-kImageCollectionOffsetX;
+                        int contentXChange = contentX%470;
+                        int frontNum = (contentX-contentXChange)/470;
+                        BOOL canNext = contentXChange>(470/2);
+                        
+                        int pageIndex = 0;
+                        if(deltaTime>0.2)
+                            pageIndex= frontNum +(canNext?1:0);
+                        else
+                        {
+                            pageIndex = (int)(self.curPageIndex-1)+([recognizer velocityInView:self.dataImageCollection].x<0?1:-1);
+                        }
+                        if(pageIndex <0)
+                            pageIndex = 0;
+                        self.curPageIndex = pageIndex+1;
+                        NSLog(@"结束拖动%@",@(pageIndex+1));
+                        self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
+                        self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex];
+                        self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex];
+                        {
+                            NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
+                            NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                                                                                          NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+                            NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                        NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+                            
+                            [priceFront appendAttributedString:priceA];
+                            
+                            if(price.integerValue == 0)
+                                self.curIssuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                                       NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+                            else
+                                self.curIssuePriceLable.attributedText = priceFront;
+                        }
+                        //[UIView animateWithDuration:1.5 animations:^{
+                            CGFloat theLeft = pageIndex*470;
+                            [self.dataImageCollection setContentOffset:CGPointMake(theLeft, 0) animated:YES] ;
+                        //}];
+                        
+                    }
+                    else if(recognizer.state == UIGestureRecognizerStateCancelled)
+                    {
+                        NSLog(@"手势取消");
                     }
                 }];
                 [self.dataImageCollection addGestureRecognizer:panGesture];
             }
+            
+            UISwipeGestureRecognizer * swipe = [[UISwipeGestureRecognizer alloc] init];
+            {
+                [swipe.rac_gestureSignal subscribeNext:^(UIPanGestureRecognizer * recognizer) {
+                    if(recognizer.state == UIGestureRecognizerStateBegan)
+                        NSLog(@"轻扫手势");
+                }];
+                [self.dataImageCollection addGestureRecognizer:swipe];
+            }
+        }
+        
+        UIView * bottomView = [[UIView alloc] init];
+        {
+            
+            bottomView.backgroundColor = [UIColor yellowColor];
+            [self.dataImageBox addSubview:bottomView];
+            [bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.centerX.equalTo(self.dataImageBox.mas_centerX);
+                make.bottom.mas_equalTo(-50);
+                make.height.mas_equalTo(180);
+                make.width.mas_equalTo(mScreenWidth-2*kImageCollectionOffsetX);
+            }];
+            
+            self.pageNumAndIndeLabel = [[UILabel alloc] init];
+            {
+                self.pageNumAndIndeLabel.textColor = [UIColor grayColor];
+                self.pageNumAndIndeLabel.font = [UIFont systemFontOfSize:12];
+                self.pageNumAndIndeLabel.textAlignment = NSTextAlignmentCenter;
+                [bottomView addSubview:self.pageNumAndIndeLabel];
+                [self.pageNumAndIndeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(0);
+                    make.bottom.mas_equalTo(0);
+                    make.height.mas_equalTo(20);
+                    make.right.mas_equalTo(0);
+                }];
+
+            }
+            
+            self.curIssueTitleLabel = [[UILabel alloc] init];
+            {
+                self.curIssueTitleLabel.textColor = kBlackColor;
+                self.curIssueTitleLabel.font = [UIFont boldSystemFontOfSize:13];
+                //self.curIssueTitleLabel.textAlignment = NSTextAlignmentCenter;
+                [bottomView addSubview:self.curIssueTitleLabel];
+                [self.curIssueTitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(0);
+                    make.top.mas_equalTo(0);
+                    make.height.mas_equalTo(20);
+                    make.right.mas_equalTo(0);
+                }];
+                
+            }
+            
+            self.curIssueEditionLable = [[UILabel alloc] init];
+            {
+                self.curIssueEditionLable.textColor = [UIColor grayColor];
+                
+                self.curIssueEditionLable.font = [UIFont boldSystemFontOfSize:13];
+                //self.curIssueTitleLabel.textAlignment = NSTextAlignmentCenter;
+                [bottomView addSubview:self.curIssueEditionLable];
+                [self.curIssueEditionLable mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(0);
+                    make.top.equalTo(self.curIssueTitleLabel.mas_bottom).offset(10);
+                    make.height.mas_equalTo(20);
+                    make.right.mas_equalTo(0);
+                }];
+                
+            }
+            
+            self.curIssuePriceLable = [[UILabel alloc] init];
+            {
+                self.curIssuePriceLable.textColor = kBlackColor;
+                self.curIssuePriceLable.font = [UIFont boldSystemFontOfSize:13];
+                //self.curIssueTitleLabel.textAlignment = NSTextAlignmentCenter;
+                [bottomView addSubview:self.curIssuePriceLable];
+                [self.curIssuePriceLable mas_makeConstraints:^(MASConstraintMaker *make) {
+                    make.left.mas_equalTo(0);
+                    make.top.equalTo(self.curIssueEditionLable.mas_bottom).offset(10);
+                    make.height.mas_equalTo(20);
+                    make.right.mas_equalTo(0);
+                }];
+                
+            }
+
         }
         
         [self.dataImageBox mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -148,7 +287,27 @@
 #pragma mark --UICollectionView回调
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
+    self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex];
+    self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex];
+    {
+        NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
+        NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                                                                      NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+        NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                    NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+        
+        [priceFront appendAttributedString:priceA];
+        
+        if(price.integerValue == 0)
+            self.curIssuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+        else
+            self.curIssuePriceLable.attributedText = priceFront;
+    }
+
     return [self.viewModel numOfBook];
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {

@@ -308,6 +308,7 @@
 				TargetAttributes = {
 					985D4C071BD4F11C00B50D81 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = REG92Q3Q5S;
 					};
 				};
 			};
@@ -518,6 +519,7 @@
 			baseConfigurationReference = 0B9B08EAEB0D25892467DB7F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/programmermag/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/programmermag/Config/Info.plist";
@@ -525,6 +527,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.csdn.programmermag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b77d7a99-8a16-4672-b307-b70364797187";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -534,6 +537,7 @@
 			baseConfigurationReference = EAC41D9C9E200CE53B0788D3 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/programmermag/Config/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/programmermag/Config/Info.plist";
@@ -541,6 +545,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.csdn.programmermag;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "b77d7a99-8a16-4672-b307-b70364797187";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

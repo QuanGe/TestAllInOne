@@ -68,7 +68,12 @@
     //游戏结束 进行清理工作
     [dispose dispose];
     
+    RACDisposable * connectdispose = [[NSURLConnection rac_sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]]] subscribeNext:^(id x) {
+        NSLog(@"结果为%@",x);
+    }];
+    [connectdispose dispose];
     
+    /*
     RACSignal *helloSignal = [RACSignal createSignal:^ RACDisposable * (id<RACSubscriber> subscriber) {
         [subscriber sendNext:@"hello"];
         [subscriber sendNext:@"hello1"];
@@ -155,8 +160,9 @@
         }];
         
     }
+    */
     
-    
+   
     
 
 }
