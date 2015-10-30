@@ -110,7 +110,7 @@
             self.dataImageCollection.backgroundColor = [UIColor whiteColor];
             [self.dataImageCollection setDataSource:self];
             [self.dataImageCollection setDelegate:self];
-            self.dataImageCollection.pagingEnabled = YES;
+            //self.dataImageCollection.pagingEnabled = YES;
             self.dataImageCollection.clipsToBounds = NO;
             //self.dataImageCollection.panGestureRecognizer.enabled = NO;
             [self.dataImageCollection registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"dataImageCollectionCell"];
@@ -121,79 +121,33 @@
                 make.right.mas_equalTo(0);
                 make.top.mas_equalTo(100);
             }];
-            /*
-            __block NSDate* tmpStartData = [NSDate date];
-            UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc] init];
-            {
-                [panGesture.rac_gestureSignal subscribeNext:^(UIPanGestureRecognizer * recognizer) {
-                    CGPoint point = [recognizer translationInView:self.dataImageCollection];
-                    if(recognizer.state == UIGestureRecognizerStateBegan)
+            [RACObserve(self.dataImageCollection, contentOffset) subscribeNext:^(id x) {
+                CGPoint contentOffset ;
+                [x getValue:&contentOffset];
+                self.curPageIndex = contentOffset.x/recommentLayout.itemSize.width+1;
+                if([self.viewModel numOfBook]>0)
+                {
+                    self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
+                    self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
+                    self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
                     {
-                        self.lastPoint = self.dataImageCollection.contentOffset;
-                        tmpStartData = [NSDate date];
-                    }
-                    self.dataImageCollection.contentOffset = CGPointMake(self.lastPoint.x-point.x, 0);
-                    if (recognizer.state == UIGestureRecognizerStateEnded) {
+                        NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
+                        NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                                                                                      NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+                        NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                    NSFontAttributeName:[UIFont systemFontOfSize:12]}];
                         
-                        double deltaTime = [[NSDate date] timeIntervalSinceDate:tmpStartData];
+                        [priceFront appendAttributedString:priceA];
                         
-                        int contentX = self.dataImageCollection.contentOffset.x-kImageCollectionOffsetX;
-                        int contentXChange = contentX%470;
-                        int frontNum = (contentX-contentXChange)/470;
-                        BOOL canNext = contentXChange>(470/2);
-                        
-                        int pageIndex = 0;
-                        if(deltaTime>0.2)
-                            pageIndex= frontNum +(canNext?1:0);
+                        if(price.integerValue == 0)
+                            self.curIssuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                                   NSFontAttributeName:[UIFont systemFontOfSize:12]}];
                         else
-                        {
-                            pageIndex = (int)(self.curPageIndex-1)+([recognizer velocityInView:self.dataImageCollection].x<0?1:-1);
-                        }
-                        if(pageIndex <0)
-                            pageIndex = 0;
-                        self.curPageIndex = pageIndex+1;
-                        NSLog(@"结束拖动%@",@(pageIndex+1));
-                        self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
-                        self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
-                        self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
-                        {
-                            NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
-                            NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
-                                                                                                                                          NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-                            NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
-                                                                                                                        NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-                            
-                            [priceFront appendAttributedString:priceA];
-                            
-                            if(price.integerValue == 0)
-                                self.curIssuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
-                                                                                                                                       NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-                            else
-                                self.curIssuePriceLable.attributedText = priceFront;
-                        }
-                        //[UIView animateWithDuration:1.5 animations:^{
-                            CGFloat theLeft = pageIndex*470;
-                            [self.dataImageCollection setContentOffset:CGPointMake(theLeft, 0) animated:YES] ;
-                        //}];
-                        
+                            self.curIssuePriceLable.attributedText = priceFront;
                     }
-                    else if(recognizer.state == UIGestureRecognizerStateCancelled)
-                    {
-                        NSLog(@"手势取消");
-                    }
-                }];
-                [self.dataImageCollection addGestureRecognizer:panGesture];
-            }
-            
-            UISwipeGestureRecognizer * swipe = [[UISwipeGestureRecognizer alloc] init];
-            {
-                [swipe.rac_gestureSignal subscribeNext:^(UIPanGestureRecognizer * recognizer) {
-                    if(recognizer.state == UIGestureRecognizerStateBegan)
-                        NSLog(@"轻扫手势");
-                }];
-                [self.dataImageCollection addGestureRecognizer:swipe];
-            }*/
-            
+                }
+
+            }];
         }
         
         UIView * bottomView = [[UIView alloc] init];
@@ -290,23 +244,26 @@
 #pragma mark --UICollectionView回调
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
-    self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
-    self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
+    if([self.viewModel numOfBook]>0)
     {
-        NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
-        NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
-                                                                                                                      NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-        NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
-                                                                                                    NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-        
-        [priceFront appendAttributedString:priceA];
-        
-        if(price.integerValue == 0)
-            self.curIssuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
-                                                                                                                NSFontAttributeName:[UIFont systemFontOfSize:12]}];
-        else
-            self.curIssuePriceLable.attributedText = priceFront;
+        self.pageNumAndIndeLabel.text = [NSString stringWithFormat:@"%@ of %@",@(self.curPageIndex).stringValue,@([self.viewModel numOfBook]).stringValue];
+        self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
+        self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
+        {
+            NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
+            NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
+                                                                                                                          NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+            NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                        NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+            
+            [priceFront appendAttributedString:priceA];
+            
+            if(price.integerValue == 0)
+                self.curIssuePriceLable.attributedText = [[NSAttributedString alloc] initWithString:@"免费" attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
+                                                                                                                       NSFontAttributeName:[UIFont systemFontOfSize:12]}];
+            else
+                self.curIssuePriceLable.attributedText = priceFront;
+        }
     }
 
     return [self.viewModel numOfBook];
