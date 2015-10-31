@@ -105,11 +105,13 @@
         {
             [recommentLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
             recommentLayout.headerReferenceSize = CGSizeMake(kImageCollectionOffsetX, 0);
+            recommentLayout.footerReferenceSize = recommentLayout.headerReferenceSize;
             recommentLayout.itemSize = CGSizeMake(470  , 598);
             self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
             self.dataImageCollection.backgroundColor = [UIColor whiteColor];
             [self.dataImageCollection setDataSource:self];
             [self.dataImageCollection setDelegate:self];
+            
             //self.dataImageCollection.pagingEnabled = YES;
             self.dataImageCollection.clipsToBounds = NO;
             //self.dataImageCollection.panGestureRecognizer.enabled = NO;
@@ -124,6 +126,10 @@
             [RACObserve(self.dataImageCollection, contentOffset) subscribeNext:^(id x) {
                 CGPoint contentOffset ;
                 [x getValue:&contentOffset];
+                if(contentOffset.x<0)
+                    return ;
+                if(contentOffset.x>[self.viewModel numOfBook]*recommentLayout.itemSize.width)
+                    return;
                 self.curPageIndex = contentOffset.x/recommentLayout.itemSize.width+1;
                 if([self.viewModel numOfBook]>0)
                 {
@@ -131,7 +137,7 @@
                     self.curIssueTitleLabel.text = [self.viewModel titleOfBookWithIndex:self.curPageIndex-1];
                     self.curIssueEditionLable.text = [self.viewModel editionOfBookWithIndex:self.curPageIndex-1];
                     {
-                        NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex] ;
+                        NSString * price = [self.viewModel priceOfBookWithIndex:self.curPageIndex-1] ;
                         NSMutableAttributedString * priceFront = [[NSMutableAttributedString alloc] initWithString:@"¥ " attributes:@{NSForegroundColorAttributeName:[UIColor grayColor],
                                                                                                                                       NSFontAttributeName:[UIFont systemFontOfSize:12]}];
                         NSAttributedString * priceA = [[NSAttributedString alloc] initWithString:price attributes:@{NSForegroundColorAttributeName:[UIColor orangeColor],
