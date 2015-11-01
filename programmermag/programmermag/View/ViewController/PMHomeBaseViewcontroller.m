@@ -11,6 +11,7 @@
 #import "RFQuiltLayout.h"
 #import "UIKit+AFNetworking.h"
 #import "PMImageCollectionFlowLayout.h"
+#import "PMBookDetailViewController.h"
 #define kImageCollectionOffsetX ((mScreenWidth - 470)/2+20)
 @interface PMHomeBaseViewController()
 @property (nonatomic,readwrite,assign) NSInteger uiType;
@@ -331,7 +332,10 @@
                     break;
                 case PMBookCollectionViewCellBtnTypeRead:
                 {
-                     mAlertView(@"杂志", @"打开杂志");
+                     //mAlertView(@"杂志", @"打开杂志");
+                    PMBookDetailViewController * detail = [[PMBookDetailViewController alloc] init];
+                    detail.bookLocalUrl = [self.viewModel issueLocalUrlOfBookWithIndex:indexPath.row];
+                    [self.navigationController pushViewController:detail animated:YES];
                 }
                     break;
                     

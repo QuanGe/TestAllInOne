@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface PMBookDetailViewController : UIViewController
-
+@property (nonatomic,readwrite,copy) NSString * bookLocalUrl;
 @end

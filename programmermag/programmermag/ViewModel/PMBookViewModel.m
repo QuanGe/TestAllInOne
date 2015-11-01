@@ -113,7 +113,7 @@
     docsDir = [dirPaths objectAtIndex:0];
     
     // Build the path to the database file
-    NSString * localUrl = [[NSString alloc] initWithString: [NSString stringWithFormat: @"%@/issues100/%@",docsDir,issueIdMd5]];
+    NSString * localUrl = [[NSString alloc] initWithString: [NSString stringWithFormat: @"%@/issues100/%@/me.magazine",docsDir,issueIdMd5]];
     
     NSFileManager *filemgr = [NSFileManager defaultManager];
     BOOL exist = [filemgr fileExistsAtPath:localUrl];
