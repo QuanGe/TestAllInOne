@@ -101,4 +101,24 @@
     return mode.issueId;
 }
 
+- (NSString *)issueLocalUrlOfBookWithIndex:(NSInteger)index
+{
+    PMIssueModel *mode = [self.dataArray objectAtIndex:index];
+    NSString *docsDir;
+    NSArray *dirPaths;
+    NSString *issueIdMd5 = [mode.issueId qgocc_stringFromMD5];
+    // Get the documents directory
+    dirPaths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
+    
+    docsDir = [dirPaths objectAtIndex:0];
+    
+    // Build the path to the database file
+    NSString * localUrl = [[NSString alloc] initWithString: [NSString stringWithFormat: @"%@/issues100/%@",docsDir,issueIdMd5]];
+    
+    NSFileManager *filemgr = [NSFileManager defaultManager];
+    BOOL exist = [filemgr fileExistsAtPath:localUrl];
+    
+    return exist?localUrl:@"";
+}
+
 @end

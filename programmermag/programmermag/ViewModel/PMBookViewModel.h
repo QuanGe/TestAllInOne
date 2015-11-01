@@ -29,4 +29,6 @@
 - (NSString *)imageUrlOfBookWithIndex:(NSInteger)index big:(BOOL)big;
 
 - (NSString *)issueIdOfBookWithIndex:(NSInteger)index;
+
+- (NSString *)issueLocalUrlOfBookWithIndex:(NSInteger)index;
 @end

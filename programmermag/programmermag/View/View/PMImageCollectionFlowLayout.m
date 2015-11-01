@@ -27,7 +27,7 @@
     if(pageIndex <0)
         pageIndex = 0;
     if(pageIndex > [self.collectionView numberOfItemsInSection:0]-1)
-        pageIndex = (int)[self.collectionView numberOfItemsInSection:0]-1;
+        pageIndex = (int)([self.collectionView numberOfItemsInSection:0])-1;
     CGFloat theLeft = pageIndex*470;
     proposedContentOffset.x = theLeft;
     

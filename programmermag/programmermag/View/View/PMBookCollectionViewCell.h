@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+typedef NS_ENUM(NSInteger,PMBookCollectionViewCellBtnType)
+{
+    PMBookCollectionViewCellBtnTypeDwonload,
+    PMBookCollectionViewCellBtnTypeBuy,
+    PMBookCollectionViewCellBtnTypeRead
+    
+};
 @interface PMBookCollectionViewCell : UICollectionViewCell
 @property (nonatomic,readwrite,strong) UIButton * issueImageBtn;
 @property (nonatomic,readwrite,strong) UILabel * issueTitleLable;
@@ -18,7 +24,7 @@
 @property (nonatomic,readwrite,strong) UIButton * deleteBtn;
 @property (nonatomic,readwrite,strong) UIView * downloadProgressBoxView;
 @property (nonatomic,readwrite,strong) MASConstraint * issueImageViewWidth;
+@property (nonatomic,readwrite,assign) PMBookCollectionViewCellBtnType downBtnType;
 - (void)updateDownloadProgress:(CGFloat)progress labelText:(NSAttributedString*)text;
 - (void)changeBig:(BOOL)big;
-- (void)changeDownBtnType:(NSInteger)type;
 @end

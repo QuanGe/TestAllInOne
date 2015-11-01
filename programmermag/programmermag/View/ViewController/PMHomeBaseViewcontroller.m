@@ -304,11 +304,46 @@
             [cell changeBig:YES];
         else
             [cell changeBig:NO];
-        
-        if(indexPath.row == 2 || indexPath.row == 4)
-            [cell changeDownBtnType:1];
+        if(price.integerValue == 0)
+        {
+            cell.downBtnType = PMBookCollectionViewCellBtnTypeDwonload;
+        }
         else
-            [cell changeDownBtnType:0];
+            cell.downBtnType = PMBookCollectionViewCellBtnTypeBuy;
+        if(![[self.viewModel issueLocalUrlOfBookWithIndex:indexPath.row] isEqualToString:@""])
+        {
+            
+            cell.downBtnType = PMBookCollectionViewCellBtnTypeRead;
+        }
+        
+        cell.downReadBuyBtn.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        
+            switch (cell.downBtnType) {
+                case PMBookCollectionViewCellBtnTypeDwonload:
+                {
+                    mAlertView(@"杂志", @"去下载啦");
+                }
+                    break;
+                case PMBookCollectionViewCellBtnTypeBuy:
+                {
+                    mAlertView(@"杂志", @"去购买啦");
+                }
+                    break;
+                case PMBookCollectionViewCellBtnTypeRead:
+                {
+                     mAlertView(@"杂志", @"打开杂志");
+                }
+                    break;
+                    
+                default:
+                    break;
+            }
+            
+            return [RACSignal empty];
+        }];
+        
+        
+        
         return cell;
     }
     else

@@ -201,6 +201,29 @@
         }];
     }
     
+    [RACObserve(self, downBtnType) subscribeNext:^(id x) {
+        switch ([x integerValue]) {
+            case PMBookCollectionViewCellBtnTypeDwonload:
+                [self.downReadBuyBtn setBackgroundImage:[UIImage imageNamed:@"bluebuttonbkg"] forState:UIControlStateNormal];
+                [self.downReadBuyBtn setTitle:@"下载" forState:UIControlStateNormal];
+                self.deleteBtn.hidden = YES;
+                break;
+            case 1:
+                [self.downReadBuyBtn setBackgroundImage:[UIImage imageNamed:@"orangebtnbkg"] forState:UIControlStateNormal];
+                [self.downReadBuyBtn setTitle:@"购买" forState:UIControlStateNormal];
+                self.deleteBtn.hidden = YES;
+                break;
+            case 2:
+                [self.downReadBuyBtn setBackgroundImage:[UIImage imageNamed:@"bluebuttonbkg"] forState:UIControlStateNormal];
+                [self.downReadBuyBtn setTitle:@"阅读" forState:UIControlStateNormal];
+                self.deleteBtn.hidden = NO;
+                break;
+            default:
+                break;
+        }
+
+        
+    }];
     
 }
 
@@ -215,29 +238,6 @@
     self.tipImageView.hidden = !big;
     self.issueDesLable.hidden = !big;
     self.issueImageViewWidth.mas_equalTo(big?kBigImageWidth:kSmallImageWidth);
-}
-
-- (void)changeDownBtnType:(NSInteger)type
-{
-    switch (type) {
-        case 0:
-            [self.downReadBuyBtn setBackgroundImage:[UIImage imageNamed:@"bluebuttonbkg"] forState:UIControlStateNormal];
-            [self.downReadBuyBtn setTitle:@"下载" forState:UIControlStateNormal];
-            self.deleteBtn.hidden = YES;
-            break;
-        case 1:
-            [self.downReadBuyBtn setBackgroundImage:[UIImage imageNamed:@"orangebtnbkg"] forState:UIControlStateNormal];
-            [self.downReadBuyBtn setTitle:@"购买" forState:UIControlStateNormal];
-            self.deleteBtn.hidden = YES;
-            break;
-        case 2:
-            [self.downReadBuyBtn setBackgroundImage:[UIImage imageNamed:@"bluebuttonbkg"] forState:UIControlStateNormal];
-            [self.downReadBuyBtn setTitle:@"阅读" forState:UIControlStateNormal];
-            self.deleteBtn.hidden = NO;
-            break;
-        default:
-            break;
-    }
 }
 
 @end
