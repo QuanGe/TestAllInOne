@@ -14,7 +14,7 @@
 @property (nonatomic,strong) NSString* editor;
 @property (nonatomic,strong) NSString* articleDescription;
 @property (nonatomic,strong) NSString* type;
-@property (nonatomic,strong) NSString* mcategory;
+@property (nonatomic,strong) NSString* category;
 @property (nonatomic,strong) NSString* pubDate;
 
 @property (nonatomic,strong) NSMutableAttributedString* content;
