@@ -42,6 +42,7 @@ static CGFloat widthCallback( void* ref ){
 
 - (void)fetchArticleList
 {
+    self.articles = [NSMutableArray arrayWithCapacity:10];
     NSString* text = [NSString stringWithContentsOfFile:self.bookLocalUrl encoding:NSUTF8StringEncoding error:NULL];
     text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     NSData * resultDataChange = [[NSData alloc] initWithBase64EncodedString:text options:NSDataBase64DecodingIgnoreUnknownCharacters];

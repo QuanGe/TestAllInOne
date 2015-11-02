@@ -9,17 +9,17 @@
 #import <Foundation/Foundation.h>
 @class PMArticleImageModel;
 @interface PMArticleModel : NSObject
-@property (nonatomic,strong) NSString* titile;
-@property (nonatomic,strong) NSString* subTitile;
-@property (nonatomic,strong) NSString* editor;
-@property (nonatomic,strong) NSString* articleDescription;
-@property (nonatomic,strong) NSString* type;
-@property (nonatomic,strong) NSString* category;
-@property (nonatomic,strong) NSString* pubDate;
+@property (nonatomic,readwrite,copy) NSString* titile;
+@property (nonatomic,readwrite,copy) NSString* subTitile;
+@property (nonatomic,readwrite,copy) NSString* editor;
+@property (nonatomic,readwrite,copy) NSString* articleDescription;
+@property (nonatomic,readwrite,copy) NSString* type;
+@property (nonatomic,readwrite,copy) NSString* category;
+@property (nonatomic,readwrite,copy) NSString* pubDate;
 
-@property (nonatomic,strong) NSMutableAttributedString* content;
-@property (nonatomic,strong) NSMutableAttributedString* headerStr;
-@property (nonatomic,strong) NSMutableArray* images;
-@property (nonatomic,strong) PMArticleImageModel* staticImage;
+@property (nonatomic,readwrite,strong) NSMutableAttributedString* content;
+@property (nonatomic,readwrite,strong) NSMutableAttributedString* headerStr;
+@property (nonatomic,readwrite,strong) NSMutableArray* images;
+@property (nonatomic,readwrite,strong) PMArticleImageModel* staticImage;
 
 @end
