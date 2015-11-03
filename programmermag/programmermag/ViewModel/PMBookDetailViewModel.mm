@@ -11,12 +11,7 @@
 #import "tinyxml2.h"
 #import "PMArticleImageModel.h"
 #import "PMArticleModel.h"
-@interface PMBookDetailViewModel ()
-@property (nonatomic,readwrite,copy) NSString * bookLocalUrl;
-@property (nonatomic,readwrite,strong) NSMutableArray * articles;
-@end
-
-@implementation PMBookDetailViewModel
+#import "PMArticlePaperModel.h"
 
 /* Callbacks */
 
@@ -30,6 +25,13 @@ static CGFloat widthCallback( void* ref ){
     return [(NSString*)[(__bridge NSDictionary*)ref objectForKey:@"width"] floatValue];
 }
 
+@interface PMBookDetailViewModel ()
+@property (nonatomic,readwrite,copy) NSString * bookLocalUrl;
+@property (nonatomic,readwrite,strong) NSMutableArray * articles;
+@end
+
+@implementation PMBookDetailViewModel
+
 - (instancetype)initWithBookLocalUrl:(NSString*)bookLocalUrl
 {
     self = [super init];
@@ -42,6 +44,7 @@ static CGFloat widthCallback( void* ref ){
 
 - (void)fetchArticleList
 {
+    NSDate* tmpStartData = [NSDate date];
     self.articles = [NSMutableArray arrayWithCapacity:10];
     NSString* text = [NSString stringWithContentsOfFile:self.bookLocalUrl encoding:NSUTF8StringEncoding error:NULL];
     text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@""];
@@ -236,7 +239,7 @@ static CGFloat widthCallback( void* ref ){
                                                   [NSNumber numberWithFloat:theImage.height], @"height",
                                                   nil] ;
                         
-                        CTRunDelegateRef delegate = CTRunDelegateCreate(&callbacks, &imgAttr); //3
+                        CTRunDelegateRef delegate = CTRunDelegateCreate(&callbacks, (__bridge void*)imgAttr); //3
                         NSDictionary *attrDictionaryDelegate = [NSDictionary dictionaryWithObjectsAndKeys:
                                                                 //set the delegate
                                                                 (__bridge id)delegate, (NSString*)kCTRunDelegateAttributeName,
@@ -295,13 +298,201 @@ static CGFloat widthCallback( void* ref ){
                 }
                 
             }
-            
+            [self createPaperWithArticle:a];
             [self.articles addObject:a];
             
         }
         keyEle = keyEle->NextSiblingElement();
     }
     NSLog(@"%@",self.articles);
+    
+    double deltaTime = [[NSDate date] timeIntervalSinceDate:tmpStartData];
+    NSLog(@"cost time = %f", deltaTime);
+    
+}
+
+- (void)createPaperWithArticle:(PMArticleModel*)article
+{
+    article.papers = [NSMutableArray array];
+    CGFloat frameXOffset = 20; //1
+    CGFloat frameYOffset = 40;
+    
+    CGMutablePathRef path = CGPathCreateMutable(); //2
+    CGRect textFrame = CGRectMake(frameXOffset, frameYOffset, mScreenWidth-2*frameXOffset, mScreenHeight-2*frameYOffset);
+    CGPathAddRect(path, NULL, textFrame );
+    
+    
+    
+    
+    int columnIndex = 0;
+    
+    int textPos = 0; //3
+    
+    int left = -1;
+    int right = -1;
+    int articleStartColIndex = columnIndex;
+    float TitleHeight = mScreenHeight*0.1;
+    PMArticlePaperModel *paper = nil;
+    if(article.staticImage != nil )
+    {
+        if(article.staticImage.type == PMArticleImageTypeContentHomeImage)
+        {
+            paper = [[PMArticlePaperModel alloc] initWithType:PMArticlePaperTypeOnlyImage];
+            paper.ortherImage = article.staticImage;
+            [article.papers addObject:paper];
+            return;
+        }
+        else if(article.staticImage.type == PMArticleImageTypeContentStaticImage || article.staticImage.type == PMArticleImageTypeContentVideo)
+        {
+            
+            if(article.staticImage.colspan == 1)
+            {
+                
+                int c = columnIndex+1;
+                right = c;
+                paper = [[PMArticlePaperModel alloc] initWithType:PMArticlePaperTypeFisrtPagerSmallImage];
+                
+            }
+            else if(article.staticImage.colspan == 2)
+            {
+                left = columnIndex;
+                right = columnIndex+1;
+                
+                paper = [[PMArticlePaperModel alloc] initWithType:PMArticlePaperTypeFisrtPagerBigImage];
+            }
+        }
+    }
+    else
+        paper = [[PMArticlePaperModel alloc] initWithType:PMArticlePaperTypeFisrtPagerNormal];
+    
+    
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((CFAttributedStringRef)article.content);
+    while (textPos < [article.content length])
+    { //4
+    
+        CGRect colRect ;
+        float firstPageDeleteHeight = 0.0;
+        if(columnIndex == left || columnIndex == right)
+            firstPageDeleteHeight += article.staticImage.height;
+        if((articleStartColIndex+1) == columnIndex || articleStartColIndex == columnIndex)
+        {
+            
+            firstPageDeleteHeight +=  TitleHeight;
+        }
+        
+        colRect = CGRectMake(0, 0 , textFrame.size.width/2-frameXOffset, textFrame.size.height-2*frameYOffset-firstPageDeleteHeight);
+        
+        CGMutablePathRef path = CGPathCreateMutable();
+        CGPathAddRect(path, NULL, colRect);
+        
+        //use the column path
+        CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(textPos, 0), path, NULL);
+        CFRange frameRange = CTFrameGetVisibleStringRange(frame); //5
+    
+        if(columnIndex%2==0)
+        {
+            if(article.papers.count != 0)
+                paper = [[PMArticlePaperModel alloc] initWithType:PMArticlePaperTypeNormal];
+            paper.leftCTFrame = (__bridge id)frame;
+        }
+        else
+        {
+            paper.rightCTFrame = (__bridge id)frame;
+            [article.papers addObject:paper];
+        }
+        
+        //prepare for next frame
+        textPos += frameRange.length;
+        
+        //CFRelease(frame);
+        CFRelease(path);
+        
+        columnIndex++;
+    }
+    
+    if(columnIndex%2 == 1)
+        [article.papers addObject:paper];
+    
+}
+
+- (void)addImageToPagperWithArticle:(PMArticleModel*)article
+{
+    CGFloat frameXOffset = 20; //1
+    CGFloat frameYOffset = 40;
+    for (PMArticlePaperModel *paper in article.papers) {
+        if(paper.leftImageArray != nil)
+            return;
+        for (int i = 0; i<2; i++) {
+            if(i == 0)
+                paper.leftImageArray = [NSMutableArray array];
+            else
+                paper.rightImageArray = [NSMutableArray array];
+            CTFrameRef f = (__bridge CTFrameRef)(i ==0?paper.leftCTFrame:paper.rightCTFrame);
+            //drawing images
+            NSArray *lines = (NSArray *)CTFrameGetLines(f); //1
+            
+            CGPoint origins[[lines count]];
+            CTFrameGetLineOrigins(f, CFRangeMake(0, 0), origins); //2
+            
+            int imgIndex = 0; //3
+            NSMutableArray * articleImages = article.images;
+            if(articleImages.count == 0)
+                return;
+            PMArticleImageModel* nextImage = [articleImages objectAtIndex:imgIndex];
+            int imgLocation = nextImage.location;
+            
+            //find images for the current column
+            CFRange frameRange = CTFrameGetVisibleStringRange(f); //4
+            while ( imgLocation < frameRange.location ) {
+                imgIndex++;
+                if (imgIndex>=[articleImages count]) return; //quit if no images for this column
+                nextImage = [articleImages objectAtIndex:imgIndex];
+                imgLocation = nextImage.location;
+            }
+            
+            NSUInteger lineIndex = 0;
+            for (id lineObj in lines) { //5
+                CTLineRef line = (__bridge CTLineRef)lineObj;
+                
+                for (id runObj in (NSArray *)CTLineGetGlyphRuns(line)) { //6
+                    CTRunRef run = (__bridge CTRunRef)runObj;
+                    CFRange runRange = CTRunGetStringRange(run);
+                    
+                    if ( runRange.location <= imgLocation && runRange.location+runRange.length > imgLocation ) { //7
+                        CGRect runBounds;
+                        CGFloat ascent;//height above the baseline
+                        CGFloat descent;//height below the baseline
+                        runBounds.size.width = CTRunGetTypographicBounds(run, CFRangeMake(0, 0), &ascent, &descent, NULL); //8
+                        runBounds.size.height = ascent + descent;
+                        
+                        CGFloat xOffset = CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, NULL); //9
+                        runBounds.origin.x = origins[lineIndex].x  + xOffset + frameXOffset;
+                        runBounds.origin.y = origins[lineIndex].y + frameYOffset;
+                        runBounds.origin.y -= descent;
+                        
+                        UIImage *img = [UIImage imageNamed: nextImage.imageFileName ];
+                        CGPathRef pathRef = CTFrameGetPath(f); //10
+                        CGRect colRect = CGPathGetBoundingBox(pathRef);
+                        
+                        CGRect imgBounds = CGRectOffset(runBounds, colRect.origin.x - frameXOffset , colRect.origin.y - frameYOffset);
+                        [(i==0?paper.leftImageArray:paper.rightImageArray) addObject: //11
+                         [NSArray arrayWithObjects:img, NSStringFromCGRect(imgBounds) , nil]
+                         ];
+                        //load the next image //12
+                        imgIndex++;
+                        if (imgIndex < [articleImages count]) {
+                            nextImage = [articleImages objectAtIndex: imgIndex];
+                            imgLocation = nextImage.location;
+                        }
+                        
+                    }
+                }
+                lineIndex++;
+            }
+
+        }
+    }
+    
     
 }
 

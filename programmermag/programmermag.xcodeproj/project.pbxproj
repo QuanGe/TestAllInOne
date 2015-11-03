@@ -30,6 +30,7 @@
 		98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE01BD5E08A00F6AA87 /* PMDBManager.m */; settings = {ASSET_TAGS = (); }; };
 		98949CE31BD5E11100F6AA87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98949CE21BD5E11100F6AA87 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		98949CE61BD6474A00F6AA87 /* PMAPIManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */; settings = {ASSET_TAGS = (); }; };
+		98B5CF111BE858D500F5323A /* PMArticlePaperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B5CF101BE858D500F5323A /* PMArticlePaperModel.m */; settings = {ASSET_TAGS = (); }; };
 		98B6565E1BE7BCE5009C6BCD /* PMArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B6565D1BE7BCE5009C6BCD /* PMArticleModel.m */; settings = {ASSET_TAGS = (); }; };
 		98B656611BE7BD2F009C6BCD /* PMArticleImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B656601BE7BD2F009C6BCD /* PMArticleImageModel.m */; settings = {ASSET_TAGS = (); }; };
 		98B656641BE7BEA9009C6BCD /* PMBookDetailViewModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98B656631BE7BEA9009C6BCD /* PMBookDetailViewModel.mm */; settings = {ASSET_TAGS = (); }; };
@@ -82,6 +83,8 @@
 		98949CE21BD5E11100F6AA87 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98949CE41BD6474A00F6AA87 /* PMAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMAPIManager.h; sourceTree = "<group>"; };
 		98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PMAPIManager.mm; sourceTree = "<group>"; };
+		98B5CF0F1BE858D500F5323A /* PMArticlePaperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMArticlePaperModel.h; sourceTree = "<group>"; };
+		98B5CF101BE858D500F5323A /* PMArticlePaperModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMArticlePaperModel.m; sourceTree = "<group>"; };
 		98B6565C1BE7BCE5009C6BCD /* PMArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMArticleModel.h; sourceTree = "<group>"; };
 		98B6565D1BE7BCE5009C6BCD /* PMArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMArticleModel.m; sourceTree = "<group>"; };
 		98B6565F1BE7BD2F009C6BCD /* PMArticleImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMArticleImageModel.h; sourceTree = "<group>"; };
@@ -291,6 +294,8 @@
 				98B6565D1BE7BCE5009C6BCD /* PMArticleModel.m */,
 				98B6565F1BE7BD2F009C6BCD /* PMArticleImageModel.h */,
 				98B656601BE7BD2F009C6BCD /* PMArticleImageModel.m */,
+				98B5CF0F1BE858D500F5323A /* PMArticlePaperModel.h */,
+				98B5CF101BE858D500F5323A /* PMArticlePaperModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 				989396DB1BD936140063321B /* RFQuiltLayout.m in Sources */,
 				98B656641BE7BEA9009C6BCD /* PMBookDetailViewModel.mm in Sources */,
 				98949CD41BD5CCEB00F6AA87 /* PMAppDelegate.m in Sources */,
+				98B5CF111BE858D500F5323A /* PMArticlePaperModel.m in Sources */,
 				98B656611BE7BD2F009C6BCD /* PMArticleImageModel.m in Sources */,
 				98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */,
 				98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */,

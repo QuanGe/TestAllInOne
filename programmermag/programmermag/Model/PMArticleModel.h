@@ -21,5 +21,6 @@
 @property (nonatomic,readwrite,strong) NSMutableAttributedString* headerStr;
 @property (nonatomic,readwrite,strong) NSMutableArray* images;
 @property (nonatomic,readwrite,strong) PMArticleImageModel* staticImage;
+@property (nonatomic,readwrite,strong) NSMutableArray * papers;
 
 @end
