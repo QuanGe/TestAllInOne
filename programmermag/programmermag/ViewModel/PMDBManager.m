@@ -7,7 +7,6 @@
 //
 
 #import "PMDBManager.h"
-#import "QGOCCategory.h"
 #import "PMIssueModel.h"
 static sqlite3 *contactDB = NULL;
 

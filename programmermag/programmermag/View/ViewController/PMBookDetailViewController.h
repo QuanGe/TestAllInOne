@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PMBookDetailViewController : UIViewController
+@interface PMBookDetailViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (nonatomic,readwrite,copy) NSString * bookLocalUrl;
 @end

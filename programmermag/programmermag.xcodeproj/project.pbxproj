@@ -31,6 +31,8 @@
 		98949CE31BD5E11100F6AA87 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98949CE21BD5E11100F6AA87 /* Info.plist */; settings = {ASSET_TAGS = (); }; };
 		98949CE61BD6474A00F6AA87 /* PMAPIManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */; settings = {ASSET_TAGS = (); }; };
 		98B5CF111BE858D500F5323A /* PMArticlePaperModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B5CF101BE858D500F5323A /* PMArticlePaperModel.m */; settings = {ASSET_TAGS = (); }; };
+		98B5CF141BE8AB2A00F5323A /* PMBookPaperColumnView.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B5CF131BE8AB2A00F5323A /* PMBookPaperColumnView.m */; settings = {ASSET_TAGS = (); }; };
+		98B5CF171BE8ABD100F5323A /* PMBookPaperCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B5CF161BE8ABD100F5323A /* PMBookPaperCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		98B6565E1BE7BCE5009C6BCD /* PMArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B6565D1BE7BCE5009C6BCD /* PMArticleModel.m */; settings = {ASSET_TAGS = (); }; };
 		98B656611BE7BD2F009C6BCD /* PMArticleImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B656601BE7BD2F009C6BCD /* PMArticleImageModel.m */; settings = {ASSET_TAGS = (); }; };
 		98B656641BE7BEA9009C6BCD /* PMBookDetailViewModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 98B656631BE7BEA9009C6BCD /* PMBookDetailViewModel.mm */; settings = {ASSET_TAGS = (); }; };
@@ -85,6 +87,10 @@
 		98949CE51BD6474A00F6AA87 /* PMAPIManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PMAPIManager.mm; sourceTree = "<group>"; };
 		98B5CF0F1BE858D500F5323A /* PMArticlePaperModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMArticlePaperModel.h; sourceTree = "<group>"; };
 		98B5CF101BE858D500F5323A /* PMArticlePaperModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMArticlePaperModel.m; sourceTree = "<group>"; };
+		98B5CF121BE8AB2A00F5323A /* PMBookPaperColumnView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookPaperColumnView.h; sourceTree = "<group>"; };
+		98B5CF131BE8AB2A00F5323A /* PMBookPaperColumnView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookPaperColumnView.m; sourceTree = "<group>"; };
+		98B5CF151BE8ABD100F5323A /* PMBookPaperCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMBookPaperCollectionViewCell.h; sourceTree = "<group>"; };
+		98B5CF161BE8ABD100F5323A /* PMBookPaperCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMBookPaperCollectionViewCell.m; sourceTree = "<group>"; };
 		98B6565C1BE7BCE5009C6BCD /* PMArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMArticleModel.h; sourceTree = "<group>"; };
 		98B6565D1BE7BCE5009C6BCD /* PMArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMArticleModel.m; sourceTree = "<group>"; };
 		98B6565F1BE7BD2F009C6BCD /* PMArticleImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMArticleImageModel.h; sourceTree = "<group>"; };
@@ -229,6 +235,10 @@
 				989396D21BD8C7280063321B /* PMBookCollectionViewCell.m */,
 				98D4EF671BE368A000216966 /* PMImageCollectionFlowLayout.h */,
 				98D4EF681BE368A000216966 /* PMImageCollectionFlowLayout.m */,
+				98B5CF121BE8AB2A00F5323A /* PMBookPaperColumnView.h */,
+				98B5CF131BE8AB2A00F5323A /* PMBookPaperColumnView.m */,
+				98B5CF151BE8ABD100F5323A /* PMBookPaperCollectionViewCell.h */,
+				98B5CF161BE8ABD100F5323A /* PMBookPaperCollectionViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -417,6 +427,7 @@
 				988ADCA41BD734FA00CE9212 /* tinyxml2.cpp in Sources */,
 				98DAEBF71BD874CA00359D2D /* PMBookDetailViewController.m in Sources */,
 				98B6565E1BE7BCE5009C6BCD /* PMArticleModel.m in Sources */,
+				98B5CF171BE8ABD100F5323A /* PMBookPaperCollectionViewCell.m in Sources */,
 				98DAEBEE1BD871E400359D2D /* PMBookStoreViewController.m in Sources */,
 				98D4EF691BE368A000216966 /* PMImageCollectionFlowLayout.m in Sources */,
 				98949CD91BD5CCEB00F6AA87 /* main.m in Sources */,
@@ -426,6 +437,7 @@
 				98949CD41BD5CCEB00F6AA87 /* PMAppDelegate.m in Sources */,
 				98B5CF111BE858D500F5323A /* PMArticlePaperModel.m in Sources */,
 				98B656611BE7BD2F009C6BCD /* PMArticleImageModel.m in Sources */,
+				98B5CF141BE8AB2A00F5323A /* PMBookPaperColumnView.m in Sources */,
 				98949CE11BD5E08A00F6AA87 /* PMDBManager.m in Sources */,
 				98949CC91BD5CCCD00F6AA87 /* ViewController.m in Sources */,
 				98DAEBF11BD8720E00359D2D /* PMMyBookViewController.m in Sources */,

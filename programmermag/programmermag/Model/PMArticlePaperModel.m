@@ -8,7 +8,7 @@
 
 #import "PMArticlePaperModel.h"
 @interface PMArticlePaperModel()
-@property (nonatomic,readwrite,assign) PMArticlePaperType type;
+
 @end
 @implementation PMArticlePaperModel
 - (instancetype)initWithType:(PMArticlePaperType)type

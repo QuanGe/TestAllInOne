@@ -496,4 +496,28 @@ static CGFloat widthCallback( void* ref ){
     
 }
 
+- (NSInteger)numOfArticle
+{
+    return self.articles.count;
+}
+
+- (NSInteger)numOfPaperWithArticleIndex:(NSInteger)articleIndex
+{
+    PMArticleModel * model = [self.articles objectAtIndex:articleIndex];
+    return model.papers.count;
+}
+
+- (void)addImageToPaperWithArticleIndex:(NSInteger)articleIndex
+{
+    PMArticleModel * model = [self.articles objectAtIndex:articleIndex];
+    [self addImageToPagperWithArticle:model];
+    
+}
+
+- (PMArticlePaperModel*)paperWithPaperInde:(NSInteger)paperIndex articleIndex:(NSInteger)articleIndex
+{
+    PMArticleModel * model = [self.articles objectAtIndex:articleIndex];
+    return model.papers[paperIndex];
+}
+
 @end

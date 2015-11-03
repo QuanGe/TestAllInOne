@@ -18,6 +18,7 @@ typedef NS_ENUM(NSInteger,PMArticlePaperType)
 };
 @interface PMArticlePaperModel : NSObject
 - (instancetype)initWithType:(PMArticlePaperType)type;
+@property (nonatomic,readwrite,assign) PMArticlePaperType type;
 @property (nonatomic,readwrite,strong) id leftCTFrame;
 @property (nonatomic,readwrite,strong) id rightCTFrame;
 @property (nonatomic,readwrite,strong) NSMutableArray *leftImageArray;

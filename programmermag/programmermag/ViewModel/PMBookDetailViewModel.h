@@ -7,7 +7,12 @@
 //
 
 #import "RVMViewModel.h"
-
+@class PMArticlePaperModel;
 @interface PMBookDetailViewModel : RVMViewModel
 - (instancetype)initWithBookLocalUrl:(NSString*)bookLocalUrl;
+
+- (NSInteger)numOfArticle;
+- (NSInteger)numOfPaperWithArticleIndex:(NSInteger)articleIndex;
+- (void)addImageToPaperWithArticleIndex:(NSInteger)articleIndex;
+- (PMArticlePaperModel*)paperWithPaperInde:(NSInteger)paperIndex articleIndex:(NSInteger)articleIndex;
 @end
