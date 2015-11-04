@@ -24,4 +24,6 @@ typedef NS_ENUM(NSInteger,PMArticlePaperType)
 @property (nonatomic,readwrite,strong) NSMutableArray *leftImageArray;
 @property (nonatomic,readwrite,strong) NSMutableArray *rightImageArray;
 @property (nonatomic,readwrite,strong) PMArticleImageModel *ortherImage;
+@property (nonatomic,readwrite,assign) CGFloat titleHeight;
+@property (nonatomic,readwrite,assign) NSMutableAttributedString *title;
 @end

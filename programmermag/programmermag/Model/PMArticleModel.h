@@ -23,4 +23,6 @@
 @property (nonatomic,readwrite,strong) PMArticleImageModel* staticImage;
 @property (nonatomic,readwrite,strong) NSMutableArray * papers;
 
+-(void)buildHeaderStr;
+
 @end

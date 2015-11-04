@@ -10,7 +10,7 @@
 @class PMArticlePaperModel;
 @interface PMBookDetailViewModel : RVMViewModel
 - (instancetype)initWithBookLocalUrl:(NSString*)bookLocalUrl;
-
+- (RACSignal*)fetchArticleList;
 - (NSInteger)numOfArticle;
 - (NSInteger)numOfPaperWithArticleIndex:(NSInteger)articleIndex;
 - (void)addImageToPaperWithArticleIndex:(NSInteger)articleIndex;

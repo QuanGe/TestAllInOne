@@ -10,4 +10,5 @@
 @class PMArticlePaperModel;
 @interface PMBookPaperCollectionViewCell : UICollectionViewCell
 @property (nonatomic,readwrite,strong) PMArticlePaperModel *paperModel;
+@property (nonatomic,readwrite,strong) UILabel * titleLabel;
 @end

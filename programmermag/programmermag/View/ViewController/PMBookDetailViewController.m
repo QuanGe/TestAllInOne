@@ -55,7 +55,7 @@
         
         
     }
-    
+    self.navigationController.navigationBar.hidden = YES;
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tabBarController.qgocc_tabBarHidden = YES;
 
@@ -82,9 +82,11 @@
             make.top.mas_equalTo(55);
         }];
     }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    
+    [[self.viewModel fetchArticleList] subscribeNext:^(id x) {
         [self.dataImageCollection reloadData];
-    });
+    }];
+    
 }
 
 - (void)viewDidLoad
@@ -110,6 +112,7 @@
     
     PMBookPaperCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"PMBookPaperCollectionViewCell" forIndexPath:indexPath];
     cell.paperModel = [self.viewModel paperWithPaperInde:indexPath.row articleIndex:indexPath.section];
+    [self.viewModel addImageToPaperWithArticleIndex:indexPath.section];
     return cell;
     
 }
