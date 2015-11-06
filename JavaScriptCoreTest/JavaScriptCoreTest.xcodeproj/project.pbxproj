@@ -17,6 +17,7 @@
 		989987671BE9C6CE009417E9 /* prettify.js in Resources */ = {isa = PBXBuildFile; fileRef = 989987651BE9C6CE009417E9 /* prettify.js */; settings = {ASSET_TAGS = (); }; };
 		989987691BE9C70C009417E9 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989987681BE9C70C009417E9 /* JavaScriptCore.framework */; };
 		9899876B1BE9C95A009417E9 /* test.js in Resources */ = {isa = PBXBuildFile; fileRef = 9899876A1BE9C95A009417E9 /* test.js */; settings = {ASSET_TAGS = (); }; };
+		989987751BEC8EBF009417E9 /* JSCTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 989987741BEC8EBF009417E9 /* JSCTest.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		989987651BE9C6CE009417E9 /* prettify.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = prettify.js; sourceTree = "<group>"; };
 		989987681BE9C70C009417E9 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		9899876A1BE9C95A009417E9 /* test.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = test.js; sourceTree = "<group>"; };
+		989987731BEC8EBF009417E9 /* JSCTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSCTest.h; sourceTree = "<group>"; };
+		989987741BEC8EBF009417E9 /* JSCTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSCTest.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				9899875B1BE9C6A4009417E9 /* LaunchScreen.storyboard */,
 				9899875E1BE9C6A4009417E9 /* Info.plist */,
 				9899874D1BE9C6A4009417E9 /* Supporting Files */,
+				989987731BEC8EBF009417E9 /* JSCTest.h */,
+				989987741BEC8EBF009417E9 /* JSCTest.m */,
 			);
 			path = JavaScriptCoreTest;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				989987751BEC8EBF009417E9 /* JSCTest.m in Sources */,
 				989987551BE9C6A4009417E9 /* ViewController.m in Sources */,
 				989987521BE9C6A4009417E9 /* AppDelegate.m in Sources */,
 				9899874F1BE9C6A4009417E9 /* main.m in Sources */,
