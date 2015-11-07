@@ -62,8 +62,8 @@
         home.hidden = YES;
         [home mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(0);
-            make.top.mas_equalTo(0);
-            make.bottom.mas_equalTo(0);
+            make.top.mas_equalTo(15);
+            make.bottom.mas_equalTo(20);
             make.right.mas_equalTo(0);
         }];
     }

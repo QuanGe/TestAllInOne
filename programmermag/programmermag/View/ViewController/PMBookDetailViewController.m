@@ -66,7 +66,7 @@
         recommentLayout.footerReferenceSize = recommentLayout.headerReferenceSize;
     
         self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
-        self.dataImageCollection.backgroundColor = [UIColor whiteColor];
+        self.dataImageCollection.backgroundColor = [UIColor blueColor];
         [self.dataImageCollection setDataSource:self];
         [self.dataImageCollection setDelegate:self];
         
@@ -79,7 +79,7 @@
             make.bottom.mas_equalTo(0);
             make.left.mas_equalTo(0);
             make.right.mas_equalTo(0);
-            make.top.mas_equalTo(55);
+            make.top.mas_equalTo(20);
         }];
     }
     
@@ -119,7 +119,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(mScreenWidth  , mSelfViewHeight-65);
+    return CGSizeMake(mScreenWidth  , mScreenHeight-20);
     
 }
 
