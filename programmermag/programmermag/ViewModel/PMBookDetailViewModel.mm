@@ -325,14 +325,7 @@ static CGFloat widthCallback( void* ref ){
 {
     article.papers = [NSMutableArray array];
     CGFloat frameXOffset = 20; //1
-    CGFloat frameYOffset = 40;
-    
-    CGMutablePathRef path = CGPathCreateMutable(); //2
-    CGRect textFrame = CGRectMake(frameXOffset, frameYOffset, mScreenWidth-2*frameXOffset, mScreenHeight-2*frameYOffset);
-    CGPathAddRect(path, NULL, textFrame );
-    
-    
-    
+    CGFloat frameYOffset = 60;
     
     int columnIndex = 0;
     
@@ -402,7 +395,7 @@ static CGFloat widthCallback( void* ref ){
             firstPageDeleteHeight +=  TitleHeight;
         }
         
-        colRect = CGRectMake(0, 0 , textFrame.size.width/2-frameXOffset, textFrame.size.height-2*frameYOffset-firstPageDeleteHeight);
+        colRect = CGRectMake(frameXOffset/2, frameYOffset/2 , (mScreenWidth-2*frameXOffset)/2, (mScreenHeight-2*frameYOffset+20)-firstPageDeleteHeight);
         
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathAddRect(path, NULL, colRect);
