@@ -88,7 +88,7 @@
     {
         [self addSubview:self.titleLabel];
         self.titleLabel.hidden = YES;
-        self.titleLabel.backgroundColor = [UIColor orangeColor];
+        self.titleLabel.backgroundColor = [UIColor whiteColor];
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.mas_equalTo(0);
             make.top.mas_equalTo(50);

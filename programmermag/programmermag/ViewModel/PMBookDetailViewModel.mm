@@ -395,7 +395,7 @@ static CGFloat widthCallback( void* ref ){
             firstPageDeleteHeight +=  TitleHeight;
         }
         
-        colRect = CGRectMake(frameXOffset/2, frameYOffset/2 , (mScreenWidth-2*frameXOffset)/2, (mScreenHeight-2*frameYOffset+20)-firstPageDeleteHeight);
+        colRect = CGRectMake(frameXOffset/2, frameYOffset , (mScreenWidth-2*frameXOffset)/2, (mScreenHeight-2*frameYOffset-20)-firstPageDeleteHeight);
         
         CGMutablePathRef path = CGPathCreateMutable();
         CGPathAddRect(path, NULL, colRect);

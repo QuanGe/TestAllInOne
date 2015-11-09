@@ -12,6 +12,8 @@
 @interface PMBookDetailViewController()
 @property (nonatomic,readwrite,strong) PMBookDetailViewModel * viewModel;
 @property (nonatomic,readwrite,strong) UICollectionView * dataImageCollection;
+@property (nonatomic,readwrite,strong) UILabel* pageNumLabel;
+@property (nonatomic,readwrite,strong) UIPageControl * page;
 @end
 
 @implementation PMBookDetailViewController
@@ -59,6 +61,8 @@
     self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.tabBarController.qgocc_tabBarHidden = YES;
 
+    
+    
     UICollectionViewFlowLayout *recommentLayout=[[UICollectionViewFlowLayout alloc] init];
     {
         [recommentLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
@@ -66,7 +70,7 @@
         recommentLayout.footerReferenceSize = recommentLayout.headerReferenceSize;
     
         self.dataImageCollection = [[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:recommentLayout];
-        self.dataImageCollection.backgroundColor = [UIColor blueColor];
+        self.dataImageCollection.backgroundColor = [UIColor whiteColor];
         [self.dataImageCollection setDataSource:self];
         [self.dataImageCollection setDelegate:self];
         
@@ -81,8 +85,50 @@
             make.right.mas_equalTo(0);
             make.top.mas_equalTo(20);
         }];
+        
+        
     }
     
+    self.pageNumLabel = [[UILabel alloc] init];
+    {
+        [self.view addSubview:self.pageNumLabel];
+        self.pageNumLabel.textAlignment = NSTextAlignmentRight;
+        [self.pageNumLabel setTextColor:[UIColor grayColor]];
+        [self.pageNumLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.bottom.mas_equalTo(-20);
+            make.width.mas_equalTo(80);
+            make.right.mas_equalTo(-20);
+            make.height.mas_equalTo(30);
+        }];
+        [RACObserve(self.dataImageCollection, contentSize) subscribeNext:^(id x) {
+            CGSize size ;
+            [x getValue:&size];
+            self.pageNumLabel.tag = size.width/mScreenWidth;
+        }];
+        
+        [RACObserve(self.dataImageCollection, contentOffset) subscribeNext:^(id x) {
+            CGPoint p ;
+            [x getValue:&p];
+            self.pageNumLabel.text = [NSString stringWithFormat:@"%@/%@",@((NSInteger)(p.x /mScreenWidth)).stringValue,@((NSInteger)(self.pageNumLabel.tag)).stringValue];
+        }];
+    }
+    
+    self.page = [[UIPageControl alloc] init];
+    {
+        
+        self.page.pageIndicatorTintColor = mRGBColor(180, 180, 180);
+        self.page.currentPageIndicatorTintColor = mRGBColor(220, 220, 220);
+        [self.view addSubview:self.page];
+        [self.page mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.bottom.mas_equalTo(-20);
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.height.mas_equalTo(30);
+        }];
+        
+    }
     [[self.viewModel fetchArticleList] subscribeNext:^(id x) {
         [self.dataImageCollection reloadData];
     }];
@@ -112,10 +158,19 @@
     
     PMBookPaperCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"PMBookPaperCollectionViewCell" forIndexPath:indexPath];
     cell.paperModel = [self.viewModel paperWithPaperInde:indexPath.row articleIndex:indexPath.section];
-    [self.viewModel addImageToPaperWithArticleIndex:indexPath.section];
+    if(indexPath.section<[self.viewModel numOfArticle]-1)
+        [self.viewModel addImageToPaperWithArticleIndex:indexPath.section+1];
+    self.pageNumLabel.hidden=indexPath.section==0;
+    self.page.hidden=indexPath.section==0;
+    self.page.numberOfPages = [self.viewModel numOfPaperWithArticleIndex:indexPath.section];
+
+    self.page.currentPage = indexPath.row;
+    
+    
     return cell;
     
 }
+
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
