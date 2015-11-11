@@ -24,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIView * maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.webview.bounds.size.width, self.webview.bounds.size.height)];
+    [maskView setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:0.5]];
+    
+    [maskView addGestureRecognizer:self.webview.scrollView.panGestureRecognizer ];
+    
+    [self.webview addSubview:maskView];
     [self.webview loadRequest:[NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://www.csdn.net"]]];
 }
 
