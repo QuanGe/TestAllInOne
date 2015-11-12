@@ -1,0 +1,31 @@
+PODS:
+  - QGOCCategory (0.1.1)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+
+DEPENDENCIES:
+  - QGOCCategory (from `https://github.com/QuanGe/QGOCCategory`)
+  - ReactiveViewModel
+
+EXTERNAL SOURCES:
+  QGOCCategory:
+    :git: https://github.com/QuanGe/QGOCCategory
+
+CHECKOUT OPTIONS:
+  QGOCCategory:
+    :commit: 694051b9a6336497426711a552277fa59e39009f
+    :git: https://github.com/QuanGe/QGOCCategory
+
+SPEC CHECKSUMS:
+  QGOCCategory: 437e1845b71e1c33b987a82b722ef0056c7747ac
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+
+COCOAPODS: 0.38.2

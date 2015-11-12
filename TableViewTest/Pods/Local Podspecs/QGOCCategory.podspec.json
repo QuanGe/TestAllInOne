@@ -1,0 +1,22 @@
+{
+  "name": "QGOCCategory",
+  "version": "0.1.1",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "license": "MIT",
+  "summary": "get some iOS Object-C category",
+  "homepage": "https://github.com/QuanGe/QGOCCategory",
+  "authors": {
+    "QuanGe": "zhang_ru_quan@163.com"
+  },
+  "source": {
+    "git": "https://github.com/QuanGe/QGOCCategory.git",
+    "tag": "0.1.1"
+  },
+  "description": "get some iOS Object-C category",
+  "frameworks": "QuartzCore",
+  "source_files": "QGOCCategory/*.{h,m}",
+  "preserve_paths": "Demo",
+  "requires_arc": true
+}
