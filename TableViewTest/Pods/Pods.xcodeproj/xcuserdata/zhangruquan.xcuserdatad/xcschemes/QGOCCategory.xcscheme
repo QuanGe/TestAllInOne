@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B2F64821AAD1F27503CBDD73"
+               BlueprintIdentifier = "3359D6D0F8422B6A7EFFD829"
                BuildableName = "libQGOCCategory.a"
                BlueprintName = "QGOCCategory"
                ReferencedContainer = "container:Pods.xcodeproj">

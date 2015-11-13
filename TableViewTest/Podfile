@@ -1,3 +1,4 @@
 platform :ios, '7.0'
+pod 'AFNetworking'
 pod 'ReactiveViewModel'
 pod 'QGOCCategory', git: 'https://github.com/QuanGe/QGOCCategory'
