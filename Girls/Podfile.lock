@@ -1,0 +1,50 @@
+PODS:
+  - Alamofire (3.2.1)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.6)
+  - Kanna (1.0.5)
+  - ReactiveCocoa (4.0.1):
+    - ReactiveCocoa/UI (= 4.0.1)
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/Core (4.0.1):
+    - ReactiveCocoa/no-arc
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/no-arc (4.0.1):
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/UI (4.0.1):
+    - ReactiveCocoa/Core
+    - Result (~> 1.0.2)
+  - Result (1.0.2)
+  - SnapKit (0.19.1)
+  - SVPullToRefresh (0.4.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Crashlytics
+  - Fabric
+  - Kanna
+  - ReactiveCocoa
+  - SnapKit
+  - SVPullToRefresh (from `https://github.com/QuanGe/SVPullToRefresh`)
+
+EXTERNAL SOURCES:
+  SVPullToRefresh:
+    :git: https://github.com/QuanGe/SVPullToRefresh
+
+CHECKOUT OPTIONS:
+  SVPullToRefresh:
+    :commit: f59232fac54b675088e23f5117aa2fb9c8ba222c
+    :git: https://github.com/QuanGe/SVPullToRefresh
+
+SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: 1abc1e59f11fa39ede6f690ef7309d8563e3ec59
+  Kanna: 1df5cd995dc1f3a282e3dcf7521cfef2f069ac4d
+  ReactiveCocoa: f7011630aee4deeb16352fcb1b50d6bde9db4f90
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+
+COCOAPODS: 0.39.0

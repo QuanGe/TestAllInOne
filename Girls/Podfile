@@ -1,0 +1,9 @@
+platform :ios, ‘8.0’
+use_frameworks!
+pod 'Kanna'
+pod 'Alamofire'
+pod 'SnapKit'
+pod 'ReactiveCocoa'
+pod 'SVPullToRefresh', git: 'https://github.com/QuanGe/SVPullToRefresh'
+pod 'Fabric'
+pod 'Crashlytics'
