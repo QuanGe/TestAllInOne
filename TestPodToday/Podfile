@@ -1,0 +1,10 @@
+platform :ios, '7.0'
+target "TestPodToday" do
+  pod 'AFNetworking', '~> 2.0'
+  pod 'UALogger'
+end
+
+target "News" do
+    pod 'AFNetworking', '~> 2.0'
+    pod 'UALogger'
+end

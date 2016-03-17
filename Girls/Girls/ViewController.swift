@@ -11,10 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     
     
+    @IBOutlet weak var girlsPhotos: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
+       girlsPhotos.backgroundColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +23,31 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    {
+        return 20;
+    }
+    
+
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    {
+        
+        let cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("girlsPhotosCell", forIndexPath: indexPath)
+        let image:UIImageView = cell.viewWithTag(10) as! UIImageView;
+        image.image = UIImage(named: "icon_feeds_active");
+        
+        return  cell;
+        
+        
+    }
+    
+ 
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    {
+        
+        return 1;
+    }
 
 }
 
