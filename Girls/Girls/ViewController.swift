@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Fabric
+import Crashlytics
 class ViewController: UIViewController {
     
     
@@ -24,6 +25,12 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func testCrash(sender: UIButton) {
+        //let image:UIImageView = self.view.viewWithTag(1000) as! UIImageView;
+        //image.image = UIImage(named: "icon_feeds_active");
+        
+        Crashlytics.sharedInstance().crash();
+    }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return 20;
