@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="jhu-eJ-CKh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
+        <!--Adv Detail View Controller-->
+        <scene sceneID="eos-f4-fim">
+            <objects>
+                <viewController storyboardIdentifier="GAdvDetailViewController" id="ey6-27-7Sn" customClass="GAdvDetailViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2ns-86-yTB"/>
+                        <viewControllerLayoutGuide type="bottom" id="tKp-QR-YqG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wog-Ao-U8r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggF-uX-hDp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="893" y="-455"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,49 +35,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zz7-lu-mSR">
-                                <rect key="frame" x="0.0" y="70" width="600" height="530"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TiU-zy-VeS">
-                                    <size key="itemSize" width="50" height="50"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="girlsPhotosCell" id="kTa-QJ-d5C">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5gj-TA-dta">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                </imageView>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="5gj-TA-dta" secondAttribute="bottom" id="1bE-Mx-8Kr"/>
-                                            <constraint firstAttribute="trailing" secondItem="5gj-TA-dta" secondAttribute="trailing" id="GHj-gn-rwu"/>
-                                            <constraint firstItem="5gj-TA-dta" firstAttribute="leading" secondItem="kTa-QJ-d5C" secondAttribute="leading" id="M3q-Qz-PAw"/>
-                                            <constraint firstItem="5gj-TA-dta" firstAttribute="top" secondItem="kTa-QJ-d5C" secondAttribute="top" id="dyh-FE-UZ5"/>
-                                        </constraints>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="3iC-td-NTD"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="soJ-Nj-EpB"/>
-                                </connections>
-                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YVX-Tm-KoI">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="90D-RP-Tbc">
-                                <rect key="frame" x="26" y="20" width="46" height="30"/>
+                                <rect key="frame" x="26" y="164" width="46" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.41568627450000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4Pt-FZ-UbC"/>
                                     <constraint firstAttribute="width" constant="46" id="RTT-qf-eBK"/>
                                 </constraints>
-                                <state key="normal" title="crash">
+                                <state key="normal" title="跳过">
                                     <color key="titleColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -69,20 +55,129 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YVX-Tm-KoI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="10h-f6-fLQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="YVX-Tm-KoI" secondAttribute="bottom" id="3Ev-kS-F7Z"/>
                             <constraint firstItem="90D-RP-Tbc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="26" id="C5N-Df-EF5"/>
-                            <constraint firstItem="zz7-lu-mSR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="GPg-VT-NPW"/>
-                            <constraint firstItem="zz7-lu-mSR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="OEI-as-Jtt"/>
-                            <constraint firstAttribute="trailing" secondItem="zz7-lu-mSR" secondAttribute="trailing" id="YPa-9P-nMt"/>
-                            <constraint firstItem="90D-RP-Tbc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j8a-6B-WQO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zz7-lu-mSR" secondAttribute="bottom" id="otW-Fy-DzL"/>
+                            <constraint firstAttribute="trailing" secondItem="YVX-Tm-KoI" secondAttribute="trailing" id="aTH-r2-8wa"/>
+                            <constraint firstItem="YVX-Tm-KoI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ek5-GV-n2d"/>
+                            <constraint firstItem="90D-RP-Tbc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="j8a-6B-WQO"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="R8t-67-OXM"/>
                     <connections>
-                        <outlet property="girlsPhotos" destination="zz7-lu-mSR" id="Rnf-Nx-c6i"/>
+                        <outlet property="advImageview" destination="YVX-Tm-KoI" id="ql5-xx-YF0"/>
+                        <segue destination="79h-2b-VWx" kind="custom" id="02B-7x-n7b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="899" y="232"/>
+        </scene>
+        <!--豆瓣美女-->
+        <scene sceneID="sH7-Iw-SEz">
+            <objects>
+                <viewController id="YTX-fE-Kez" customClass="GDouBanHomeViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L4N-jo-rBE"/>
+                        <viewControllerLayoutGuide type="bottom" id="nMj-Ie-6je"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4lY-IP-1lf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里显示豆瓣美女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luD-2j-Q53">
+                                <rect key="frame" x="143" y="183" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Dgt-Ia-aNI"/>
+                                    <constraint firstAttribute="height" constant="21" id="qX9-U0-ooy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="luD-2j-Q53" firstAttribute="top" secondItem="L4N-jo-rBE" secondAttribute="bottom" constant="163" id="Bzr-dM-J2Q"/>
+                            <constraint firstItem="luD-2j-Q53" firstAttribute="leading" secondItem="4lY-IP-1lf" secondAttribute="leading" constant="143" id="VZ8-Jy-jyM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="豆瓣美女" id="vYQ-f4-ayB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAq-ez-MbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366" y="569"/>
+        </scene>
+        <!--糗事百科-->
+        <scene sceneID="lpO-t8-OTT">
+            <objects>
+                <viewController id="bxx-YS-Pdc" customClass="GQiuShiHomeViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="unf-Ke-I1R"/>
+                        <viewControllerLayoutGuide type="bottom" id="n1H-RF-Yjm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dwo-zw-ot5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里显示糗事百科的内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-M1-Zqm">
+                                <rect key="frame" x="153" y="303" width="200" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="edF-VT-z8k"/>
+                                    <constraint firstAttribute="height" constant="21" id="f4V-jO-yzV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="m8a-M1-Zqm" firstAttribute="top" secondItem="unf-Ke-I1R" secondAttribute="bottom" constant="283" id="VHk-TE-cYG"/>
+                            <constraint firstItem="m8a-M1-Zqm" firstAttribute="leading" secondItem="dwo-zw-ot5" secondAttribute="leading" constant="153" id="nab-PN-61I"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="糗事百科" id="x3h-h9-IRU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d1O-xU-aw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366" y="-92"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="PaM-5z-APB">
+            <objects>
+                <tabBarController storyboardIdentifier="GHomeViewController" id="79h-2b-VWx" customClass="GHomeViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="m4r-aB-XaO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bxx-YS-Pdc" kind="relationship" relationship="viewControllers" id="FXQ-Q0-81d"/>
+                        <segue destination="YTX-fE-Kez" kind="relationship" relationship="viewControllers" id="n6H-u6-s0Y"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wdm-xB-pu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1602" y="258"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LgF-oA-j2s">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jhu-eJ-CKh" customClass="GNavigationController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tu2-f4-pwf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="e4a-Hx-WaX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Elz-0F-F6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="227"/>
         </scene>
     </scenes>
 </document>

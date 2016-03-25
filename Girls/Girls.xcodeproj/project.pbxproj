@@ -12,6 +12,11 @@
 		98007DFC1C8D6C6F00F49D17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98007DFA1C8D6C6F00F49D17 /* Main.storyboard */; };
 		98007E011C8D6C6F00F49D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98007DFF1C8D6C6F00F49D17 /* LaunchScreen.storyboard */; };
 		98007E0A1C8D732400F49D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98007E091C8D732400F49D17 /* Assets.xcassets */; };
+		983058111CA3E32600F1B576 /* GAdvDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983058101CA3E32600F1B576 /* GAdvDetailViewController.swift */; };
+		98B31AAA1CA3C80D003097D7 /* GHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B31AA91CA3C80D003097D7 /* GHomeViewController.swift */; };
+		98B31AAC1CA3D314003097D7 /* GQiuShiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B31AAB1CA3D314003097D7 /* GQiuShiHomeViewController.swift */; };
+		98B31AAE1CA3D338003097D7 /* GDouBanHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B31AAD1CA3D338003097D7 /* GDouBanHomeViewController.swift */; };
+		98ED32D11CA4C8A200D63AC9 /* GNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED32D01CA4C8A200D63AC9 /* GNavigationController.swift */; };
 		AB3BC31E0C909B3D58487822 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897C9C5D6CA188709FEACDDE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +30,11 @@
 		98007E001C8D6C6F00F49D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		98007E021C8D6C6F00F49D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98007E091C8D732400F49D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		983058101CA3E32600F1B576 /* GAdvDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAdvDetailViewController.swift; sourceTree = "<group>"; };
+		98B31AA91CA3C80D003097D7 /* GHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHomeViewController.swift; sourceTree = "<group>"; };
+		98B31AAB1CA3D314003097D7 /* GQiuShiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuShiHomeViewController.swift; sourceTree = "<group>"; };
+		98B31AAD1CA3D338003097D7 /* GDouBanHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDouBanHomeViewController.swift; sourceTree = "<group>"; };
+		98ED32D01CA4C8A200D63AC9 /* GNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNavigationController.swift; sourceTree = "<group>"; };
 		DC109672C004C5718FB6F72B /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +86,11 @@
 				98007DFA1C8D6C6F00F49D17 /* Main.storyboard */,
 				98007DFF1C8D6C6F00F49D17 /* LaunchScreen.storyboard */,
 				98007E021C8D6C6F00F49D17 /* Info.plist */,
+				98B31AA91CA3C80D003097D7 /* GHomeViewController.swift */,
+				98B31AAB1CA3D314003097D7 /* GQiuShiHomeViewController.swift */,
+				98B31AAD1CA3D338003097D7 /* GDouBanHomeViewController.swift */,
+				983058101CA3E32600F1B576 /* GAdvDetailViewController.swift */,
+				98ED32D01CA4C8A200D63AC9 /* GNavigationController.swift */,
 			);
 			path = Girls;
 			sourceTree = "<group>";
@@ -224,8 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98ED32D11CA4C8A200D63AC9 /* GNavigationController.swift in Sources */,
+				98B31AAC1CA3D314003097D7 /* GQiuShiHomeViewController.swift in Sources */,
 				98007DF91C8D6C6F00F49D17 /* ViewController.swift in Sources */,
 				98007DF71C8D6C6F00F49D17 /* AppDelegate.swift in Sources */,
+				98B31AAA1CA3C80D003097D7 /* GHomeViewController.swift in Sources */,
+				98B31AAE1CA3D338003097D7 /* GDouBanHomeViewController.swift in Sources */,
+				983058111CA3E32600F1B576 /* GAdvDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,16 +7,21 @@
 //
 
 import UIKit
-import Fabric
-import Crashlytics
+
 class ViewController: UIViewController {
     
-    
-    @IBOutlet weak var girlsPhotos: UICollectionView!
+
+    @IBOutlet weak var advImageview: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       girlsPhotos.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBarHidden = true;
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+            self.gotoAppHome()
+        }
+        self.advImageview.userInteractionEnabled = true
+        self.advImageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "gotoAdvDetail:"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,37 +29,29 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
 
     @IBAction func testCrash(sender: UIButton) {
-        //let image:UIImageView = self.view.viewWithTag(1000) as! UIImageView;
-        //image.image = UIImage(named: "icon_feeds_active");
-        
-        Crashlytics.sharedInstance().crash();
-    }
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
-    {
-        return 20;
+       self.gotoAppHome()
     }
     
-
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func gotoAppHome()
     {
-        
-        let cell:UICollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier("girlsPhotosCell", forIndexPath: indexPath)
-        let image:UIImageView = cell.viewWithTag(10) as! UIImageView;
-        image.image = UIImage(named: "icon_feeds_active");
-        
-        return  cell;
-        
-        
+        if(self.view.tag != 111)
+        {
+            let main = UIStoryboard(name: "Main", bundle: nil);
+            let modal=main.instantiateViewControllerWithIdentifier("GHomeViewController");
+            self.navigationController?.pushViewController(modal, animated: false);
+        }
     }
     
- 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    func gotoAdvDetail(sender:UITapGestureRecognizer)
     {
         
-        return 1;
+        gotoAppHome()
+        self.view.tag = 111;
     }
 
+   
 }
 
