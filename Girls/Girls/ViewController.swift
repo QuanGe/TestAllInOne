@@ -21,6 +21,14 @@ class ViewController: UIViewController {
             self.gotoAppHome()
         }
         self.advImageview.userInteractionEnabled = true
+        self.advImageview.contentMode = .ScaleAspectFill
+        let dstPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!
+        let imageSavePath = (dstPath as NSString).stringByAppendingPathComponent("appSplashPath")
+        if NSFileManager.defaultManager().fileExistsAtPath(imageSavePath)
+        {
+            self.advImageview.image = UIImage(contentsOfFile: imageSavePath)
+        }
+        
         self.advImageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "gotoAdvDetail:"))
     }
 
