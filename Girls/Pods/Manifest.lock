@@ -3,6 +3,8 @@ PODS:
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
+  - Kanna (1.0.5)
+  - Kingfisher (2.0.4)
   - Mantle (2.0.6):
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
@@ -16,25 +18,29 @@ PODS:
     - ReactiveCocoa/Core
   - ReactiveViewModel (0.3):
     - ReactiveCocoa (~> 2.4)
-  - UALogger (0.3)
+  - UMengAnalytics-NO-IDFA (3.6.7)
 
 DEPENDENCIES:
   - Alamofire (= 2.0.2)
   - Crashlytics
   - Fabric
-  - Mantle
+  - Kanna (~> 1.0.5)
+  - Kingfisher (~> 2.0.1)
+  - Mantle (~> 2.0.6)
   - MBProgressHUD (~> 0.9.0)
   - ReactiveViewModel
-  - UALogger
+  - UMengAnalytics-NO-IDFA
 
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  Kanna: 1df5cd995dc1f3a282e3dcf7521cfef2f069ac4d
+  Kingfisher: 8f1ec2c067ade2c549a1a594379b69c4b1ff81ab
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
-  UALogger: ccc041e5982dbd274ab5805f914076fef9bf29cf
+  UMengAnalytics-NO-IDFA: 6d02561a00579b2e37718f204eb81347df5d7b8b
 
 COCOAPODS: 0.39.0

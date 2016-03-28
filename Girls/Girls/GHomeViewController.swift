@@ -14,7 +14,7 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.delegate = self
-        
+        MobClick.event("appHome")
         Alamofire.request(.GET, "https://raw.githubusercontent.com/QuanGe/QuanGe.github.io/master/launchImage").validate().responseString { (request, response,result) in
             NSLog(result.value!)
             let strs = result.value?.componentsSeparatedByString(" ")

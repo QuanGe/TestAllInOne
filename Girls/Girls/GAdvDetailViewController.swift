@@ -14,6 +14,7 @@ class GAdvDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        MobClick.event("splashAdvDetail")
         self.showLoadingHUD()
         let imageClick = NSUserDefaults.standardUserDefaults().objectForKey("appSplashClick") as? String
         

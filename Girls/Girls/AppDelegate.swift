@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
-        
-        
+        MobClick.startWithAppkey("56f8a571e0f55ad17a0017c6", reportPolicy:BATCH, channelId: "appStore")
         return true
     }
 

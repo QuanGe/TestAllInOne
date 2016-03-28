@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 class ViewController: UIViewController {
     
 
@@ -32,6 +31,8 @@ class ViewController: UIViewController {
         }
         
         self.advImageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "gotoAdvDetail:"))
+        MobClick.event("splashVC")
+        
     }
 
     override func didReceiveMemoryWarning() {

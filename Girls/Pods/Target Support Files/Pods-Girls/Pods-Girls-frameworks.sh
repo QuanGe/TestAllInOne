@@ -85,17 +85,19 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Girls/Alamofire.framework"
+  install_framework "Pods-Girls/Kanna.framework"
+  install_framework "Pods-Girls/Kingfisher.framework"
   install_framework "Pods-Girls/MBProgressHUD.framework"
   install_framework "Pods-Girls/Mantle.framework"
   install_framework "Pods-Girls/ReactiveCocoa.framework"
   install_framework "Pods-Girls/ReactiveViewModel.framework"
-  install_framework "Pods-Girls/UALogger.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Girls/Alamofire.framework"
+  install_framework "Pods-Girls/Kanna.framework"
+  install_framework "Pods-Girls/Kingfisher.framework"
   install_framework "Pods-Girls/MBProgressHUD.framework"
   install_framework "Pods-Girls/Mantle.framework"
   install_framework "Pods-Girls/ReactiveCocoa.framework"
   install_framework "Pods-Girls/ReactiveViewModel.framework"
-  install_framework "Pods-Girls/UALogger.framework"
 fi
