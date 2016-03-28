@@ -1,9 +1,19 @@
-platform :ios, ‘8.0’
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
 use_frameworks!
-pod 'Kanna'
-pod 'Alamofire'
-pod 'SnapKit'
-pod 'ReactiveCocoa'
-pod 'SVPullToRefresh', git: 'https://github.com/QuanGe/SVPullToRefresh'
+
+def pods
+
+pod 'Alamofire', '2.0.2'
+pod 'MBProgressHUD', '~> 0.9.0'
+pod 'UALogger'
+pod 'Mantle'
+pod 'ReactiveViewModel'
 pod 'Fabric'
 pod 'Crashlytics'
+
+end
+
+target 'Girls' do
+    pods
+end

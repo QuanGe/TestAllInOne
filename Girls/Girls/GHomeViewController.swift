@@ -8,16 +8,19 @@
 
 import UIKit
 import Alamofire
+
 class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.delegate = self
         
-        Alamofire.request(.GET, "https://raw.githubusercontent.com/QuanGe/QuanGe.github.io/master/launchImage").validate().responseString { response in
-            NSLog(response.result.value!)
-            let strs = response.result.value?.componentsSeparatedByString(" ")
+        Alamofire.request(.GET, "https://raw.githubusercontent.com/QuanGe/QuanGe.github.io/master/launchImage").validate().responseString { (request, response,result) in
+            NSLog(result.value!)
+            let strs = result.value?.componentsSeparatedByString(" ")
             let imageUrl = strs?.first;
+            let imageClick = strs?.last
+            
             let imageSaveUrl = NSUserDefaults.standardUserDefaults().objectForKey("appSplashUrl") as? String
             if (imageSaveUrl == imageUrl && imageSaveUrl != nil)
             {
@@ -26,14 +29,15 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
             
             
             
-            Alamofire.request(.GET,imageUrl!).validate().responseString{
-                respon in
-                let imagedata = respon.data
+            Alamofire.request(.GET,imageUrl!).validate().responseData{
+                (request, response,result) in
+                let imagedata = result.value
                 let dstPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!
                 let imageSavePath = (dstPath as NSString).stringByAppendingPathComponent("appSplashPath")
                 
                 if NSFileManager.defaultManager().createFileAtPath(imageSavePath, contents: imagedata, attributes: nil) {
                     NSUserDefaults.standardUserDefaults().setObject(imageUrl, forKey: "appSplashUrl")
+                    NSUserDefaults.standardUserDefaults().setObject(imageClick, forKey: "appSplashClick")
                 }
                 
             }
