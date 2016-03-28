@@ -9,9 +9,10 @@
 import UIKit
 import MBProgressHUD
 import ReactiveCocoa
-
+import Kanna
 class GAdvDetailViewController: UIViewController {
 
+    var photos = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         MobClick.event("splashAdvDetail")
@@ -27,7 +28,29 @@ class GAdvDetailViewController: UIViewController {
 
         let htmlData = (result as! RACTuple).second as! NSData
         let htmlStr = String(data: htmlData, encoding: NSUTF8StringEncoding)
-       
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
+            //用photos保存临时数据
+          
+            //用kanna解析html数据
+            if let doc = Kanna.HTML(html: htmlStr!, encoding: NSUTF8StringEncoding){
+                CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingASCII)
+               
+                //解析imageurl
+                for node in doc.css("img"){
+                    let src = node["src"]! as String
+                    
+                    if (src.rangeOfString("icon") == nil)
+                    {
+                        self.photos.append(node["src"]!)
+                    }
+                    
+                }
+                
+                NSLog("%@",self.photos )
+                
+            }
+        }
+
         dispatch_async(dispatch_get_main_queue()) {
             self.hideLoadingHUD()
         }
