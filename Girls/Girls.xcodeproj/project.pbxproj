@@ -23,6 +23,8 @@
 		98D931E91CAA4F5F00CA801C /* GAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931E81CAA4F5F00CA801C /* GAPIManager.swift */; };
 		98D931ED1CAA6E4000CA801C /* GQiuBaiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931EC1CAA6E4000CA801C /* GQiuBaiModel.swift */; };
 		98D931EF1CAA73E100CA801C /* GQiuBaiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */; };
+		98D931F11CAABE9F00CA801C /* GQiuBaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931F01CAABE9F00CA801C /* GQiuBaiTableViewCell.swift */; };
+		98D931F31CAABECC00CA801C /* GQiuBaiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98D931F21CAABECC00CA801C /* GQiuBaiTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		98D931E81CAA4F5F00CA801C /* GAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPIManager.swift; sourceTree = "<group>"; };
 		98D931EC1CAA6E4000CA801C /* GQiuBaiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiModel.swift; sourceTree = "<group>"; };
 		98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiViewModel.swift; sourceTree = "<group>"; };
+		98D931F01CAABE9F00CA801C /* GQiuBaiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiTableViewCell.swift; sourceTree = "<group>"; };
+		98D931F21CAABECC00CA801C /* GQiuBaiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GQiuBaiTableViewCell.xib; sourceTree = "<group>"; };
 		E9B674E76CC970BD9DCB9D08 /* Pods-Girls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girls.release.xcconfig"; path = "Pods/Target Support Files/Pods-Girls/Pods-Girls.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +162,8 @@
 		98D931CE1CAA470A00CA801C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				98D931F01CAABE9F00CA801C /* GQiuBaiTableViewCell.swift */,
+				98D931F21CAABECC00CA801C /* GQiuBaiTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -246,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D931F31CAABECC00CA801C /* GQiuBaiTableViewCell.xib in Resources */,
 				98D931DA1CAA470A00CA801C /* LaunchScreen.storyboard in Resources */,
 				98D931D91CAA470A00CA801C /* Assets.xcassets in Resources */,
 				98D931D81CAA470A00CA801C /* Info.plist in Resources */,
@@ -330,6 +337,7 @@
 				98D931DC1CAA470A00CA801C /* GAdvDetailViewController.swift in Sources */,
 				98D931ED1CAA6E4000CA801C /* GQiuBaiModel.swift in Sources */,
 				98D931E11CAA470A00CA801C /* ViewController.swift in Sources */,
+				98D931F11CAABE9F00CA801C /* GQiuBaiTableViewCell.swift in Sources */,
 				98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */,
 				98D931DE1CAA470A00CA801C /* GHomeViewController.swift in Sources */,
 			);

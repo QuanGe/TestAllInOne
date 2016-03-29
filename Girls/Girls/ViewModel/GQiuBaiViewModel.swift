@@ -32,5 +32,26 @@ class GQiuBaiViewModel: RVMViewModel {
         
     }
     
+    func numOfItems()->Int{
+        return (qiubaiModels?.count)!
+    }
+    
+    func contentOfRow(row:Int)->String{
+        let model = qiubaiModels![row] as! GQiuBaiModel
+        return model.content!
+    }
+    
+    func typeOfRow(row:Int)->String
+    {
+        let model = qiubaiModels![row] as! GQiuBaiModel
+        return model.format!
+    }
+    
+    func imageUrlOfRow(row:Int)->String
+    {
+        let model = qiubaiModels![row] as! GQiuBaiModel
+        return model.image!
+    }
+    
     
 }

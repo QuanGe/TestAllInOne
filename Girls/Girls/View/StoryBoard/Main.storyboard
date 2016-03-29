@@ -202,24 +202,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里显示糗事百科的内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8a-M1-Zqm">
-                                <rect key="frame" x="153" y="303" width="200" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="edF-VT-z8k"/>
-                                    <constraint firstAttribute="height" constant="21" id="f4V-jO-yzV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-tF-BDY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bxx-YS-Pdc" id="ZZO-Za-BKs"/>
+                                    <outlet property="delegate" destination="bxx-YS-Pdc" id="iZy-DG-tI6"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="m8a-M1-Zqm" firstAttribute="top" secondItem="unf-Ke-I1R" secondAttribute="bottom" constant="283" id="VHk-TE-cYG"/>
-                            <constraint firstItem="m8a-M1-Zqm" firstAttribute="leading" secondItem="dwo-zw-ot5" secondAttribute="leading" constant="153" id="nab-PN-61I"/>
+                            <constraint firstItem="eBf-tF-BDY" firstAttribute="leading" secondItem="dwo-zw-ot5" secondAttribute="leading" id="AbC-Qs-dnB"/>
+                            <constraint firstItem="eBf-tF-BDY" firstAttribute="top" secondItem="dwo-zw-ot5" secondAttribute="top" id="bjx-Eo-V6b"/>
+                            <constraint firstAttribute="trailing" secondItem="eBf-tF-BDY" secondAttribute="trailing" id="iee-gH-z9x"/>
+                            <constraint firstItem="n1H-RF-Yjm" firstAttribute="top" secondItem="eBf-tF-BDY" secondAttribute="bottom" id="tEK-DM-FLn"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="糗事百科" id="x3h-h9-IRU"/>
+                    <connections>
+                        <outlet property="tableView" destination="eBf-tF-BDY" id="RTq-D7-rMs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1O-xU-aw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
