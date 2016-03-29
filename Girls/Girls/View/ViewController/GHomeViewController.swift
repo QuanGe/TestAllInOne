@@ -16,6 +16,10 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
         self.navigationController?.delegate = self
         MobClick.event("appHome")
         Alamofire.request(.GET, "https://raw.githubusercontent.com/QuanGe/QuanGe.github.io/master/launchImage").validate().responseString { (request, response,result) in
+            if result.isFailure
+            {
+                return
+            }
             NSLog(result.value!)
             let strs = result.value?.componentsSeparatedByString(" ")
             let imageUrl = strs?.first;
@@ -51,6 +55,22 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
         
         self.navigationItem.hidesBackButton = true
         self.navigationItem.rightBarButtonItem?.customView?.hidden = true;
+        
+        let childs =  self.childViewControllers as NSArray
+        for vc in childs
+        {
+            if vc is GQiuShiHomeViewController
+            {
+                (vc as? UIViewController)!.tabBarItem.image = UIImage(named: "icon_main")?.imageWithRenderingMode(.AlwaysOriginal)
+                (vc as? UIViewController)!.tabBarItem.selectedImage = UIImage(named: "icon_main_active")?.imageWithRenderingMode(.AlwaysOriginal)
+            }
+            else
+            {
+                (vc as? UIViewController)!.tabBarItem.image = UIImage(named: "icon_me")?.imageWithRenderingMode(.AlwaysOriginal)
+                (vc as? UIViewController)!.tabBarItem.selectedImage = UIImage(named: "icon_me_active")?.imageWithRenderingMode(.AlwaysOriginal)
+
+            }
+        }
         
     }
     

@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         Fabric.with([Crashlytics.self])
         MobClick.startWithAppkey("56f8a571e0f55ad17a0017c6", reportPolicy:BATCH, channelId: "appStore")
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.grayColor(),NSFontAttributeName:UIFont.systemFontOfSize(10)], forState: .Normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orangeColor(),NSFontAttributeName:UIFont.systemFontOfSize(10)], forState: .Selected)
+        
+        
         return true
     }
 

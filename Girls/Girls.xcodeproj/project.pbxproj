@@ -8,34 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		00EDB3B7AD20666ABCD98DB7 /* Pods_Girls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 499C8355F529AEEE389EDC2A /* Pods_Girls.framework */; };
-		98007DF71C8D6C6F00F49D17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98007DF61C8D6C6F00F49D17 /* AppDelegate.swift */; };
-		98007DF91C8D6C6F00F49D17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98007DF81C8D6C6F00F49D17 /* ViewController.swift */; };
-		98007DFC1C8D6C6F00F49D17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98007DFA1C8D6C6F00F49D17 /* Main.storyboard */; };
-		98007E011C8D6C6F00F49D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98007DFF1C8D6C6F00F49D17 /* LaunchScreen.storyboard */; };
-		98007E0A1C8D732400F49D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98007E091C8D732400F49D17 /* Assets.xcassets */; };
-		983058111CA3E32600F1B576 /* GAdvDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983058101CA3E32600F1B576 /* GAdvDetailViewController.swift */; };
-		98B31AAA1CA3C80D003097D7 /* GHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B31AA91CA3C80D003097D7 /* GHomeViewController.swift */; };
-		98B31AAC1CA3D314003097D7 /* GQiuShiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B31AAB1CA3D314003097D7 /* GQiuShiHomeViewController.swift */; };
-		98B31AAE1CA3D338003097D7 /* GDouBanHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B31AAD1CA3D338003097D7 /* GDouBanHomeViewController.swift */; };
-		98ED32D11CA4C8A200D63AC9 /* GNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98ED32D01CA4C8A200D63AC9 /* GNavigationController.swift */; };
+		98D931D71CAA470A00CA801C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931C41CAA470A00CA801C /* AppDelegate.swift */; };
+		98D931D81CAA470A00CA801C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98D931C61CAA470A00CA801C /* Info.plist */; };
+		98D931D91CAA470A00CA801C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D931CA1CAA470A00CA801C /* Assets.xcassets */; };
+		98D931DA1CAA470A00CA801C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D931CC1CAA470A00CA801C /* LaunchScreen.storyboard */; };
+		98D931DB1CAA470A00CA801C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98D931CD1CAA470A00CA801C /* Main.storyboard */; };
+		98D931DC1CAA470A00CA801C /* GAdvDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D01CAA470A00CA801C /* GAdvDetailViewController.swift */; };
+		98D931DD1CAA470A00CA801C /* GDouBanHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D11CAA470A00CA801C /* GDouBanHomeViewController.swift */; };
+		98D931DE1CAA470A00CA801C /* GHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D21CAA470A00CA801C /* GHomeViewController.swift */; };
+		98D931DF1CAA470A00CA801C /* GNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D31CAA470A00CA801C /* GNavigationController.swift */; };
+		98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D41CAA470A00CA801C /* GQiuShiHomeViewController.swift */; };
+		98D931E11CAA470A00CA801C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D51CAA470A00CA801C /* ViewController.swift */; };
+		98D931E41CAA48E000CA801C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98D931E61CAA48E000CA801C /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3EF84B83B24081FE83C7748A /* Pods-Girls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Girls/Pods-Girls.debug.xcconfig"; sourceTree = "<group>"; };
 		499C8355F529AEEE389EDC2A /* Pods_Girls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Girls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98007DF31C8D6C6F00F49D17 /* Girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Girls.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		98007DF61C8D6C6F00F49D17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98007DF81C8D6C6F00F49D17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		98007DFB1C8D6C6F00F49D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		98007E001C8D6C6F00F49D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		98007E021C8D6C6F00F49D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		98007E091C8D732400F49D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		98201A021CA92261004E95D2 /* Girls-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Girls-Bridging-Header.h"; sourceTree = "<group>"; };
-		983058101CA3E32600F1B576 /* GAdvDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAdvDetailViewController.swift; sourceTree = "<group>"; };
-		98B31AA91CA3C80D003097D7 /* GHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHomeViewController.swift; sourceTree = "<group>"; };
-		98B31AAB1CA3D314003097D7 /* GQiuShiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuShiHomeViewController.swift; sourceTree = "<group>"; };
-		98B31AAD1CA3D338003097D7 /* GDouBanHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDouBanHomeViewController.swift; sourceTree = "<group>"; };
-		98ED32D01CA4C8A200D63AC9 /* GNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNavigationController.swift; sourceTree = "<group>"; };
+		98D931C41CAA470A00CA801C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		98D931C51CAA470A00CA801C /* Girls-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Girls-Bridging-Header.h"; sourceTree = "<group>"; };
+		98D931C61CAA470A00CA801C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		98D931CA1CAA470A00CA801C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98D931CC1CAA470A00CA801C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		98D931CD1CAA470A00CA801C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		98D931D01CAA470A00CA801C /* GAdvDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAdvDetailViewController.swift; sourceTree = "<group>"; };
+		98D931D11CAA470A00CA801C /* GDouBanHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDouBanHomeViewController.swift; sourceTree = "<group>"; };
+		98D931D21CAA470A00CA801C /* GHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GHomeViewController.swift; sourceTree = "<group>"; };
+		98D931D31CAA470A00CA801C /* GNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GNavigationController.swift; sourceTree = "<group>"; };
+		98D931D41CAA470A00CA801C /* GQiuShiHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuShiHomeViewController.swift; sourceTree = "<group>"; };
+		98D931D51CAA470A00CA801C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		98D931E51CAA48E000CA801C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		98D931E71CAA494600CA801C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		E9B674E76CC970BD9DCB9D08 /* Pods-Girls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girls.release.xcconfig"; path = "Pods/Target Support Files/Pods-Girls/Pods-Girls.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,20 +93,85 @@
 		98007DF51C8D6C6F00F49D17 /* Girls */ = {
 			isa = PBXGroup;
 			children = (
-				98007E091C8D732400F49D17 /* Assets.xcassets */,
-				98007DF61C8D6C6F00F49D17 /* AppDelegate.swift */,
-				98007DF81C8D6C6F00F49D17 /* ViewController.swift */,
-				98007DFA1C8D6C6F00F49D17 /* Main.storyboard */,
-				98007DFF1C8D6C6F00F49D17 /* LaunchScreen.storyboard */,
-				98007E021C8D6C6F00F49D17 /* Info.plist */,
-				98B31AA91CA3C80D003097D7 /* GHomeViewController.swift */,
-				98B31AAB1CA3D314003097D7 /* GQiuShiHomeViewController.swift */,
-				98B31AAD1CA3D338003097D7 /* GDouBanHomeViewController.swift */,
-				983058101CA3E32600F1B576 /* GAdvDetailViewController.swift */,
-				98ED32D01CA4C8A200D63AC9 /* GNavigationController.swift */,
-				98201A021CA92261004E95D2 /* Girls-Bridging-Header.h */,
+				98D931C71CAA470A00CA801C /* Model */,
+				98D931D61CAA470A00CA801C /* ViewModel */,
+				98D931C81CAA470A00CA801C /* View */,
+				98D931C31CAA470A00CA801C /* Config */,
 			);
 			path = Girls;
+			sourceTree = "<group>";
+		};
+		98D931C31CAA470A00CA801C /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				98D931C41CAA470A00CA801C /* AppDelegate.swift */,
+				98D931C51CAA470A00CA801C /* Girls-Bridging-Header.h */,
+				98D931C61CAA470A00CA801C /* Info.plist */,
+				98D931E61CAA48E000CA801C /* InfoPlist.strings */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		98D931C71CAA470A00CA801C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		98D931C81CAA470A00CA801C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98D931C91CAA470A00CA801C /* Resource */,
+				98D931CB1CAA470A00CA801C /* StoryBoard */,
+				98D931CE1CAA470A00CA801C /* View */,
+				98D931CF1CAA470A00CA801C /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D931C91CAA470A00CA801C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				98D931CA1CAA470A00CA801C /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		98D931CB1CAA470A00CA801C /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				98D931CC1CAA470A00CA801C /* LaunchScreen.storyboard */,
+				98D931CD1CAA470A00CA801C /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		98D931CE1CAA470A00CA801C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		98D931CF1CAA470A00CA801C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				98D931D01CAA470A00CA801C /* GAdvDetailViewController.swift */,
+				98D931D11CAA470A00CA801C /* GDouBanHomeViewController.swift */,
+				98D931D21CAA470A00CA801C /* GHomeViewController.swift */,
+				98D931D31CAA470A00CA801C /* GNavigationController.swift */,
+				98D931D41CAA470A00CA801C /* GQiuShiHomeViewController.swift */,
+				98D931D51CAA470A00CA801C /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		98D931D61CAA470A00CA801C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +220,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 98007DEA1C8D6C6F00F49D17;
 			productRefGroup = 98007DF41C8D6C6F00F49D17 /* Products */;
@@ -167,9 +237,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98007E011C8D6C6F00F49D17 /* LaunchScreen.storyboard in Resources */,
-				98007E0A1C8D732400F49D17 /* Assets.xcassets in Resources */,
-				98007DFC1C8D6C6F00F49D17 /* Main.storyboard in Resources */,
+				98D931DA1CAA470A00CA801C /* LaunchScreen.storyboard in Resources */,
+				98D931D91CAA470A00CA801C /* Assets.xcassets in Resources */,
+				98D931D81CAA470A00CA801C /* Info.plist in Resources */,
+				98D931DB1CAA470A00CA801C /* Main.storyboard in Resources */,
+				98D931E41CAA48E000CA801C /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,33 +313,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98ED32D11CA4C8A200D63AC9 /* GNavigationController.swift in Sources */,
-				98B31AAC1CA3D314003097D7 /* GQiuShiHomeViewController.swift in Sources */,
-				98007DF91C8D6C6F00F49D17 /* ViewController.swift in Sources */,
-				98007DF71C8D6C6F00F49D17 /* AppDelegate.swift in Sources */,
-				98B31AAA1CA3C80D003097D7 /* GHomeViewController.swift in Sources */,
-				98B31AAE1CA3D338003097D7 /* GDouBanHomeViewController.swift in Sources */,
-				983058111CA3E32600F1B576 /* GAdvDetailViewController.swift in Sources */,
+				98D931DF1CAA470A00CA801C /* GNavigationController.swift in Sources */,
+				98D931D71CAA470A00CA801C /* AppDelegate.swift in Sources */,
+				98D931DD1CAA470A00CA801C /* GDouBanHomeViewController.swift in Sources */,
+				98D931DC1CAA470A00CA801C /* GAdvDetailViewController.swift in Sources */,
+				98D931E11CAA470A00CA801C /* ViewController.swift in Sources */,
+				98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */,
+				98D931DE1CAA470A00CA801C /* GHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		98007DFA1C8D6C6F00F49D17 /* Main.storyboard */ = {
+		98D931E61CAA48E000CA801C /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				98007DFB1C8D6C6F00F49D17 /* Base */,
+				98D931E51CAA48E000CA801C /* en */,
+				98D931E71CAA494600CA801C /* zh-Hans */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		98007DFF1C8D6C6F00F49D17 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				98007E001C8D6C6F00F49D17 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -362,7 +427,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Girls/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Girls/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -371,7 +436,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quange.Girls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Girls/Girls-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Girls/Config/Girls-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -384,7 +449,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Girls/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Girls/Config/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -393,7 +458,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.quange.Girls;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Girls/Girls-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Girls/Config/Girls-Bridging-Header.h";
 			};
 			name = Release;
 		};
