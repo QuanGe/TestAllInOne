@@ -9,9 +9,17 @@
 import UIKit
 
 class GQiuShiHomeViewController: UIViewController {
+    var viewModel :GQiuBaiViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        viewModel = GQiuBaiViewModel()
+        viewModel?.fetchQiuBaiData(false).subscribeNext({ (result) -> Void in
+            NSLog(" 糗百能获取结果")
+            }, error: { (error) -> Void in
+             NSLog(" 糗百获取失败")
+        })
     }
     
     override func viewWillAppear(animated: Bool) {

@@ -20,6 +20,9 @@
 		98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D41CAA470A00CA801C /* GQiuShiHomeViewController.swift */; };
 		98D931E11CAA470A00CA801C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931D51CAA470A00CA801C /* ViewController.swift */; };
 		98D931E41CAA48E000CA801C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 98D931E61CAA48E000CA801C /* InfoPlist.strings */; };
+		98D931E91CAA4F5F00CA801C /* GAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931E81CAA4F5F00CA801C /* GAPIManager.swift */; };
+		98D931ED1CAA6E4000CA801C /* GQiuBaiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931EC1CAA6E4000CA801C /* GQiuBaiModel.swift */; };
+		98D931EF1CAA73E100CA801C /* GQiuBaiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		98D931D51CAA470A00CA801C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		98D931E51CAA48E000CA801C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		98D931E71CAA494600CA801C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		98D931E81CAA4F5F00CA801C /* GAPIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GAPIManager.swift; sourceTree = "<group>"; };
+		98D931EC1CAA6E4000CA801C /* GQiuBaiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiModel.swift; sourceTree = "<group>"; };
+		98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiViewModel.swift; sourceTree = "<group>"; };
 		E9B674E76CC970BD9DCB9D08 /* Pods-Girls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girls.release.xcconfig"; path = "Pods/Target Support Files/Pods-Girls/Pods-Girls.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +114,7 @@
 				98D931C51CAA470A00CA801C /* Girls-Bridging-Header.h */,
 				98D931C61CAA470A00CA801C /* Info.plist */,
 				98D931E61CAA48E000CA801C /* InfoPlist.strings */,
+				98D931E81CAA4F5F00CA801C /* GAPIManager.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 		98D931C71CAA470A00CA801C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				98D931EC1CAA6E4000CA801C /* GQiuBaiModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,6 +178,7 @@
 		98D931D61CAA470A00CA801C /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -313,10 +322,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98D931E91CAA4F5F00CA801C /* GAPIManager.swift in Sources */,
 				98D931DF1CAA470A00CA801C /* GNavigationController.swift in Sources */,
 				98D931D71CAA470A00CA801C /* AppDelegate.swift in Sources */,
+				98D931EF1CAA73E100CA801C /* GQiuBaiViewModel.swift in Sources */,
 				98D931DD1CAA470A00CA801C /* GDouBanHomeViewController.swift in Sources */,
 				98D931DC1CAA470A00CA801C /* GAdvDetailViewController.swift in Sources */,
+				98D931ED1CAA6E4000CA801C /* GQiuBaiModel.swift in Sources */,
 				98D931E11CAA470A00CA801C /* ViewController.swift in Sources */,
 				98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */,
 				98D931DE1CAA470A00CA801C /* GHomeViewController.swift in Sources */,
