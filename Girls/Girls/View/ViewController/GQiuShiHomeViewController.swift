@@ -8,6 +8,7 @@
 
 import UIKit
 import SVPullToRefresh
+
 class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var viewModel :GQiuBaiViewModel?
     
@@ -17,6 +18,8 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         // Do any additional setup after loading the view, typically from a nib.
         tableView.registerNib(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
         tableView.separatorStyle = .None
+        tableView.allowsSelection = false
+        tableView.pullType = SVPullVisibleLogo
         viewModel = GQiuBaiViewModel()
         tableView.addPullToRefreshWithActionHandler { () -> Void in
             
@@ -61,9 +64,9 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
     {
         let content = viewModel?.contentOfRow(indexPath.row)
         
-        let height: CGFloat = content!.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width-16, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(12)], context: nil).size.height
+        let height: CGFloat = content!.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width-16, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14)], context: nil).size.height
       
-        return height+40+8+20;
+        return height+40+8+20 + (viewModel?.imageHeightOfRow(indexPath.row))!+5;
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -73,7 +76,24 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("GQiuBaiTableViewCell") as! GQiuBaiTableViewCell
         cell.contentLabel.text = viewModel?.contentOfRow(indexPath.row)
-        
+        cell.contentImageHeight.constant = (viewModel?.imageHeightOfRow(indexPath.row))!
+        if viewModel?.typeOfRow(indexPath.row) != "word"
+        {
+            //cell.contentImageBtn.kf_setBackgroundImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!, forState: .Normal)
+           cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
+        }
+        cell.userIconImageView.layer.cornerRadius = 20
+        cell.userIconImageView.clipsToBounds = true
+        if viewModel?.userIcon(indexPath.row) != ""
+        {
+            cell.userIconImageView.kf_setImageWithURL(NSURL(string:(viewModel?.userIcon(indexPath.row))!)!,placeholderImage: UIImage(named: "icon_main"))
+            cell.nickNameLabel.text = viewModel?.userNickName(indexPath.row)
+        }
+        else
+        {
+            cell.userIconImageView.image = UIImage(named: "icon_main")
+            cell.nickNameLabel.text = "匿名"
+        }
         return cell
     }
     

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVPullToRefresh
 class GDouBanHomeViewController: UIViewController {
 
     @IBOutlet weak var collection: UICollectionView!
@@ -18,6 +18,7 @@ class GDouBanHomeViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         collection.backgroundColor = UIColor.whiteColor()
         viewModel = GGirlsViewModel()
+        collection.pullType = SVPullVisibleLogo
         viewModel?.fetchGirls(false).subscribeNext({ (result) -> Void in
             NSLog(" 豆瓣美女能获取结果")
             self.collection.reloadData()

@@ -10,6 +10,8 @@ import UIKit
 
 class GQiuBaiTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var contentImageBtn: UIImageView!
+    @IBOutlet weak var contentImageHeight: NSLayoutConstraint!
     @IBOutlet weak var nickNameLabel: UILabel!
     @IBOutlet weak var userIconImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!

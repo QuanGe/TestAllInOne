@@ -168,7 +168,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-At-Lbg">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="486"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jFp-8R-2Xg">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -205,7 +205,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pjr-At-Lbg" firstAttribute="top" secondItem="4lY-IP-1lf" secondAttribute="top" id="Dx9-Mq-DbR"/>
+                            <constraint firstItem="pjr-At-Lbg" firstAttribute="top" secondItem="4lY-IP-1lf" secondAttribute="top" constant="65" id="Dx9-Mq-DbR"/>
                             <constraint firstItem="nMj-Ie-6je" firstAttribute="top" secondItem="pjr-At-Lbg" secondAttribute="bottom" id="GpX-yQ-Dri"/>
                             <constraint firstItem="pjr-At-Lbg" firstAttribute="leading" secondItem="4lY-IP-1lf" secondAttribute="leading" id="Omg-ly-9YJ"/>
                             <constraint firstAttribute="trailing" secondItem="pjr-At-Lbg" secondAttribute="trailing" id="QDp-7J-zhx"/>
@@ -233,7 +233,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-tF-BDY">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="65" width="600" height="486"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bxx-YS-Pdc" id="ZZO-Za-BKs"/>
@@ -244,7 +244,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eBf-tF-BDY" firstAttribute="leading" secondItem="dwo-zw-ot5" secondAttribute="leading" id="AbC-Qs-dnB"/>
-                            <constraint firstItem="eBf-tF-BDY" firstAttribute="top" secondItem="dwo-zw-ot5" secondAttribute="top" id="bjx-Eo-V6b"/>
+                            <constraint firstItem="eBf-tF-BDY" firstAttribute="top" secondItem="dwo-zw-ot5" secondAttribute="top" constant="65" id="bjx-Eo-V6b"/>
                             <constraint firstAttribute="trailing" secondItem="eBf-tF-BDY" secondAttribute="trailing" id="iee-gH-z9x"/>
                             <constraint firstItem="n1H-RF-Yjm" firstAttribute="top" secondItem="eBf-tF-BDY" secondAttribute="bottom" id="tEK-DM-FLn"/>
                         </constraints>
