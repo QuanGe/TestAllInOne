@@ -93,7 +93,7 @@ static char UIScrollViewPullToRefreshView;
         view.position = position;
         self.pullToRefreshView = view;
         self.showsPullToRefresh = YES;
-        self.pullType = SVPullDefault;
+        self.pullType = SVPullTypeDefault;
     }
     
 }
@@ -220,7 +220,7 @@ static char UIScrollViewPullToRefreshView;
 -(void)configPullVisibleLogoWithName:(NSString*)imageName
 {
     
-    if(self.pullType == SVPullDefault)
+    if(self.pullType == SVPullTypeDefault)
         return;
     UIImageView * logo =   (UIImageView *)[self.pullToRefreshView viewWithTag:LogoImageTag];
     UIImage * i = [UIImage imageNamed:imageName];
@@ -329,7 +329,7 @@ static char UIScrollViewPullToRefreshView;
     }
     else {
         
-        if(((UIScrollView*)self.superview).pullType == SVPullDefault)
+        if(((UIScrollView*)self.superview).pullType == SVPullTypeDefault)
         {
             self.arrow.hidden = NO;
             self.activityIndicatorView.hidesWhenStopped = YES;
@@ -346,7 +346,7 @@ static char UIScrollViewPullToRefreshView;
                 [self.activityIndicatorView stopAnimating];
                 switch (self.position) {
                     case SVPullToRefreshPositionTop:
-                        if(((UIScrollView*)self.superview).pullType == SVPullVisibleLogo)
+                        if(((UIScrollView*)self.superview).pullType == SVPullTypeVisibleLogo)
                             [self viewWithTag:LogoImageTag].hidden = YES;
                         [self rotateArrow:0 hide:NO];
                         break;
@@ -359,7 +359,7 @@ static char UIScrollViewPullToRefreshView;
             case SVPullToRefreshStateTriggered:
                 switch (self.position) {
                     case SVPullToRefreshPositionTop:
-                        if(self.scrollView.contentSize.height>0 && ((UIScrollView*)self.superview).pullType == SVPullVisibleLogo)
+                        if(self.scrollView.contentSize.height>0 && ((UIScrollView*)self.superview).pullType == SVPullTypeVisibleLogo)
                             [self viewWithTag:LogoImageTag].hidden = NO;
                         [self rotateArrow:(float)M_PI hide:NO];
                         break;
@@ -373,7 +373,7 @@ static char UIScrollViewPullToRefreshView;
                 [self.activityIndicatorView startAnimating];
                 switch (self.position) {
                     case SVPullToRefreshPositionTop:
-                        if(((UIScrollView*)self.superview).pullType == SVPullVisibleLogo)
+                        if(((UIScrollView*)self.superview).pullType == SVPullTypeVisibleLogo)
                             [self viewWithTag:LogoImageTag].hidden = YES;
                         [self rotateArrow:0 hide:YES];
                         break;
@@ -511,7 +511,7 @@ static char UIScrollViewPullToRefreshView;
 - (void)scrollViewDidScroll:(CGPoint)contentOffset {
     
     //下拉控制是否移动头部
-    if(contentOffset.y<-62 && ((UIScrollView*)self.superview).pullType == SVPullVisibleLogo)
+    if(contentOffset.y<-62 && ((UIScrollView*)self.superview).pullType == SVPullTypeVisibleLogo)
     {
         CGRect r= self.frame;
         r.origin.y=contentOffset.y;

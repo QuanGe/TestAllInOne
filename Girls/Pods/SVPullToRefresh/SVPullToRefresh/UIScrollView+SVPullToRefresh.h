@@ -10,10 +10,10 @@
 #import <UIKit/UIKit.h>
 #import <AvailabilityMacros.h>
 
-typedef enum{
-    SVPullDefault,
-    SVPullVisibleLogo//lock SVPullToRefreshView
-} SVPullType;
+typedef NS_ENUM(NSUInteger, SVPullType){
+    SVPullTypeDefault,
+    SVPullTypeVisibleLogo//lock SVPullToRefreshView
+} ;
 
 @class SVPullToRefreshView;
 

@@ -34,11 +34,12 @@
     [self.tableView addInfiniteScrollingWithActionHandler:^{
         [weakSelf insertRowAtBottom];
     }];
-    self.tableView.pullType = SVPullVisibleLogo;
+    self.tableView.pullType = SVPullTypeVisibleLogo;
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [tableView triggerPullToRefresh];
 }
 

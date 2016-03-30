@@ -18,7 +18,7 @@ class GDouBanHomeViewController: UIViewController {
         self.view.backgroundColor = UIColor.whiteColor()
         collection.backgroundColor = UIColor.whiteColor()
         viewModel = GGirlsViewModel()
-        collection.pullType = SVPullVisibleLogo
+        
         viewModel?.fetchGirls(false).subscribeNext({ (result) -> Void in
             NSLog(" 豆瓣美女能获取结果")
             self.collection.reloadData()
@@ -53,6 +53,7 @@ class GDouBanHomeViewController: UIViewController {
         collection.pullToRefreshView.setTitle("下拉更新", forState: .Stopped)
         collection.pullToRefreshView.setTitle("释放更新", forState: .Triggered)
         collection.pullToRefreshView.setTitle("卖力加载中", forState: .Loading)
+        collection.pullType = .VisibleLogo
         collection.triggerPullToRefresh()
     }
     

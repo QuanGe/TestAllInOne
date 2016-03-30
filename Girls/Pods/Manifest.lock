@@ -46,7 +46,7 @@ CHECKOUT OPTIONS:
     :commit: 694051b9a6336497426711a552277fa59e39009f
     :git: https://github.com/QuanGe/QGOCCategory
   SVPullToRefresh:
-    :commit: f59232fac54b675088e23f5117aa2fb9c8ba222c
+    :commit: 40ea3942acb14fe851cd05f09341bc4101742ffa
     :git: https://github.com/QuanGe/SVPullToRefresh
 
 SPEC CHECKSUMS:
