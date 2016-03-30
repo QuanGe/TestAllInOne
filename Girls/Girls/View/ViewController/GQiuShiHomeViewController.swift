@@ -19,7 +19,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.registerNib(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
         tableView.separatorStyle = .None
         tableView.allowsSelection = false
-        
+      
         viewModel = GQiuBaiViewModel()
         tableView.addPullToRefreshWithActionHandler { () -> Void in
             
@@ -64,10 +64,12 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         let content = viewModel?.contentOfRow(indexPath.row)
-        
-        let height: CGFloat = content!.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width-16, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14)], context: nil).size.height
+        let textStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        textStyle.lineSpacing = 12
+        let height: CGFloat = content!.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width-16, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14),NSParagraphStyleAttributeName:textStyle], context: nil).size.height
       
-        return height+40+8+20 + (viewModel?.imageHeightOfRow(indexPath.row))!+5;
+        let cellheight: CGFloat = height + 8 + 40 + 5 + (viewModel?.imageHeightOfRow(indexPath.row))!+2+7+10
+        return cellheight;
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -76,12 +78,17 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("GQiuBaiTableViewCell") as! GQiuBaiTableViewCell
-        cell.contentLabel.text = viewModel?.contentOfRow(indexPath.row)
-        cell.contentImageHeight.constant = (viewModel?.imageHeightOfRow(indexPath.row))!
+        let textStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        textStyle.lineSpacing = 12
+        cell.contentLabel.attributedText = NSAttributedString(string: (viewModel?.contentOfRow(indexPath.row))!, attributes:  [NSFontAttributeName: UIFont.systemFontOfSize(14),NSParagraphStyleAttributeName:textStyle])
+        
         if viewModel?.typeOfRow(indexPath.row) != "word"
         {
-            //cell.contentImageBtn.kf_setBackgroundImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!, forState: .Normal)
            cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
+        }
+        else
+        {
+            cell.contentImageBtn.image = nil
         }
         cell.userIconImageView.layer.cornerRadius = 20
         cell.userIconImageView.clipsToBounds = true
@@ -95,6 +102,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
             cell.userIconImageView.image = UIImage(named: "icon_main")
             cell.nickNameLabel.text = "匿名"
         }
+        
         return cell
     }
     

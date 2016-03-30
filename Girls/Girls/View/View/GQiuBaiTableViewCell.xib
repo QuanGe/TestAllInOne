@@ -12,7 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6J-Tt-V6C">
-                    <rect key="frame" x="8" y="53" width="584" height="504"/>
+                    <rect key="frame" x="8" y="53" width="584" height="17"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -41,10 +41,7 @@
                     </constraints>
                 </view>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="de2-tP-RxU">
-                    <rect key="frame" x="8" y="557" width="584" height="34"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="34" id="bye-WW-4t6"/>
-                    </constraints>
+                    <rect key="frame" x="8" y="70" width="584" height="521"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -67,7 +64,6 @@
             </constraints>
             <connections>
                 <outlet property="contentImageBtn" destination="de2-tP-RxU" id="jqi-pH-wdg"/>
-                <outlet property="contentImageHeight" destination="bye-WW-4t6" id="56y-k8-Yhe"/>
                 <outlet property="contentLabel" destination="l6J-Tt-V6C" id="XIc-ng-Kgu"/>
                 <outlet property="nickNameLabel" destination="ehG-K8-YSo" id="Roh-Cu-3uM"/>
                 <outlet property="userIconImageView" destination="18k-Jz-id1" id="LkO-9j-Odg"/>

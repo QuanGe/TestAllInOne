@@ -77,10 +77,13 @@ class GQiuBaiViewModel: RVMViewModel {
             let size = model.imageSize! as NSDictionary
             let sizeInfo = size["m"] as! NSArray
             let hw = sizeInfo.objectAtIndex(1).floatValue/sizeInfo.objectAtIndex(0).floatValue
-            return (UIScreen.mainScreen().bounds.width - 16.0) * CGFloat(hw)
+            
+            let h = (UIScreen.mainScreen().bounds.width - 16.0) * CGFloat(hw)
+            return h
         } else if model.format == "video"
         {
-            return UIScreen.mainScreen().bounds.width - 16.0
+            let h = UIScreen.mainScreen().bounds.width - 16.0
+            return h
         }
 
         return 0

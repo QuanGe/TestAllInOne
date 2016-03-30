@@ -78,7 +78,7 @@ class GAPIManager: NSObject {
     }
     
     func fetchQiuBaiHot(pagenum:Int)-> RACSignal{
-        return fetchData("http://m2.qiushibaike.com/article/list/suggest",type: .GRequestTypeJson,params: ["count":"40","page":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
+        return fetchData("http://m2.qiushibaike.com/article/list/latest",type: .GRequestTypeJson,params: ["page":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
             let items = result["items"] as! [AnyObject]
             do {
                 return try MTLJSONAdapter.modelsOfClass(GQiuBaiModel.self, fromJSONArray: items)
