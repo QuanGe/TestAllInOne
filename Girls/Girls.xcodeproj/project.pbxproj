@@ -25,6 +25,8 @@
 		98D931EF1CAA73E100CA801C /* GQiuBaiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */; };
 		98D931F11CAABE9F00CA801C /* GQiuBaiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931F01CAABE9F00CA801C /* GQiuBaiTableViewCell.swift */; };
 		98D931F31CAABECC00CA801C /* GQiuBaiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98D931F21CAABECC00CA801C /* GQiuBaiTableViewCell.xib */; };
+		98D931F51CAACCCC00CA801C /* GGirlsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931F41CAACCCC00CA801C /* GGirlsModel.swift */; };
+		98D931F71CAACD8B00CA801C /* GGirlsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931F61CAACD8B00CA801C /* GGirlsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiViewModel.swift; sourceTree = "<group>"; };
 		98D931F01CAABE9F00CA801C /* GQiuBaiTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GQiuBaiTableViewCell.swift; sourceTree = "<group>"; };
 		98D931F21CAABECC00CA801C /* GQiuBaiTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GQiuBaiTableViewCell.xib; sourceTree = "<group>"; };
+		98D931F41CAACCCC00CA801C /* GGirlsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGirlsModel.swift; sourceTree = "<group>"; };
+		98D931F61CAACD8B00CA801C /* GGirlsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGirlsViewModel.swift; sourceTree = "<group>"; };
 		E9B674E76CC970BD9DCB9D08 /* Pods-Girls.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girls.release.xcconfig"; path = "Pods/Target Support Files/Pods-Girls/Pods-Girls.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				98D931EC1CAA6E4000CA801C /* GQiuBaiModel.swift */,
+				98D931F41CAACCCC00CA801C /* GGirlsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */,
+				98D931F61CAACD8B00CA801C /* GGirlsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -334,12 +340,14 @@
 				98D931D71CAA470A00CA801C /* AppDelegate.swift in Sources */,
 				98D931EF1CAA73E100CA801C /* GQiuBaiViewModel.swift in Sources */,
 				98D931DD1CAA470A00CA801C /* GDouBanHomeViewController.swift in Sources */,
+				98D931F51CAACCCC00CA801C /* GGirlsModel.swift in Sources */,
 				98D931DC1CAA470A00CA801C /* GAdvDetailViewController.swift in Sources */,
 				98D931ED1CAA6E4000CA801C /* GQiuBaiModel.swift in Sources */,
 				98D931E11CAA470A00CA801C /* ViewController.swift in Sources */,
 				98D931F11CAABE9F00CA801C /* GQiuBaiTableViewCell.swift in Sources */,
 				98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */,
 				98D931DE1CAA470A00CA801C /* GHomeViewController.swift in Sources */,
+				98D931F71CAACD8B00CA801C /* GGirlsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

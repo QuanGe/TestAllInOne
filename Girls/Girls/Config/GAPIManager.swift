@@ -10,7 +10,7 @@ import UIKit
 import ReactiveCocoa
 import Alamofire
 import Mantle
-
+import Kanna
 public enum RequestType
 {
     case GRequestTypeString,GRequestTypeJson,GRequestTypeData
@@ -89,5 +89,33 @@ class GAPIManager: NSObject {
            
         })
     }
+    
+    func fetchGirls(pagenum:Int)-> RACSignal{
+        return fetchData("http://www.dbmeinv.com/dbgroup/show.htm",type: .GRequestTypeString,params: ["cid":"2","pager_offset":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
+            //用photos保存临时数据
+            var urls = [GGirlsModel]()
+            //用kanna解析html数据
+            if let doc = Kanna.HTML(html: result as! String!, encoding: NSUTF8StringEncoding){
+                CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingASCII)
+                
+                //解析imageurl
+                for nodeparent in doc.css("a")
+                {
+                    for node in nodeparent.css("img"){
+                        let mode = GGirlsModel()
+                        mode.imageUrlStr = node["src"]!
+                        mode.imageDetailUrlStr = nodeparent["href"]!
+                        urls.append(mode)
+                        
+                    }
+                }
+                
+            }
+
+            return urls
+            
+        })
+    }
+
     
 }

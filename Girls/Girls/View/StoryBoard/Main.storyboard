@@ -167,24 +167,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这里显示豆瓣美女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luD-2j-Q53">
-                                <rect key="frame" x="143" y="183" width="200" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Dgt-Ia-aNI"/>
-                                    <constraint firstAttribute="height" constant="21" id="qX9-U0-ooy"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pjr-At-Lbg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="jFp-8R-2Xg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="girlCell" id="2C9-dI-9kD">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AhN-Bv-8xw">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="AhN-Bv-8xw" firstAttribute="top" secondItem="2C9-dI-9kD" secondAttribute="top" id="B4S-qy-qHM"/>
+                                            <constraint firstAttribute="trailing" secondItem="AhN-Bv-8xw" secondAttribute="trailing" id="KCV-te-79B"/>
+                                            <constraint firstItem="AhN-Bv-8xw" firstAttribute="leading" secondItem="2C9-dI-9kD" secondAttribute="leading" id="KiW-cG-Tm7"/>
+                                            <constraint firstAttribute="bottom" secondItem="AhN-Bv-8xw" secondAttribute="bottom" id="KoG-M6-SHg"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YTX-fE-Kez" id="gro-eI-vbV"/>
+                                    <outlet property="delegate" destination="YTX-fE-Kez" id="88p-kI-9PQ"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="luD-2j-Q53" firstAttribute="top" secondItem="L4N-jo-rBE" secondAttribute="bottom" constant="163" id="Bzr-dM-J2Q"/>
-                            <constraint firstItem="luD-2j-Q53" firstAttribute="leading" secondItem="4lY-IP-1lf" secondAttribute="leading" constant="143" id="VZ8-Jy-jyM"/>
+                            <constraint firstItem="pjr-At-Lbg" firstAttribute="top" secondItem="4lY-IP-1lf" secondAttribute="top" id="Dx9-Mq-DbR"/>
+                            <constraint firstItem="nMj-Ie-6je" firstAttribute="top" secondItem="pjr-At-Lbg" secondAttribute="bottom" id="GpX-yQ-Dri"/>
+                            <constraint firstItem="pjr-At-Lbg" firstAttribute="leading" secondItem="4lY-IP-1lf" secondAttribute="leading" id="Omg-ly-9YJ"/>
+                            <constraint firstAttribute="trailing" secondItem="pjr-At-Lbg" secondAttribute="trailing" id="QDp-7J-zhx"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="豆瓣美女" id="vYQ-f4-ayB"/>
+                    <connections>
+                        <outlet property="collection" destination="pjr-At-Lbg" id="NbF-mg-M0F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAq-ez-MbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
