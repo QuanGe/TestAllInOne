@@ -22,7 +22,7 @@ class GQiuBaiViewModel: RVMViewModel {
         //let gifDuration = more  ? 1 : 0
         
         return GAPIManager.sharedInstance.fetchQiuBaiHot(page).map({ (result) -> AnyObject! in
-            if more {
+            if !more {
                 self.qiubaiModels?.removeAllObjects()
                 
             }

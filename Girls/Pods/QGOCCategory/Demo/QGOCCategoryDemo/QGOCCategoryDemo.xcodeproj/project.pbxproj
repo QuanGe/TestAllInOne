@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		98165F891BE1E6A7007B06DB /* NSData+QGOCCAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F611BE1E6A7007B06DB /* NSData+QGOCCAES256.m */; settings = {ASSET_TAGS = (); }; };
+		98165F8A1BE1E6A7007B06DB /* NSDate+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F631BE1E6A7007B06DB /* NSDate+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F8B1BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F651BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F8C1BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F671BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F8D1BE1E6A7007B06DB /* NSString+QGOCCAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F691BE1E6A7007B06DB /* NSString+QGOCCAES256.m */; settings = {ASSET_TAGS = (); }; };
+		98165F8E1BE1E6A7007B06DB /* NSString+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F6B1BE1E6A7007B06DB /* NSString+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F8F1BE1E6A7007B06DB /* NSString+QGOCCM3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F6D1BE1E6A7007B06DB /* NSString+QGOCCM3u8.m */; settings = {ASSET_TAGS = (); }; };
+		98165F901BE1E6A7007B06DB /* NSString+QGOCCMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F6F1BE1E6A7007B06DB /* NSString+QGOCCMD5.m */; settings = {ASSET_TAGS = (); }; };
+		98165F911BE1E6A7007B06DB /* NSString+QGOCCRegular.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F711BE1E6A7007B06DB /* NSString+QGOCCRegular.m */; settings = {ASSET_TAGS = (); }; };
+		98165F921BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F731BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.m */; settings = {ASSET_TAGS = (); }; };
+		98165F931BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F761BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.m */; settings = {ASSET_TAGS = (); }; };
+		98165F941BE1E6A7007B06DB /* UIColor+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F781BE1E6A7007B06DB /* UIColor+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F951BE1E6A7007B06DB /* UIDevice+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F7A1BE1E6A7007B06DB /* UIDevice+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F961BE1E6A7007B06DB /* UIImage+QGOCCCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F7C1BE1E6A7007B06DB /* UIImage+QGOCCCommon.m */; settings = {ASSET_TAGS = (); }; };
+		98165F971BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F7E1BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.m */; settings = {ASSET_TAGS = (); }; };
+		98165F981BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F801BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.m */; settings = {ASSET_TAGS = (); }; };
+		98165F991BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F821BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.m */; settings = {ASSET_TAGS = (); }; };
+		98165F9A1BE1E6A7007B06DB /* UIView+QGOCCVFL.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F841BE1E6A7007B06DB /* UIView+QGOCCVFL.m */; settings = {ASSET_TAGS = (); }; };
+		98165F9B1BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F861BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.m */; settings = {ASSET_TAGS = (); }; };
+		98165F9C1BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 98165F881BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.m */; settings = {ASSET_TAGS = (); }; };
+		98DB45061BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98DB45051BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98F3832A1BC6C3A4004D839F /* QGOCCTestTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F383291BC6C3A4004D839F /* QGOCCTestTextViewViewController.m */; settings = {ASSET_TAGS = (); }; };
+		98F57FB31BC00F650071D3E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F57FB21BC00F650071D3E9 /* main.m */; };
+		98F57FB61BC00F650071D3E9 /* QGOCCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F57FB51BC00F650071D3E9 /* QGOCCAppDelegate.m */; };
+		98F57FB91BC00F650071D3E9 /* QGOCCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F57FB81BC00F650071D3E9 /* QGOCCViewController.m */; };
+		98F57FBC1BC00F650071D3E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F57FBA1BC00F650071D3E9 /* Main.storyboard */; };
+		98F57FBE1BC00F650071D3E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F57FBD1BC00F650071D3E9 /* Assets.xcassets */; };
+		98F57FC11BC00F650071D3E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F57FBF1BC00F650071D3E9 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		98165F601BE1E6A7007B06DB /* NSData+QGOCCAES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+QGOCCAES256.h"; sourceTree = "<group>"; };
+		98165F611BE1E6A7007B06DB /* NSData+QGOCCAES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+QGOCCAES256.m"; sourceTree = "<group>"; };
+		98165F621BE1E6A7007B06DB /* NSDate+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F631BE1E6A7007B06DB /* NSDate+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F641BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F651BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F661BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F671BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F681BE1E6A7007B06DB /* NSString+QGOCCAES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QGOCCAES256.h"; sourceTree = "<group>"; };
+		98165F691BE1E6A7007B06DB /* NSString+QGOCCAES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QGOCCAES256.m"; sourceTree = "<group>"; };
+		98165F6A1BE1E6A7007B06DB /* NSString+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F6B1BE1E6A7007B06DB /* NSString+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F6C1BE1E6A7007B06DB /* NSString+QGOCCM3u8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QGOCCM3u8.h"; sourceTree = "<group>"; };
+		98165F6D1BE1E6A7007B06DB /* NSString+QGOCCM3u8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QGOCCM3u8.m"; sourceTree = "<group>"; };
+		98165F6E1BE1E6A7007B06DB /* NSString+QGOCCMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QGOCCMD5.h"; sourceTree = "<group>"; };
+		98165F6F1BE1E6A7007B06DB /* NSString+QGOCCMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QGOCCMD5.m"; sourceTree = "<group>"; };
+		98165F701BE1E6A7007B06DB /* NSString+QGOCCRegular.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QGOCCRegular.h"; sourceTree = "<group>"; };
+		98165F711BE1E6A7007B06DB /* NSString+QGOCCRegular.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QGOCCRegular.m"; sourceTree = "<group>"; };
+		98165F721BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+QGOCCURLEncoding.h"; sourceTree = "<group>"; };
+		98165F731BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+QGOCCURLEncoding.m"; sourceTree = "<group>"; };
+		98165F741BE1E6A7007B06DB /* QGOCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGOCCategory.h; sourceTree = "<group>"; };
+		98165F751BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+QGOCCBlock.h"; sourceTree = "<group>"; };
+		98165F761BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+QGOCCBlock.m"; sourceTree = "<group>"; };
+		98165F771BE1E6A7007B06DB /* UIColor+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F781BE1E6A7007B06DB /* UIColor+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F791BE1E6A7007B06DB /* UIDevice+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F7A1BE1E6A7007B06DB /* UIDevice+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F7B1BE1E6A7007B06DB /* UIImage+QGOCCCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QGOCCCommon.h"; sourceTree = "<group>"; };
+		98165F7C1BE1E6A7007B06DB /* UIImage+QGOCCCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QGOCCCommon.m"; sourceTree = "<group>"; };
+		98165F7D1BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+QGOCCHideTabBar.h"; sourceTree = "<group>"; };
+		98165F7E1BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+QGOCCHideTabBar.m"; sourceTree = "<group>"; };
+		98165F7F1BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+QGOCCLimitLength.h"; sourceTree = "<group>"; };
+		98165F801BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+QGOCCLimitLength.m"; sourceTree = "<group>"; };
+		98165F811BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+QGOCCPlaceHolder.h"; sourceTree = "<group>"; };
+		98165F821BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+QGOCCPlaceHolder.m"; sourceTree = "<group>"; };
+		98165F831BE1E6A7007B06DB /* UIView+QGOCCVFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+QGOCCVFL.h"; sourceTree = "<group>"; };
+		98165F841BE1E6A7007B06DB /* UIView+QGOCCVFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+QGOCCVFL.m"; sourceTree = "<group>"; };
+		98165F851BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QGOCCLogDealloc.h"; sourceTree = "<group>"; };
+		98165F861BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+QGOCCLogDealloc.m"; sourceTree = "<group>"; };
+		98165F871BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+QGOCCPopWindow.h"; sourceTree = "<group>"; };
+		98165F881BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+QGOCCPopWindow.m"; sourceTree = "<group>"; };
+		98DB45041BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGOCCtestPopWindowViewController.h; sourceTree = "<group>"; };
+		98DB45051BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGOCCtestPopWindowViewController.m; sourceTree = "<group>"; };
+		98F383281BC6C3A4004D839F /* QGOCCTestTextViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGOCCTestTextViewViewController.h; sourceTree = "<group>"; };
+		98F383291BC6C3A4004D839F /* QGOCCTestTextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGOCCTestTextViewViewController.m; sourceTree = "<group>"; };
+		98F57FAE1BC00F650071D3E9 /* QGOCCategoryDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QGOCCategoryDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F57FB21BC00F650071D3E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		98F57FB41BC00F650071D3E9 /* QGOCCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGOCCAppDelegate.h; sourceTree = "<group>"; };
+		98F57FB51BC00F650071D3E9 /* QGOCCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGOCCAppDelegate.m; sourceTree = "<group>"; };
+		98F57FB71BC00F650071D3E9 /* QGOCCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QGOCCViewController.h; sourceTree = "<group>"; };
+		98F57FB81BC00F650071D3E9 /* QGOCCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QGOCCViewController.m; sourceTree = "<group>"; };
+		98F57FBB1BC00F650071D3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		98F57FBD1BC00F650071D3E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98F57FC01BC00F650071D3E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		98F57FC21BC00F650071D3E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98F57FAB1BC00F650071D3E9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		98F57FA51BC00F650071D3E9 = {
+			isa = PBXGroup;
+			children = (
+				98F57FD51BC011D30071D3E9 /* QGOCCategory */,
+				98F57FB01BC00F650071D3E9 /* QGOCCategoryDemo */,
+				98F57FAF1BC00F650071D3E9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		98F57FAF1BC00F650071D3E9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98F57FAE1BC00F650071D3E9 /* QGOCCategoryDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98F57FB01BC00F650071D3E9 /* QGOCCategoryDemo */ = {
+			isa = PBXGroup;
+			children = (
+				98F57FB41BC00F650071D3E9 /* QGOCCAppDelegate.h */,
+				98F57FB51BC00F650071D3E9 /* QGOCCAppDelegate.m */,
+				98F57FB71BC00F650071D3E9 /* QGOCCViewController.h */,
+				98F57FB81BC00F650071D3E9 /* QGOCCViewController.m */,
+				98F57FBA1BC00F650071D3E9 /* Main.storyboard */,
+				98F57FBD1BC00F650071D3E9 /* Assets.xcassets */,
+				98F57FBF1BC00F650071D3E9 /* LaunchScreen.storyboard */,
+				98F57FC21BC00F650071D3E9 /* Info.plist */,
+				98F57FB11BC00F650071D3E9 /* Supporting Files */,
+				98F383281BC6C3A4004D839F /* QGOCCTestTextViewViewController.h */,
+				98F383291BC6C3A4004D839F /* QGOCCTestTextViewViewController.m */,
+				98DB45041BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.h */,
+				98DB45051BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.m */,
+			);
+			path = QGOCCategoryDemo;
+			sourceTree = "<group>";
+		};
+		98F57FB11BC00F650071D3E9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				98F57FB21BC00F650071D3E9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		98F57FD51BC011D30071D3E9 /* QGOCCategory */ = {
+			isa = PBXGroup;
+			children = (
+				98165F601BE1E6A7007B06DB /* NSData+QGOCCAES256.h */,
+				98165F611BE1E6A7007B06DB /* NSData+QGOCCAES256.m */,
+				98165F621BE1E6A7007B06DB /* NSDate+QGOCCCommon.h */,
+				98165F631BE1E6A7007B06DB /* NSDate+QGOCCCommon.m */,
+				98165F641BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.h */,
+				98165F651BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.m */,
+				98165F661BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.h */,
+				98165F671BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.m */,
+				98165F681BE1E6A7007B06DB /* NSString+QGOCCAES256.h */,
+				98165F691BE1E6A7007B06DB /* NSString+QGOCCAES256.m */,
+				98165F6A1BE1E6A7007B06DB /* NSString+QGOCCCommon.h */,
+				98165F6B1BE1E6A7007B06DB /* NSString+QGOCCCommon.m */,
+				98165F6C1BE1E6A7007B06DB /* NSString+QGOCCM3u8.h */,
+				98165F6D1BE1E6A7007B06DB /* NSString+QGOCCM3u8.m */,
+				98165F6E1BE1E6A7007B06DB /* NSString+QGOCCMD5.h */,
+				98165F6F1BE1E6A7007B06DB /* NSString+QGOCCMD5.m */,
+				98165F701BE1E6A7007B06DB /* NSString+QGOCCRegular.h */,
+				98165F711BE1E6A7007B06DB /* NSString+QGOCCRegular.m */,
+				98165F721BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.h */,
+				98165F731BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.m */,
+				98165F741BE1E6A7007B06DB /* QGOCCategory.h */,
+				98165F751BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.h */,
+				98165F761BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.m */,
+				98165F771BE1E6A7007B06DB /* UIColor+QGOCCCommon.h */,
+				98165F781BE1E6A7007B06DB /* UIColor+QGOCCCommon.m */,
+				98165F791BE1E6A7007B06DB /* UIDevice+QGOCCCommon.h */,
+				98165F7A1BE1E6A7007B06DB /* UIDevice+QGOCCCommon.m */,
+				98165F7B1BE1E6A7007B06DB /* UIImage+QGOCCCommon.h */,
+				98165F7C1BE1E6A7007B06DB /* UIImage+QGOCCCommon.m */,
+				98165F7D1BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.h */,
+				98165F7E1BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.m */,
+				98165F7F1BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.h */,
+				98165F801BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.m */,
+				98165F811BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.h */,
+				98165F821BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.m */,
+				98165F831BE1E6A7007B06DB /* UIView+QGOCCVFL.h */,
+				98165F841BE1E6A7007B06DB /* UIView+QGOCCVFL.m */,
+				98165F851BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.h */,
+				98165F861BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.m */,
+				98165F871BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.h */,
+				98165F881BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.m */,
+			);
+			name = QGOCCategory;
+			path = ../../QGOCCategory;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98F57FAD1BC00F650071D3E9 /* QGOCCategoryDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98F57FC51BC00F650071D3E9 /* Build configuration list for PBXNativeTarget "QGOCCategoryDemo" */;
+			buildPhases = (
+				98F57FAA1BC00F650071D3E9 /* Sources */,
+				98F57FAB1BC00F650071D3E9 /* Frameworks */,
+				98F57FAC1BC00F650071D3E9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QGOCCategoryDemo;
+			productName = QGOCCategoryDemo;
+			productReference = 98F57FAE1BC00F650071D3E9 /* QGOCCategoryDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F57FA61BC00F650071D3E9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = QuanGe;
+				TargetAttributes = {
+					98F57FAD1BC00F650071D3E9 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = 98F57FA91BC00F650071D3E9 /* Build configuration list for PBXProject "QGOCCategoryDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 98F57FA51BC00F650071D3E9;
+			productRefGroup = 98F57FAF1BC00F650071D3E9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98F57FAD1BC00F650071D3E9 /* QGOCCategoryDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98F57FAC1BC00F650071D3E9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98F57FC11BC00F650071D3E9 /* LaunchScreen.storyboard in Resources */,
+				98F57FBE1BC00F650071D3E9 /* Assets.xcassets in Resources */,
+				98F57FBC1BC00F650071D3E9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98F57FAA1BC00F650071D3E9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98165F9B1BE1E6A7007B06DB /* UIViewController+QGOCCLogDealloc.m in Sources */,
+				98165F8F1BE1E6A7007B06DB /* NSString+QGOCCM3u8.m in Sources */,
+				98F57FB91BC00F650071D3E9 /* QGOCCViewController.m in Sources */,
+				98165F941BE1E6A7007B06DB /* UIColor+QGOCCCommon.m in Sources */,
+				98165F8C1BE1E6A7007B06DB /* NSMutableAttributedString+QGOCCCommon.m in Sources */,
+				98165F981BE1E6A7007B06DB /* UITextField+QGOCCLimitLength.m in Sources */,
+				98165F9A1BE1E6A7007B06DB /* UIView+QGOCCVFL.m in Sources */,
+				98165F961BE1E6A7007B06DB /* UIImage+QGOCCCommon.m in Sources */,
+				98DB45061BCB60CA00222DF9 /* QGOCCtestPopWindowViewController.m in Sources */,
+				98165F891BE1E6A7007B06DB /* NSData+QGOCCAES256.m in Sources */,
+				98165F971BE1E6A7007B06DB /* UITabBarController+QGOCCHideTabBar.m in Sources */,
+				98165F8B1BE1E6A7007B06DB /* NSFileManager+QGOCCCommon.m in Sources */,
+				98165F901BE1E6A7007B06DB /* NSString+QGOCCMD5.m in Sources */,
+				98165F951BE1E6A7007B06DB /* UIDevice+QGOCCCommon.m in Sources */,
+				98165F931BE1E6A7007B06DB /* UIAlertView+QGOCCBlock.m in Sources */,
+				98165F8E1BE1E6A7007B06DB /* NSString+QGOCCCommon.m in Sources */,
+				98F57FB61BC00F650071D3E9 /* QGOCCAppDelegate.m in Sources */,
+				98165F991BE1E6A7007B06DB /* UITextView+QGOCCPlaceHolder.m in Sources */,
+				98165F8A1BE1E6A7007B06DB /* NSDate+QGOCCCommon.m in Sources */,
+				98165F9C1BE1E6A7007B06DB /* UIViewController+QGOCCPopWindow.m in Sources */,
+				98165F911BE1E6A7007B06DB /* NSString+QGOCCRegular.m in Sources */,
+				98165F921BE1E6A7007B06DB /* NSString+QGOCCURLEncoding.m in Sources */,
+				98165F8D1BE1E6A7007B06DB /* NSString+QGOCCAES256.m in Sources */,
+				98F3832A1BC6C3A4004D839F /* QGOCCTestTextViewViewController.m in Sources */,
+				98F57FB31BC00F650071D3E9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		98F57FBA1BC00F650071D3E9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98F57FBB1BC00F650071D3E9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		98F57FBF1BC00F650071D3E9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98F57FC01BC00F650071D3E9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98F57FC31BC00F650071D3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		98F57FC41BC00F650071D3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98F57FC61BC00F650071D3E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QGOCCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quange.QGOCCategoryDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		98F57FC71BC00F650071D3E9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = QGOCCategoryDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.quange.QGOCCategoryDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98F57FA91BC00F650071D3E9 /* Build configuration list for PBXProject "QGOCCategoryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98F57FC31BC00F650071D3E9 /* Debug */,
+				98F57FC41BC00F650071D3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98F57FC51BC00F650071D3E9 /* Build configuration list for PBXNativeTarget "QGOCCategoryDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98F57FC61BC00F650071D3E9 /* Debug */,
+				98F57FC71BC00F650071D3E9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F57FA61BC00F650071D3E9 /* Project object */;
+}

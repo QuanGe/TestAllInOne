@@ -23,7 +23,7 @@ class GGirlsViewModel: RVMViewModel {
         //let gifDuration = more  ? 1 : 0
         
         return GAPIManager.sharedInstance.fetchGirls(page).map({ (result) -> AnyObject! in
-            if more {
+            if !more {
                 self.girls?.removeAllObjects()
                 
             }

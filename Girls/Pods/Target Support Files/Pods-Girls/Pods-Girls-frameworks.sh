@@ -89,8 +89,10 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Girls/Kingfisher.framework"
   install_framework "Pods-Girls/MBProgressHUD.framework"
   install_framework "Pods-Girls/Mantle.framework"
+  install_framework "Pods-Girls/QGOCCategory.framework"
   install_framework "Pods-Girls/ReactiveCocoa.framework"
   install_framework "Pods-Girls/ReactiveViewModel.framework"
+  install_framework "Pods-Girls/SVPullToRefresh.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Girls/Alamofire.framework"
@@ -98,6 +100,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Girls/Kingfisher.framework"
   install_framework "Pods-Girls/MBProgressHUD.framework"
   install_framework "Pods-Girls/Mantle.framework"
+  install_framework "Pods-Girls/QGOCCategory.framework"
   install_framework "Pods-Girls/ReactiveCocoa.framework"
   install_framework "Pods-Girls/ReactiveViewModel.framework"
+  install_framework "Pods-Girls/SVPullToRefresh.framework"
 fi

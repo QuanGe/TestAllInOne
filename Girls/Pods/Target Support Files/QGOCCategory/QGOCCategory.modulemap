@@ -1,0 +1,6 @@
+framework module QGOCCategory {
+  umbrella header "QGOCCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}

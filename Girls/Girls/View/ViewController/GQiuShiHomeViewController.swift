@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVPullToRefresh
 class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var viewModel :GQiuBaiViewModel?
     
@@ -18,12 +18,35 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.registerNib(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
         tableView.separatorStyle = .None
         viewModel = GQiuBaiViewModel()
-        viewModel?.fetchQiuBaiData(false).subscribeNext({ (result) -> Void in
-            NSLog(" 糗百能获取结果")
-            self.tableView.reloadData()
-            }, error: { (error) -> Void in
-             NSLog(" 糗百获取失败")
-        })
+        tableView.addPullToRefreshWithActionHandler { () -> Void in
+            
+            self.viewModel?.fetchQiuBaiData(false).subscribeNext({ (result) -> Void in
+                
+                self.tableView.reloadData()
+                self.tableView.pullToRefreshView.stopAnimating()
+                }, error: { (error) -> Void in
+                   self.tableView.pullToRefreshView.stopAnimating()
+                    self.tableView.showNoNataViewWithMessage(NSLocalizedString(error.userInfo[NSLocalizedDescriptionKey] as! String, comment: ""), imageName: nil)
+            })
+
+        }
+        
+        tableView.addInfiniteScrollingWithActionHandler { () -> Void in
+            self.viewModel?.fetchQiuBaiData(true).subscribeNext({ (result) -> Void in
+                
+                self.tableView.reloadData()
+                self.tableView.infiniteScrollingView.stopAnimating()
+                }, error: { (error) -> Void in
+                    self.tableView.infiniteScrollingView.stopAnimating()
+                    self.tableView.showNoNataViewWithMessage(NSLocalizedString(error.userInfo[NSLocalizedDescriptionKey] as! String, comment: ""), imageName: nil)
+            })
+        }
+        
+        tableView.pullToRefreshView.setTitle("下拉更新", forState: .Stopped)
+        tableView.pullToRefreshView.setTitle("释放更新", forState: .Triggered)
+        tableView.pullToRefreshView.setTitle("卖力加载中", forState: .Loading)
+        tableView.triggerPullToRefresh()
+        
     }
     
     override func viewWillAppear(animated: Bool) {

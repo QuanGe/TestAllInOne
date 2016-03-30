@@ -13,6 +13,8 @@ pod 'ReactiveViewModel'
 pod 'Fabric'
 pod 'Crashlytics'
 pod 'UMengAnalytics-NO-IDFA'
+pod 'QGOCCategory', git: 'https://github.com/QuanGe/QGOCCategory'
+pod 'SVPullToRefresh', git: 'https://github.com/QuanGe/SVPullToRefresh'
 end
 
 target 'Girls' do

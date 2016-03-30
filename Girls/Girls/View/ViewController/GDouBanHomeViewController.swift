@@ -15,7 +15,8 @@ class GDouBanHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+        self.view.backgroundColor = UIColor.whiteColor()
+        collection.backgroundColor = UIColor.whiteColor()
         viewModel = GGirlsViewModel()
         viewModel?.fetchGirls(false).subscribeNext({ (result) -> Void in
             NSLog(" 豆瓣美女能获取结果")
@@ -23,6 +24,35 @@ class GDouBanHomeViewController: UIViewController {
             }, error: { (error) -> Void in
                 NSLog(" 豆瓣美女能获取结果")
         })
+        
+        collection.addPullToRefreshWithActionHandler { () -> Void in
+            
+            self.viewModel?.fetchGirls(false).subscribeNext({ (result) -> Void in
+                
+                self.collection.reloadData()
+                self.collection.pullToRefreshView.stopAnimating()
+                }, error: { (error) -> Void in
+                    self.collection.pullToRefreshView.stopAnimating()
+                    self.collection.showNoNataViewWithMessage(NSLocalizedString(error.userInfo[NSLocalizedDescriptionKey] as! String, comment: ""), imageName: nil)
+            })
+            
+        }
+        
+        collection.addInfiniteScrollingWithActionHandler { () -> Void in
+            self.viewModel?.fetchGirls(true).subscribeNext({ (result) -> Void in
+                
+                self.collection.reloadData()
+                self.collection.infiniteScrollingView.stopAnimating()
+                }, error: { (error) -> Void in
+                    self.collection.infiniteScrollingView.stopAnimating()
+                    self.collection.showNoNataViewWithMessage(NSLocalizedString(error.userInfo[NSLocalizedDescriptionKey] as! String, comment: ""), imageName: nil)
+            })
+        }
+        
+        collection.pullToRefreshView.setTitle("下拉更新", forState: .Stopped)
+        collection.pullToRefreshView.setTitle("释放更新", forState: .Triggered)
+        collection.pullToRefreshView.setTitle("卖力加载中", forState: .Loading)
+        collection.triggerPullToRefresh()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -43,8 +73,7 @@ class GDouBanHomeViewController: UIViewController {
         let advImageView = cell.viewWithTag(11) as? UIImageView
         advImageView!.contentMode = .ScaleAspectFill
         advImageView?.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
-//        advImageView?.kf_setImageWithURL(NSURL(string:self.photos[indexPath.row])!)
-//        self.advsPageControl.currentPage = indexPath.row
+
         return cell
     }
     //MARK: - UICollectionViewDelegateFlowLayout method
