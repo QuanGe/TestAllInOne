@@ -72,32 +72,47 @@ class GDouBanHomeViewController: UIViewController {
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("girlCell", forIndexPath: indexPath)
-        let advImageView = cell.viewWithTag(11) as? UIImageView
-        advImageView!.contentMode = .ScaleAspectFill
-        advImageView?.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
-
+        let advImageView = cell.viewWithTag(11) as! UIImageView
+        advImageView.contentMode = .ScaleAspectFill
+        advImageView.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
+        advImageView.layer.cornerRadius = 5.0
+        advImageView.layer.masksToBounds = true
         return cell
     }
     //MARK: - UICollectionViewDelegateFlowLayout method
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
         
-        return CGSizeMake(UIScreen.mainScreen().bounds.width/2-21, (UIScreen.mainScreen().bounds.width/2-21)*(UIScreen.mainScreen().bounds.height/UIScreen.mainScreen().bounds.width))
+        return CGSizeMake((UIScreen.mainScreen().bounds.width-30)/2, ((UIScreen.mainScreen().bounds.width-30)/2-30)*(UIScreen.mainScreen().bounds.height/UIScreen.mainScreen().bounds.width))
         
     }
     
     //设置四周边距
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(7, 7, 0, 7)
+        return UIEdgeInsetsMake(10, 10, 0, 10)
     }
     
     //左右间距
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return CGFloat(7)
+        return CGFloat(0)
     }
     
     //    上下间距
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-        return CGFloat(7)
+        return CGFloat(10)
     }
+
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let main = UIStoryboard(name: "Main", bundle: nil);
+        let modal=main.instantiateViewControllerWithIdentifier("GDoubanDetailViewController") as! GDoubanDetailViewController
+        for i in 0 ..< viewModel!.numOfItems()
+        {
+            modal.parentImageUrlStr.addObject(viewModel!.imageUrlOfRow(i))
+        }
+        modal.curIndex = indexPath
+        self.navigationController?.pushViewController(modal, animated: false);
+    }
+
+    
 
 }

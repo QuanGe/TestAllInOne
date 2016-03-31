@@ -116,6 +116,32 @@ class GAPIManager: NSObject {
             
         })
     }
+    
+    func fetchGirlsWithUrlstr(urlstr:String)-> RACSignal{
+        return fetchData(urlstr,type: .GRequestTypeString,params: [:],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
+            //用photos保存临时数据
+            var urls = [String]()
+            //用kanna解析html数据
+            if let doc = Kanna.HTML(html: result as! String!, encoding: NSUTF8StringEncoding){
+                CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingASCII)
+                
+                //解析imageurl
+                for node in doc.css("img"){
+                    let src = node["src"]! as String
+                    
+                    if (src.rangeOfString("icon") == nil)
+                    {
+                        urls.append(node["src"]!)
+                    }
+                    
+                }
+            }
+            
+            return urls
+            
+        })
+    }
+
 
     
 }

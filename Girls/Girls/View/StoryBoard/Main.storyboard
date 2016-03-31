@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Bq-mV-Yoe">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3Bq-mV-Yoe">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EUq-JW-Mlp">
@@ -214,11 +214,73 @@
                     <tabBarItem key="tabBarItem" title="豆瓣美女" id="vYQ-f4-ayB"/>
                     <connections>
                         <outlet property="collection" destination="pjr-At-Lbg" id="NbF-mg-M0F"/>
+                        <segue destination="d78-OG-XLO" kind="show" id="SmB-Oc-5x3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAq-ez-MbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2366" y="569"/>
+        </scene>
+        <!--豆瓣详情-->
+        <scene sceneID="KFu-nT-wC3">
+            <objects>
+                <viewController storyboardIdentifier="GDoubanDetailViewController" id="d78-OG-XLO" userLabel="豆瓣详情" customClass="GDoubanDetailViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FcG-T4-v4G"/>
+                        <viewControllerLayoutGuide type="bottom" id="VrO-Ax-zno"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M4z-Vd-7Y6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dBB-SA-JZB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Noo-hP-ZTw">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LdO-wr-YBU">
+                                <rect key="frame" x="276" y="487" width="48" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="48" id="KhL-Pf-Fxo"/>
+                                    <constraint firstAttribute="height" constant="49" id="Oym-pc-e0r"/>
+                                </constraints>
+                                <state key="normal" image="full_screen_icon_save"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpO-7B-F62">
+                                <rect key="frame" x="20" y="40" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="U70-Ey-ki5"/>
+                                    <constraint firstAttribute="width" constant="40" id="tPz-cC-a0s"/>
+                                </constraints>
+                                <state key="normal" image="icon_back"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dBB-SA-JZB" secondAttribute="trailing" id="1Jd-7f-am3"/>
+                            <constraint firstItem="dBB-SA-JZB" firstAttribute="top" secondItem="M4z-Vd-7Y6" secondAttribute="top" id="Dxq-DP-OXP"/>
+                            <constraint firstItem="LdO-wr-YBU" firstAttribute="centerX" secondItem="M4z-Vd-7Y6" secondAttribute="centerX" id="bba-hE-AF2"/>
+                            <constraint firstItem="VrO-Ax-zno" firstAttribute="top" secondItem="LdO-wr-YBU" secondAttribute="bottom" constant="15" id="eMG-cS-kDc"/>
+                            <constraint firstItem="dBB-SA-JZB" firstAttribute="leading" secondItem="M4z-Vd-7Y6" secondAttribute="leading" id="sbG-C8-KTt"/>
+                            <constraint firstAttribute="bottom" secondItem="dBB-SA-JZB" secondAttribute="bottom" id="xqD-I7-m8g"/>
+                            <constraint firstItem="MpO-7B-F62" firstAttribute="top" secondItem="FcG-T4-v4G" secondAttribute="bottom" constant="20" id="xvO-zR-P1E"/>
+                            <constraint firstItem="MpO-7B-F62" firstAttribute="leading" secondItem="M4z-Vd-7Y6" secondAttribute="leading" constant="20" id="ztV-QE-W2A"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backBtn" destination="MpO-7B-F62" id="QOC-Jw-vQc"/>
+                        <outlet property="collection" destination="dBB-SA-JZB" id="c2A-pR-ww9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cDq-5G-eC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3020" y="569"/>
         </scene>
         <!--糗事百科-->
         <scene sceneID="lpO-t8-OTT">
@@ -295,4 +357,8 @@
             <point key="canvasLocation" x="141" y="227"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="full_screen_icon_save" width="34" height="28"/>
+        <image name="icon_back" width="40" height="40"/>
+    </resources>
 </document>

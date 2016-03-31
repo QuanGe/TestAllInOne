@@ -19,6 +19,8 @@ class GAdvDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     var photos = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.whiteColor()
+        advsCollectionView.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBarHidden = true;
         self.backBtn.layer.cornerRadius = 20
         self.backBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).CGColor

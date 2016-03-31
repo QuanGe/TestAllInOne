@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1F5A0506760A9BB460DC725B /* Pods_Girls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FC1618C4A8BB3B07283F5D5 /* Pods_Girls.framework */; };
+		985D1C2D1CABCCD30041F0E7 /* GDoubanDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985D1C2C1CABCCD30041F0E7 /* GDoubanDetailViewController.swift */; };
+		985D1C2F1CABD5320041F0E7 /* GGirlCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985D1C2E1CABD5320041F0E7 /* GGirlCollectionViewCell.swift */; };
+		985D1C311CABDF330041F0E7 /* GGirlsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985D1C301CABDF330041F0E7 /* GGirlsDetailViewModel.swift */; };
 		98D931D71CAA470A00CA801C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D931C41CAA470A00CA801C /* AppDelegate.swift */; };
 		98D931D81CAA470A00CA801C /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 98D931C61CAA470A00CA801C /* Info.plist */; };
 		98D931D91CAA470A00CA801C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98D931CA1CAA470A00CA801C /* Assets.xcassets */; };
@@ -34,6 +37,9 @@
 		4011D1A8D55FEE15CF83C7EC /* Pods-Girls.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Girls.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Girls/Pods-Girls.debug.xcconfig"; sourceTree = "<group>"; };
 		5FC1618C4A8BB3B07283F5D5 /* Pods_Girls.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Girls.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98007DF31C8D6C6F00F49D17 /* Girls.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Girls.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		985D1C2C1CABCCD30041F0E7 /* GDoubanDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GDoubanDetailViewController.swift; sourceTree = "<group>"; };
+		985D1C2E1CABD5320041F0E7 /* GGirlCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGirlCollectionViewCell.swift; sourceTree = "<group>"; };
+		985D1C301CABDF330041F0E7 /* GGirlsDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GGirlsDetailViewModel.swift; sourceTree = "<group>"; };
 		98D931C41CAA470A00CA801C /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98D931C51CAA470A00CA801C /* Girls-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Girls-Bridging-Header.h"; sourceTree = "<group>"; };
 		98D931C61CAA470A00CA801C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 			children = (
 				98D931F01CAABE9F00CA801C /* GQiuBaiTableViewCell.swift */,
 				98D931F21CAABECC00CA801C /* GQiuBaiTableViewCell.xib */,
+				985D1C2E1CABD5320041F0E7 /* GGirlCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,6 +181,7 @@
 				98D931D31CAA470A00CA801C /* GNavigationController.swift */,
 				98D931D41CAA470A00CA801C /* GQiuShiHomeViewController.swift */,
 				98D931D51CAA470A00CA801C /* ViewController.swift */,
+				985D1C2C1CABCCD30041F0E7 /* GDoubanDetailViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			children = (
 				98D931EE1CAA73E100CA801C /* GQiuBaiViewModel.swift */,
 				98D931F61CAACD8B00CA801C /* GGirlsViewModel.swift */,
+				985D1C301CABDF330041F0E7 /* GGirlsDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -339,6 +348,7 @@
 				98D931DF1CAA470A00CA801C /* GNavigationController.swift in Sources */,
 				98D931D71CAA470A00CA801C /* AppDelegate.swift in Sources */,
 				98D931EF1CAA73E100CA801C /* GQiuBaiViewModel.swift in Sources */,
+				985D1C2D1CABCCD30041F0E7 /* GDoubanDetailViewController.swift in Sources */,
 				98D931DD1CAA470A00CA801C /* GDouBanHomeViewController.swift in Sources */,
 				98D931F51CAACCCC00CA801C /* GGirlsModel.swift in Sources */,
 				98D931DC1CAA470A00CA801C /* GAdvDetailViewController.swift in Sources */,
@@ -347,6 +357,8 @@
 				98D931F11CAABE9F00CA801C /* GQiuBaiTableViewCell.swift in Sources */,
 				98D931E01CAA470A00CA801C /* GQiuShiHomeViewController.swift in Sources */,
 				98D931DE1CAA470A00CA801C /* GHomeViewController.swift in Sources */,
+				985D1C311CABDF330041F0E7 /* GGirlsDetailViewModel.swift in Sources */,
+				985D1C2F1CABD5320041F0E7 /* GGirlCollectionViewCell.swift in Sources */,
 				98D931F71CAACD8B00CA801C /* GGirlsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
