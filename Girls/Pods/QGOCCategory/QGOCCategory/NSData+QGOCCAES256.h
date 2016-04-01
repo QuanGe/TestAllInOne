@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonDigest.h>
-#import <CommonCrypto/CommonCryptor.h>
+
 @interface NSData (QGOCCAES256)
 
 /**

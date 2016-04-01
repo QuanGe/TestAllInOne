@@ -8,7 +8,7 @@
 
 import UIKit
 import SVPullToRefresh
-
+import QGOCCategory
 class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     var viewModel :GQiuBaiViewModel?
     
@@ -84,7 +84,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         
         if viewModel?.typeOfRow(indexPath.row) != "word"
         {
-           cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
+           cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_imageWithColor(UIColor.lightGrayColor(), size: CGSizeMake(1, 1)))
         }
         else
         {

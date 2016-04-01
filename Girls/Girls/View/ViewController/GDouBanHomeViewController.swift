@@ -74,7 +74,7 @@ class GDouBanHomeViewController: UIViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("girlCell", forIndexPath: indexPath)
         let advImageView = cell.viewWithTag(11) as! UIImageView
         advImageView.contentMode = .ScaleAspectFill
-        advImageView.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!)
+        advImageView.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_imageWithColor(UIColor.lightGrayColor(), size: CGSizeMake(1, 1)))
         advImageView.layer.cornerRadius = 5.0
         advImageView.layer.masksToBounds = true
         return cell
