@@ -101,11 +101,15 @@ class GAPIManager: NSObject {
                 //解析imageurl
                 for nodeparent in doc.css("a")
                 {
+                    
                     for node in nodeparent.css("img"){
-                        let mode = GGirlsModel()
-                        mode.imageUrlStr = node["src"]!
-                        mode.imageDetailUrlStr = nodeparent["href"]!
-                        urls.append(mode)
+                        if nodeparent["href"]?.rangeOfString("http://www.dbmeinv.com/dbgroup") != nil
+                        {
+                            let mode = GGirlsModel()
+                            mode.imageUrlStr = node["src"]!
+                            mode.imageDetailUrlStr = nodeparent["href"]!
+                            urls.append(mode)
+                        }
                         
                     }
                 }
