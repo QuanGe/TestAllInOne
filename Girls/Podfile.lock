@@ -9,6 +9,7 @@ PODS:
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
   - MBProgressHUD (0.9.2)
+  - QGCollectionMenu (0.1.1)
   - QGOCCategory (0.1.1)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -30,20 +31,26 @@ DEPENDENCIES:
   - Kingfisher (= 2.0.4)
   - Mantle (= 2.0.6)
   - MBProgressHUD (= 0.9.2)
+  - QGCollectionMenu (from `https://github.com/QuanGe/QGCollectionMenu.git`)
   - QGOCCategory (from `https://github.com/QuanGe/QGOCCategory`)
   - ReactiveViewModel (= 0.3)
   - SVPullToRefresh (from `https://github.com/QuanGe/SVPullToRefresh`)
   - UMengAnalytics-NO-IDFA
 
 EXTERNAL SOURCES:
+  QGCollectionMenu:
+    :git: https://github.com/QuanGe/QGCollectionMenu.git
   QGOCCategory:
     :git: https://github.com/QuanGe/QGOCCategory
   SVPullToRefresh:
     :git: https://github.com/QuanGe/SVPullToRefresh
 
 CHECKOUT OPTIONS:
+  QGCollectionMenu:
+    :commit: 2704cfc55e1aa354adbf8efbd5b2f9c29b42f9ea
+    :git: https://github.com/QuanGe/QGCollectionMenu.git
   QGOCCategory:
-    :commit: e6e73dd3c57abaab462c68ff556e4d6ad260397b
+    :commit: fe4e9731f1bebefd1a2ccd037a4d4d9e5bead565
     :git: https://github.com/QuanGe/QGOCCategory
   SVPullToRefresh:
     :commit: 40ea3942acb14fe851cd05f09341bc4101742ffa
@@ -57,6 +64,7 @@ SPEC CHECKSUMS:
   Kingfisher: 8f1ec2c067ade2c549a1a594379b69c4b1ff81ab
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  QGCollectionMenu: 8ccb647043e1bd253a5d9362e6eb8a7da6f05d4a
   QGOCCategory: 437e1845b71e1c33b987a82b722ef0056c7747ac
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999

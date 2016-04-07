@@ -1,0 +1,25 @@
+{
+  "name": "QGCollectionMenu",
+  "version": "0.1.1",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "license": "MIT",
+  "summary": "some menus in a horizontally collection",
+  "homepage": "https://github.com/QuanGe/QGCollectionMenu",
+  "authors": {
+    "QuanGe": "zhang_ru_quan@163.com"
+  },
+  "source": {
+    "git": "https://github.com/QuanGe/QGCollectionMenu.git",
+    "tag": "0.1.1"
+  },
+  "description": "some menus in a horizontally collection",
+  "frameworks": "QuartzCore",
+  "source_files": "QGCollectionMenu/*.{h,m}",
+  "resources": [
+    "QGCollectionMenu/*.{xib}"
+  ],
+  "preserve_paths": "Demo",
+  "requires_arc": true
+}

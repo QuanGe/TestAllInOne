@@ -15,6 +15,7 @@ pod 'Crashlytics'
 pod 'UMengAnalytics-NO-IDFA'
 pod 'QGOCCategory', git: 'https://github.com/QuanGe/QGOCCategory'
 pod 'SVPullToRefresh', git: 'https://github.com/QuanGe/SVPullToRefresh'
+pod 'QGCollectionMenu', :git => 'https://github.com/QuanGe/QGCollectionMenu.git'
 end
 
 target 'Girls' do

@@ -84,7 +84,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         
         if viewModel?.typeOfRow(indexPath.row) != "word"
         {
-           cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_imageWithColor(UIColor.lightGrayColor(), size: CGSizeMake(1, 1)))
+           cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_imageWithColor(UIColor.lightGrayColor(), size: CGSizeMake(UIScreen.mainScreen().bounds.width - 16.0, (viewModel?.imageHeightOfRow(indexPath.row))!)))
         }
         else
         {

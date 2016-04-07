@@ -1,0 +1,1 @@
+../../../QGCollectionMenu/QGCollectionMenu/QGCMCollectionViewCell.h

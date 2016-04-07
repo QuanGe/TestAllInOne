@@ -1,0 +1,6 @@
+framework module QGCollectionMenu {
+  umbrella header "QGCollectionMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

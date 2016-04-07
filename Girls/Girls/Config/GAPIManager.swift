@@ -90,8 +90,8 @@ class GAPIManager: NSObject {
         })
     }
     
-    func fetchGirls(pagenum:Int)-> RACSignal{
-        return fetchData("http://www.dbmeinv.com/dbgroup/show.htm",type: .GRequestTypeString,params: ["cid":"2","pager_offset":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
+    func fetchGirls(pagenum:Int,type:String)-> RACSignal{
+        return fetchData("http://www.dbmeinv.com/dbgroup/show.htm",type: .GRequestTypeString,params: ["cid":type,"pager_offset":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
             //用photos保存临时数据
             var urls = [GGirlsModel]()
             //用kanna解析html数据

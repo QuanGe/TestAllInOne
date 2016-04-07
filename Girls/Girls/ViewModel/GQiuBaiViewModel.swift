@@ -12,7 +12,7 @@ class GQiuBaiViewModel: RVMViewModel {
     var qiubaiModels :NSMutableArray?
     
     override init() {
-        
+        super.init()
         self.qiubaiModels = []
     }
     

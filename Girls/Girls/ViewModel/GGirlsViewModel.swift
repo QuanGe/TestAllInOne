@@ -10,43 +10,50 @@ import ReactiveViewModel
 import ReactiveCocoa
 
 class GGirlsViewModel: RVMViewModel {
-    var girls :NSMutableArray?
+    var girls :NSMutableArray = []
+    var type:String = "2"
+    init?(dataType:String){
+        super.init()
+        type = dataType
+    }
+    
     
     override init() {
+        super.init()
         
-        self.girls = []
+        
     }
     
     func fetchGirls(more: Bool)->RACSignal{
         
-        let page = !more ? 1 : ((self.girls!.count - self.girls!.count%20 )/20+(self.girls!.count%20 == 0 ? 1 : 2))
+        let page = !more ? 1 : ((self.girls.count - self.girls.count%20 )/20+(self.girls.count%20 == 0 ? 1 : 2))
         //let gifDuration = more  ? 1 : 0
         
-        return GAPIManager.sharedInstance.fetchGirls(page).map({ (result) -> AnyObject! in
+        return GAPIManager.sharedInstance.fetchGirls(page,type: type).map({ (result) -> AnyObject! in
             if !more {
-                self.girls?.removeAllObjects()
+                self.girls.removeAllObjects()
                 
             }
-            self.girls?.addObjectsFromArray(result as! [AnyObject])
+            self.girls.addObjectsFromArray(result as! [AnyObject])
             return result
         })
         
     }
     
     func numOfItems()->Int{
-        return (girls?.count)!
+        return (girls.count)
     }
     
   
     func imageDetailUrlOfRow(row:Int)->String
     {
-        let model = girls![row] as! GGirlsModel
+        let model = girls[row] as! GGirlsModel
         return model.imageDetailUrlStr
     }
     
     func imageUrlOfRow(row:Int)->String
     {
-        let model = girls![row] as! GGirlsModel
+        let model = girls[row] as! GGirlsModel
         return model.imageUrlStr
     }
 

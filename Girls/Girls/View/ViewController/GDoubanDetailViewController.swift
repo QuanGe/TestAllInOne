@@ -39,7 +39,7 @@ class GDoubanDetailViewController: UIViewController,UICollectionViewDelegate,UIC
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //automaticallyAdjustsScrollViewInsets = false
         self.view.backgroundColor = UIColor.whiteColor()
         collection.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBarHidden = true;
@@ -54,7 +54,10 @@ class GDoubanDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(0.2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
             self.collection.delegate = self
             self.collection.dataSource = self
+            if self.curIndex != nil
+            {
             self.collection.scrollToItemAtIndexPath(self.curIndex!, atScrollPosition: .CenteredHorizontally, animated: false)
+            }
         }
         
         
@@ -104,5 +107,6 @@ class GDoubanDetailViewController: UIViewController,UICollectionViewDelegate,UIC
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return CGFloat(0)
     }
+    
 
 }

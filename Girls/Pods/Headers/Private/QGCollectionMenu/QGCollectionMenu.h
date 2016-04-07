@@ -1,0 +1,1 @@
+../../../QGCollectionMenu/QGCollectionMenu/QGCollectionMenu.h
