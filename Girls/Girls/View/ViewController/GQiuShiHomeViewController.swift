@@ -15,6 +15,8 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.edgesForExtendedLayout = .None
         // Do any additional setup after loading the view, typically from a nib.
         tableView.registerNib(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
         tableView.separatorStyle = .None

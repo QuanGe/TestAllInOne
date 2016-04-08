@@ -37,7 +37,5 @@
 //
 - (void)reload;
 //
-- (void)clearCollectionDelegateAndDataSource;
-//
-- (void)resetCollectionDelegateAndDataSource;
+- (void)subVCCollectionContentInsetUpdate;
 @end

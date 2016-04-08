@@ -26,17 +26,12 @@ class GDouBanHomeViewController: UIViewController,QGCollectionMenuDataSource,QGC
             
             viewModels.addObject(GGirlsViewModel(dataType: node as! String)!)
         }
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-     self.collectionMenu.resetCollectionDelegateAndDataSource()
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-      self.collectionMenu.clearCollectionDelegateAndDataSource()
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        collectionMenu.subVCCollectionContentInsetUpdate()
     }
     
     func menumTitles() -> [AnyObject]!

@@ -359,7 +359,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-tF-BDY">
-                                <rect key="frame" x="0.0" y="65" width="600" height="486"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bxx-YS-Pdc" id="ZZO-Za-BKs"/>
@@ -370,7 +370,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="eBf-tF-BDY" firstAttribute="leading" secondItem="dwo-zw-ot5" secondAttribute="leading" id="AbC-Qs-dnB"/>
-                            <constraint firstItem="eBf-tF-BDY" firstAttribute="top" secondItem="dwo-zw-ot5" secondAttribute="top" constant="65" id="bjx-Eo-V6b"/>
+                            <constraint firstItem="eBf-tF-BDY" firstAttribute="top" secondItem="unf-Ke-I1R" secondAttribute="bottom" id="eDv-A0-lpP"/>
                             <constraint firstAttribute="trailing" secondItem="eBf-tF-BDY" secondAttribute="trailing" id="iee-gH-z9x"/>
                             <constraint firstItem="n1H-RF-Yjm" firstAttribute="top" secondItem="eBf-tF-BDY" secondAttribute="bottom" id="tEK-DM-FLn"/>
                         </constraints>

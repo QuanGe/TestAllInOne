@@ -14,6 +14,7 @@ class GDouBanSubViewController: UIViewController,UICollectionViewDataSource,UICo
     var viewModel :GGirlsViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBarHidden = true;
         // Do any additional setup after loading the view, typically from a nib.
         self.view.backgroundColor = UIColor.whiteColor()
         collection.backgroundColor = UIColor.whiteColor()
