@@ -51,10 +51,6 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = false;
-        
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.rightBarButtonItem?.customView?.hidden = true;
         
         let childs =  self.childViewControllers as NSArray
         for vc in childs

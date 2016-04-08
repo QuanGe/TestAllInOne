@@ -42,7 +42,7 @@ class GDoubanDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         //automaticallyAdjustsScrollViewInsets = false
         self.view.backgroundColor = UIColor.whiteColor()
         collection.backgroundColor = UIColor.whiteColor()
-        self.navigationController?.navigationBarHidden = true;
+        
       
         collection.registerClass(GGirlCollectionViewCell.self, forCellWithReuseIdentifier: "girlCell")
         backBtn.rac_command = RACCommand(signalBlock: { (any) -> RACSignal! in
@@ -63,6 +63,19 @@ class GDoubanDetailViewController: UIViewController,UICollectionViewDelegate,UIC
         
         
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = true;
+        self.tabBarController?.qgocc_tabBarHidden = true
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.navigationBarHidden = false;
+       
     }
     
     private func showLoadingHUD() {

@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.grayColor(),NSFontAttributeName:UIFont.systemFontOfSize(10)], forState: .Normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName : UIColor.orangeColor(),NSFontAttributeName:UIFont.systemFontOfSize(10)], forState: .Selected)
         
-        
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.redColor(),NSFontAttributeName:UIFont.boldSystemFontOfSize(18)]
+        window?.backgroundColor = UIColor.whiteColor()
         return true
     }
 

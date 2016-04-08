@@ -156,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="899" y="232"/>
         </scene>
-        <!--豆瓣美女-->
+        <!--Dou Ban Home View Controller-->
         <scene sceneID="sH7-Iw-SEz">
             <objects>
                 <viewController id="YTX-fE-Kez" customClass="GDouBanHomeViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
@@ -169,26 +169,32 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XQ5-eU-pRM" customClass="QGCollectionMenu">
-                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="XQ5-eU-pRM" secondAttribute="trailing" id="SFu-FY-c8I"/>
-                            <constraint firstItem="nMj-Ie-6je" firstAttribute="top" secondItem="XQ5-eU-pRM" secondAttribute="bottom" id="rPG-Wj-vTB"/>
                             <constraint firstItem="XQ5-eU-pRM" firstAttribute="leading" secondItem="4lY-IP-1lf" secondAttribute="leading" id="rXz-BA-O0a"/>
+                            <constraint firstAttribute="bottom" secondItem="XQ5-eU-pRM" secondAttribute="bottom" id="s5u-ds-CKh"/>
                             <constraint firstItem="XQ5-eU-pRM" firstAttribute="top" secondItem="L4N-jo-rBE" secondAttribute="bottom" id="seP-Yf-TNL"/>
+                            <constraint firstItem="nMj-Ie-6je" firstAttribute="top" secondItem="XQ5-eU-pRM" secondAttribute="bottom" id="usc-3a-7Nm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="s5u-ds-CKh"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="豆瓣美女" id="vYQ-f4-ayB"/>
+                    <navigationItem key="navigationItem" id="hTa-Wk-mxY"/>
                     <connections>
                         <outlet property="collectionMenu" destination="XQ5-eU-pRM" id="Irf-6I-9DM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAq-ez-MbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="569"/>
+            <point key="canvasLocation" x="3178" y="569"/>
         </scene>
         <!--Qiu Shi Sub View Controller-->
         <scene sceneID="FPl-U2-bB3">
@@ -219,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZd-ft-7UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3037" y="-139"/>
+            <point key="canvasLocation" x="3849" y="-139"/>
         </scene>
         <!--豆瓣详情-->
         <scene sceneID="KFu-nT-wC3">
@@ -280,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cDq-5G-eC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3020" y="569"/>
+            <point key="canvasLocation" x="3832" y="569"/>
         </scene>
         <!--豆瓣子界面-->
         <scene sceneID="xtD-Uw-A8p">
@@ -346,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="2730" y="1249"/>
         </scene>
-        <!--糗事百科-->
+        <!--Qiu Shi Home View Controller-->
         <scene sceneID="lpO-t8-OTT">
             <objects>
                 <viewController id="bxx-YS-Pdc" customClass="GQiuShiHomeViewController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
@@ -358,7 +364,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-tF-BDY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBf-tF-BDY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -375,14 +381,14 @@
                             <constraint firstItem="n1H-RF-Yjm" firstAttribute="top" secondItem="eBf-tF-BDY" secondAttribute="bottom" id="tEK-DM-FLn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="糗事百科" id="x3h-h9-IRU"/>
+                    <navigationItem key="navigationItem" id="zX6-zs-LPq"/>
                     <connections>
                         <outlet property="tableView" destination="eBf-tF-BDY" id="RTq-D7-rMs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1O-xU-aw1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="-92"/>
+            <point key="canvasLocation" x="3178" y="-92"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="PaM-5z-APB">
@@ -394,8 +400,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="bxx-YS-Pdc" kind="relationship" relationship="viewControllers" id="FXQ-Q0-81d"/>
-                        <segue destination="YTX-fE-Kez" kind="relationship" relationship="viewControllers" id="n6H-u6-s0Y"/>
+                        <segue destination="3vD-cb-fdB" kind="relationship" relationship="viewControllers" id="FXQ-Q0-81d"/>
+                        <segue destination="eTS-0e-nie" kind="relationship" relationship="viewControllers" id="n6H-u6-s0Y"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wdm-xB-pu1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -405,8 +411,9 @@
         <!--Navigation Controller-->
         <scene sceneID="LgF-oA-j2s">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jhu-eJ-CKh" customClass="GNavigationController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="jhu-eJ-CKh" customClass="GNavigationController" customModule="Girls" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tu2-f4-pwf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -419,6 +426,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Elz-0F-F6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="141" y="227"/>
+        </scene>
+        <!--糗事百科-->
+        <scene sceneID="xCB-qg-sw0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3vD-cb-fdB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="糗事百科" id="x3h-h9-IRU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XVw-BB-eba">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bxx-YS-Pdc" kind="relationship" relationship="rootViewController" id="nob-UV-Yx2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qaX-gT-wVx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366" y="-92"/>
+        </scene>
+        <!--豆瓣美女-->
+        <scene sceneID="YbM-Fh-p7A">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eTS-0e-nie" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="豆瓣美女" id="vYQ-f4-ayB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WKS-zc-QAf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YTX-fE-Kez" kind="relationship" relationship="rootViewController" id="7fU-f3-bBZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDN-MC-GFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2366" y="569"/>
         </scene>
     </scenes>
     <resources>

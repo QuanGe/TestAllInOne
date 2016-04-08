@@ -21,7 +21,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.registerNib(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
         tableView.separatorStyle = .None
         tableView.allowsSelection = false
-      
+        
         viewModel = GQiuBaiViewModel()
         tableView.addPullToRefreshWithActionHandler { () -> Void in
             
@@ -52,7 +52,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         tableView.pullToRefreshView.setTitle("卖力加载中", forState: .Loading)
         tableView.pullType = .VisibleLogo
         tableView.triggerPullToRefresh()
-        
+        self.title = "糗事百科"
     }
     
     override func viewWillAppear(animated: Bool) {

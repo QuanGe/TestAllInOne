@@ -21,17 +21,23 @@ class GDouBanHomeViewController: UIViewController,QGCollectionMenuDataSource,QGC
         self.collectionMenu.dataSource = self;
         self.collectionMenu.delegate = self;
         self.collectionMenu.reload();
-        
+       
         for node in titleType{
             
             viewModels.addObject(GGirlsViewModel(dataType: node as! String)!)
         }
-        
+        self.title = "豆瓣美女"
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        collectionMenu.subVCCollectionContentInsetUpdate()
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        collectionMenu.subVCCollectionContentInsetUpdate()
+//    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.qgocc_tabBarHidden = false;
+        //self.navigationController!.navigationBar.translucent  = true;
     }
     
     func menumTitles() -> [AnyObject]!

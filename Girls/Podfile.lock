@@ -50,7 +50,7 @@ CHECKOUT OPTIONS:
     :commit: e3e35751d21406d11ac0edbed577dbbe18c5e261
     :git: https://github.com/QuanGe/QGCollectionMenu.git
   QGOCCategory:
-    :commit: fe4e9731f1bebefd1a2ccd037a4d4d9e5bead565
+    :commit: c1317b24b581e37ffc21a980b77d078068aaf97a
     :git: https://github.com/QuanGe/QGOCCategory
   SVPullToRefresh:
     :commit: 40ea3942acb14fe851cd05f09341bc4101742ffa
