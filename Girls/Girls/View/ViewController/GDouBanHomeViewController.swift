@@ -24,7 +24,7 @@ class GDouBanHomeViewController: UIViewController,QGCollectionMenuDataSource,QGC
        
         for node in titleType{
             
-            viewModels.addObject(GGirlsViewModel(dataType: node as! String)!)
+            viewModels.add(GGirlsViewModel(dataType: node as! String)!)
         }
         self.title = "豆瓣美女"
     }
@@ -34,9 +34,9 @@ class GDouBanHomeViewController: UIViewController,QGCollectionMenuDataSource,QGC
 //        collectionMenu.subVCCollectionContentInsetUpdate()
 //    }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.qgocc_tabBarHidden = false;
+        self.tabBarController?.qgocc_isTabBarHidden = false;
         //self.navigationController!.navigationBar.translucent  = true;
     }
     
@@ -47,7 +47,7 @@ class GDouBanHomeViewController: UIViewController,QGCollectionMenuDataSource,QGC
     //
     func subVCClassStrsForStoryBoard() -> [AnyObject]!
     {
-        return ["GDouBanSubViewController", "GDouBanSubViewController", "GDouBanSubViewController", "GDouBanSubViewController", "GDouBanSubViewController", "GDouBanSubViewController"]
+        return ["GDouBanSubViewController" as AnyObject, "GDouBanSubViewController" as AnyObject, "GDouBanSubViewController" as AnyObject, "GDouBanSubViewController" as AnyObject, "GDouBanSubViewController" as AnyObject, "GDouBanSubViewController" as AnyObject]
 
     }
     //
@@ -56,7 +56,7 @@ class GDouBanHomeViewController: UIViewController,QGCollectionMenuDataSource,QGC
         return []
     }
 
-    func updateSubVCWithIndex(index: Int)
+    func updateSubVC(with index: Int)
     {
         let subs: [(GDouBanSubViewController)] = self.childViewControllers as! [(GDouBanSubViewController)];
         for vc in subs {

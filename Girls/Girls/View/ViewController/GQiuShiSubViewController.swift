@@ -21,8 +21,8 @@ class GQiuShiSubViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func back(sender: AnyObject) {
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func back(_ sender: AnyObject) {
+        self.navigationController?.popViewController(animated: true)
     }
 
     /*

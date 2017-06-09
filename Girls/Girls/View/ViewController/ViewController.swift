@@ -15,22 +15,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController?.navigationBarHidden = true;
+        self.navigationController?.isNavigationBarHidden = true;
         
         
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.gotoAppHome()
         }
-        self.advImageview.userInteractionEnabled = true
-        self.advImageview.contentMode = .ScaleAspectFill
-        let dstPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!
-        let imageSavePath = (dstPath as NSString).stringByAppendingPathComponent("appSplashPath")
-        if NSFileManager.defaultManager().fileExistsAtPath(imageSavePath)
+        self.advImageview.isUserInteractionEnabled = true
+        self.advImageview.contentMode = .scaleAspectFill
+        let dstPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
+        let imageSavePath = (dstPath as NSString).appendingPathComponent("appSplashPath")
+        if FileManager.default.fileExists(atPath: imageSavePath)
         {
             self.advImageview.image = UIImage(contentsOfFile: imageSavePath)
         }
         
-        self.advImageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "gotoAdvDetail:"))
+        self.advImageview.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(ViewController.gotoAdvDetail(_:))))
         MobClick.event("splashVC")
         
     }
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
 
     
 
-    @IBAction func testCrash(sender: UIButton) {
+    @IBAction func testCrash(_ sender: UIButton) {
        self.gotoAppHome()
     }
     
@@ -51,12 +51,12 @@ class ViewController: UIViewController {
         if(self.view.tag != 111)
         {
             let main = UIStoryboard(name: "Main", bundle: nil);
-            let modal=main.instantiateViewControllerWithIdentifier("GHomeViewController");
+            let modal=main.instantiateViewController(withIdentifier: "GHomeViewController");
             self.navigationController?.pushViewController(modal, animated: false);
         }
     }
     
-    func gotoAdvDetail(sender:UITapGestureRecognizer)
+    func gotoAdvDetail(_ sender:UITapGestureRecognizer)
     {
         
         gotoAppHome()

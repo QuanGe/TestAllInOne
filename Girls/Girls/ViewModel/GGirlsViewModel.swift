@@ -24,7 +24,7 @@ class GGirlsViewModel: RVMViewModel {
         
     }
     
-    func fetchGirls(more: Bool)->RACSignal{
+    func fetchGirls(_ more: Bool)->RACSignal{
         
         let page = !more ? 1 : ((self.girls.count - self.girls.count%20 )/20+(self.girls.count%20 == 0 ? 1 : 2))
         //let gifDuration = more  ? 1 : 0
@@ -45,13 +45,13 @@ class GGirlsViewModel: RVMViewModel {
     }
     
   
-    func imageDetailUrlOfRow(row:Int)->String
+    func imageDetailUrlOfRow(_ row:Int)->String
     {
         let model = girls[row] as! GGirlsModel
         return model.imageDetailUrlStr
     }
     
-    func imageUrlOfRow(row:Int)->String
+    func imageUrlOfRow(_ row:Int)->String
     {
         let model = girls[row] as! GGirlsModel
         return model.imageUrlStr

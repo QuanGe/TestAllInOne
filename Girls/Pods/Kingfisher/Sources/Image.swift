@@ -78,7 +78,7 @@ extension Image {
         return images
     }
     
-    var kf_duration: NSTimeInterval {
+    var kf_duration: TimeInterval {
         return duration
     }
 #endif
@@ -104,11 +104,11 @@ extension Image {
         return nil
     }
 #else
-    static func kf_imageWithCGImage(cgImage: CGImageRef, scale: CGFloat, refImage: Image?) -> Image {
+    static func kf_imageWithCGImage(_ cgImage: CGImage, scale: CGFloat, refImage: Image?) -> Image {
         if let refImage = refImage {
-            return Image(CGImage: cgImage, scale: scale, orientation: refImage.imageOrientation)
+            return Image(cgImage: cgImage, scale: scale, orientation: refImage.imageOrientation)
         } else {
-            return Image(CGImage: cgImage, scale: scale, orientation: .Up)
+            return Image(cgImage: cgImage, scale: scale, orientation: .up)
         }
     }
     
@@ -123,27 +123,27 @@ extension Image {
             return self
         }
     
-        if imageOrientation == .Up {
+        if imageOrientation == .up {
             return self
         }
     
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        drawInRect(CGRect(origin: CGPoint.zero, size: size))
+        draw(in: CGRect(origin: CGPoint.zero, size: size))
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
     
-        return normalizedImage
+        return normalizedImage!
     }
     
-    static func kf_animatedImageWithImages(images: [Image], duration: NSTimeInterval) -> Image? {
-        return Image.animatedImageWithImages(images, duration: duration)
+    static func kf_animatedImageWithImages(_ images: [Image], duration: TimeInterval) -> Image? {
+        return Image.animatedImage(with: images, duration: duration)
     }
 #endif
 }
 
 
 // MARK: - PNG
-func ImagePNGRepresentation(image: Image) -> NSData? {
+func ImagePNGRepresentation(_ image: Image) -> Data? {
 #if os(OSX)
     let rep = NSBitmapImageRep(CGImage: image.CGImage)
     return rep.representationUsingType(.NSPNGFileType, properties:[:])
@@ -153,7 +153,7 @@ func ImagePNGRepresentation(image: Image) -> NSData? {
 }
 
 // MARK: - JPEG
-func ImageJPEGRepresentation(image: Image, _ compressionQuality: CGFloat) -> NSData? {
+func ImageJPEGRepresentation(_ image: Image, _ compressionQuality: CGFloat) -> Data? {
 #if os(OSX)
     let rep = NSBitmapImageRep(CGImage: image.CGImage)
     return rep.representationUsingType(.NSJPEGFileType, properties: [NSImageCompressionFactor: compressionQuality])
@@ -163,11 +163,11 @@ func ImageJPEGRepresentation(image: Image, _ compressionQuality: CGFloat) -> NSD
 }
 
 // MARK: - GIF
-func ImageGIFRepresentation(image: Image) -> NSData? {
+func ImageGIFRepresentation(_ image: Image) -> Data? {
     return ImageGIFRepresentation(image, duration: 0.0, repeatCount: 0)
 }
 
-func ImageGIFRepresentation(image: Image, duration: NSTimeInterval, repeatCount: Int) -> NSData? {
+func ImageGIFRepresentation(_ image: Image, duration: TimeInterval, repeatCount: Int) -> Data? {
     guard let images = image.kf_images else {
         return nil
     }
@@ -183,24 +183,24 @@ func ImageGIFRepresentation(image: Image, duration: NSTimeInterval, repeatCount:
     guard let destination = CGImageDestinationCreateWithData(data, kUTTypeGIF, frameCount, nil) else {
         return nil
     }
-    CGImageDestinationSetProperties(destination, imageProperties)
+    CGImageDestinationSetProperties(destination, imageProperties as CFDictionary?)
     
     for image in images {
-        CGImageDestinationAddImage(destination, image.CGImage!, frameProperties)
+        CGImageDestinationAddImage(destination, image.cgImage!, frameProperties as CFDictionary?)
     }
     
-    return CGImageDestinationFinalize(destination) ? NSData(data: data) : nil
+    return CGImageDestinationFinalize(destination) ? (NSData(data: data as Data) as Data) : nil
 }
 
 extension Image {
-    static func kf_animatedImageWithGIFData(gifData data: NSData) -> Image? {
+    static func kf_animatedImageWithGIFData(gifData data: Data) -> Image? {
         return kf_animatedImageWithGIFData(gifData: data, scale: 1.0, duration: 0.0)
     }
     
-    static func kf_animatedImageWithGIFData(gifData data: NSData, scale: CGFloat, duration: NSTimeInterval) -> Image? {
+    static func kf_animatedImageWithGIFData(gifData data: Data, scale: CGFloat, duration: TimeInterval) -> Image? {
         
-        let options: NSDictionary = [kCGImageSourceShouldCache as String: NSNumber(bool: true), kCGImageSourceTypeIdentifierHint as String: kUTTypeGIF]
-        guard let imageSource = CGImageSourceCreateWithData(data, options) else {
+        let options: NSDictionary = [kCGImageSourceShouldCache as String: NSNumber(value: true as Bool), kCGImageSourceTypeIdentifierHint as String: kUTTypeGIF]
+        guard let imageSource = CGImageSourceCreateWithData(data as CFData, options) else {
             return nil
         }
         
@@ -220,8 +220,8 @@ extension Image {
             } else {
                 // Animated GIF
                 guard let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, i, nil),
-                    gifInfo = (properties as NSDictionary)[kCGImagePropertyGIFDictionary as String] as? NSDictionary,
-                    frameDuration = (gifInfo[kCGImagePropertyGIFDelayTime as String] as? NSNumber) else
+                    let gifInfo = (properties as NSDictionary)[kCGImagePropertyGIFDictionary as String] as? NSDictionary,
+                    let frameDuration = (gifInfo[kCGImagePropertyGIFDelayTime as String] as? NSNumber) else
                 {
                     return nil
                 }
@@ -246,7 +246,7 @@ extension Image {
 
 // MARK: - Create images from data
 extension Image {
-    static func kf_imageWithData(data: NSData, scale: CGFloat) -> Image? {
+    static func kf_imageWithData(_ data: Data, scale: CGFloat) -> Image? {
         var image: Image?
         #if os(OSX)
             switch data.kf_imageFormat {
@@ -257,10 +257,10 @@ extension Image {
             }
         #else
             switch data.kf_imageFormat {
-            case .JPEG: image = Image(data: data, scale: scale)
-            case .PNG: image = Image(data: data, scale: scale)
-            case .GIF: image = Image.kf_animatedImageWithGIFData(gifData: data, scale: scale, duration: 0.0)
-            case .Unknown: image = nil
+            case .jpeg: image = Image(data: data, scale: scale)
+            case .png: image = Image(data: data, scale: scale)
+            case .gif: image = Image.kf_animatedImageWithGIFData(gifData: data, scale: scale, duration: 0.0)
+            case .unknown: image = nil
             }
         #endif
         
@@ -274,21 +274,21 @@ extension Image {
         return self.kf_decodedImage(scale: kf_scale)
     }
     
-    func kf_decodedImage(scale scale: CGFloat) -> Image? {
+    func kf_decodedImage(scale: CGFloat) -> Image? {
         // prevent animated image (GIF) lose it's images
         if kf_images != nil {
             return self
         }
         
-        let imageRef = self.CGImage
+        let imageRef = self.cgImage
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.PremultipliedLast.rawValue).rawValue
-        let contextHolder = UnsafeMutablePointer<Void>()
-        let context = CGBitmapContextCreate(contextHolder, CGImageGetWidth(imageRef), CGImageGetHeight(imageRef), 8, 0, colorSpace, bitmapInfo)
+        let bitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedLast.rawValue).rawValue
+        let contextHolder: UnsafeMutableRawPointer = nil
+        let context = CGContext(data: contextHolder, width: (imageRef?.width)!, height: (imageRef?.height)!, bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: bitmapInfo)
         if let context = context {
-            let rect = CGRect(x: 0, y: 0, width: CGImageGetWidth(imageRef), height: CGImageGetHeight(imageRef))
-            CGContextDrawImage(context, rect, imageRef)
-            let decompressedImageRef = CGBitmapContextCreateImage(context)
+            let rect = CGRect(x: 0, y: 0, width: (imageRef?.width)!, height: (imageRef?.height)!)
+            context.draw(imageRef!, in: rect)
+            let decompressedImageRef = context.makeImage()
             return Image.kf_imageWithCGImage(decompressedImageRef!, scale: scale, refImage: self)
         } else {
             return nil
@@ -303,27 +303,27 @@ private let jpgHeaderIF: [UInt8] = [0xFF]
 private let gifHeader: [UInt8] = [0x47, 0x49, 0x46]
 
 enum ImageFormat {
-    case Unknown, PNG, JPEG, GIF
+    case unknown, png, jpeg, gif
 }
 
-extension NSData {
+extension Data {
     var kf_imageFormat: ImageFormat {
-        var buffer = [UInt8](count: 8, repeatedValue: 0)
-        self.getBytes(&buffer, length: 8)
+        var buffer = [UInt8](repeating: 0, count: 8)
+        (self as NSData).getBytes(&buffer, length: 8)
         if buffer == pngHeader {
-            return .PNG
+            return .png
         } else if buffer[0] == jpgHeaderSOI[0] &&
             buffer[1] == jpgHeaderSOI[1] &&
             buffer[2] == jpgHeaderIF[0]
         {
-            return .JPEG
+            return .jpeg
         } else if buffer[0] == gifHeader[0] &&
             buffer[1] == gifHeader[1] &&
             buffer[2] == gifHeader[2]
         {
-            return .GIF
+            return .gif
         }
         
-        return .Unknown
+        return .unknown
     }
 }

@@ -19,11 +19,11 @@ class GAdvDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
     var photos = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
-        advsCollectionView.backgroundColor = UIColor.whiteColor()
-        self.navigationController?.navigationBarHidden = true;
+        self.view.backgroundColor = UIColor.white
+        advsCollectionView.backgroundColor = UIColor.white
+        self.navigationController?.isNavigationBarHidden = true;
         self.backBtn.layer.cornerRadius = 20
-        self.backBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).CGColor
+        self.backBtn.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 0.5).cgColor
         self.backBtn.titleEdgeInsets = UIEdgeInsets(top: -5, left: 0, bottom: 0, right: 0)
         self.backBtn.rac_command = RACCommand(signalBlock: { (sender) -> RACSignal! in
             self.navigationController?.popViewControllerAnimated(true)
@@ -34,11 +34,11 @@ class GAdvDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
         self.advsPageControl.numberOfPages = 1;
         self.advsPageControl.currentPage = 0;
         self.showLoadingHUD()
-        let imageClick = NSUserDefaults.standardUserDefaults().objectForKey("appSplashClick") as? String
+        let imageClick = UserDefaults.standard.object(forKey: "appSplashClick") as? String
         
         
         
-        let request = NSMutableURLRequest(URL: NSURL(string:imageClick!)!)
+        let request = NSMutableURLRequest(url: URL(string:imageClick!)!)
        NSURLConnection.rac_sendAsynchronousRequest(request).subscribeNext({ (result) -> Void in
         
        
@@ -81,54 +81,54 @@ class GAdvDetailViewController: UIViewController,UICollectionViewDelegate,UIColl
          }, error: {
             (error) -> Void in
        
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.hideLoadingHUD()
             }
        })
     
     }
 
-    private func showLoadingHUD() {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        hud.labelText = "加载中..."
+    fileprivate func showLoadingHUD() {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud?.labelText = "加载中..."
     }
     
-    private func hideLoadingHUD() {
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+    fileprivate func hideLoadingHUD() {
+        MBProgressHUD.hideAllHUDs(for: self.view, animated: true)
     }
 
     // MARK: - Collection view data source
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.photos.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("advCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "advCell", for: indexPath)
         let advImageView = cell.viewWithTag(11) as? UIImageView
-        advsCollectionView.contentMode = .ScaleAspectFill
-        advImageView?.kf_setImageWithURL(NSURL(string:self.photos[indexPath.row])!)
+        advsCollectionView.contentMode = .scaleAspectFill
+        advImageView?.kf_setImageWithURL(URL(string:self.photos[indexPath.row])!)
         self.advsPageControl.currentPage = indexPath.row
         return cell
     }
     //MARK: - UICollectionViewDelegateFlowLayout method
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize{
         
-        return CGSizeMake(self.view.frame.size.width, self.view.frame.size.height)
+        return CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height)
         
     }
     
     //设置四周边距
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(0, 0, 0.0, 0)
     }
     
     //左右间距
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return CGFloat(0)
     }
     
     //    上下间距
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return CGFloat(0)
     }
 

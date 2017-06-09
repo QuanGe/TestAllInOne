@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B5248EC1E9B76E7001C7813 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B5248EB1E9B76E7001C7813 /* Foundation.framework */; };
 		98E806EE1BB839CB008C9F53 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806ED1BB839CB008C9F53 /* main.m */; };
 		98E806F11BB839CB008C9F53 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806F01BB839CB008C9F53 /* AppDelegate.m */; };
 		98E806F41BB839CB008C9F53 /* TTHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E806F31BB839CB008C9F53 /* TTHomeViewController.m */; };
 		98E806F71BB839CB008C9F53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E806F51BB839CB008C9F53 /* Main.storyboard */; };
 		98E806F91BB839CB008C9F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98E806F81BB839CB008C9F53 /* Assets.xcassets */; };
 		98E806FC1BB839CB008C9F53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E806FA1BB839CB008C9F53 /* LaunchScreen.storyboard */; };
-		98E807081BB83D90008C9F53 /* TTNSThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */; settings = {ASSET_TAGS = (); }; };
-		98F0F6CA1BBA3C6A00B722DF /* TTSubOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F0F6C91BBA3C6A00B722DF /* TTSubOperation.m */; settings = {ASSET_TAGS = (); }; };
-		98F0F6CD1BBA7D8F00B722DF /* TTBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F0F6CC1BBA7D8F00B722DF /* TTBlockViewController.m */; settings = {ASSET_TAGS = (); }; };
-		98F6A67D1BB8D0E8001FF5E9 /* TTRealObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectViewController.m */; settings = {ASSET_TAGS = (); }; };
-		98F9E6E91BBB736E00F0498C /* TTBlockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F9E6E81BBB736E00F0498C /* TTBlockObject.m */; settings = {ASSET_TAGS = (); }; };
+		98E807081BB83D90008C9F53 /* TTNSThreadTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98E807071BB83D90008C9F53 /* TTNSThreadTestViewController.m */; };
+		98F0F6CA1BBA3C6A00B722DF /* TTSubOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F0F6C91BBA3C6A00B722DF /* TTSubOperation.m */; };
+		98F0F6CD1BBA7D8F00B722DF /* TTBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F0F6CC1BBA7D8F00B722DF /* TTBlockViewController.m */; };
+		98F6A67D1BB8D0E8001FF5E9 /* TTRealObjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F6A67C1BB8D0E8001FF5E9 /* TTRealObjectViewController.m */; };
+		98F9E6E91BBB736E00F0498C /* TTBlockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 98F9E6E81BBB736E00F0498C /* TTBlockObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4B5248EB1E9B76E7001C7813 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		98E806E91BB839CB008C9F53 /* ThreadTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98E806ED1BB839CB008C9F53 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		98E806EF1BB839CB008C9F53 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,17 +50,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B5248EC1E9B76E7001C7813 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B5248EA1E9B76E7001C7813 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B5248EB1E9B76E7001C7813 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		98E806E01BB839CB008C9F53 = {
 			isa = PBXGroup;
 			children = (
 				98E806EB1BB839CB008C9F53 /* ThreadTest */,
 				98E806EA1BB839CB008C9F53 /* Products */,
+				4B5248EA1E9B76E7001C7813 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

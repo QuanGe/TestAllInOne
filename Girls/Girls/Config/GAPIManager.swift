@@ -13,13 +13,13 @@ import Mantle
 import Kanna
 public enum RequestType
 {
-    case GRequestTypeString,GRequestTypeJson,GRequestTypeData
+    case gRequestTypeString,gRequestTypeJson,gRequestTypeData
 }
 
 class GAPIManager: NSObject {
     static let sharedInstance = GAPIManager()
     
-    func fetchData(urlstring:String,type:RequestType,params:NSDictionary,header:NSDictionary,httpMethod:String) -> RACSignal {
+    func fetchData(_ urlstring:String,type:RequestType,params:NSDictionary,header:NSDictionary,httpMethod:String) -> RACSignal {
         
         return RACSignal.createSignal({ ( subscriber) -> RACDisposable! in
             
@@ -77,7 +77,7 @@ class GAPIManager: NSObject {
         })
     }
     
-    func fetchQiuBaiHot(pagenum:Int)-> RACSignal{
+    func fetchQiuBaiHot(_ pagenum:Int)-> RACSignal{
         return fetchData("http://m2.qiushibaike.com/article/list/latest",type: .GRequestTypeJson,params: ["page":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
             let items = result["items"] as! [AnyObject]
             do {
@@ -90,7 +90,7 @@ class GAPIManager: NSObject {
         })
     }
     
-    func fetchGirls(pagenum:Int,type:String)-> RACSignal{
+    func fetchGirls(_ pagenum:Int,type:String)-> RACSignal{
         return fetchData("http://www.dbmeinv.com/dbgroup/show.htm",type: .GRequestTypeString,params: ["cid":type,"pager_offset":pagenum],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
             //用photos保存临时数据
             var urls = [GGirlsModel]()
@@ -121,7 +121,7 @@ class GAPIManager: NSObject {
         })
     }
     
-    func fetchGirlsWithUrlstr(urlstr:String)-> RACSignal{
+    func fetchGirlsWithUrlstr(_ urlstr:String)-> RACSignal{
         return fetchData(urlstr,type: .GRequestTypeString,params: [:],header: [:],httpMethod: "get").map({ (result) -> AnyObject! in
             //用photos保存临时数据
             var urls = [String]()

@@ -14,10 +14,10 @@ class GDouBanSubViewController: UIViewController,UICollectionViewDataSource,UICo
     var viewModel :GGirlsViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBarHidden = true;
+        self.navigationController?.isNavigationBarHidden = true;
         // Do any additional setup after loading the view, typically from a nib.
-        self.view.backgroundColor = UIColor.whiteColor()
-        collection.backgroundColor = UIColor.whiteColor()
+        self.view.backgroundColor = UIColor.white
+        collection.backgroundColor = UIColor.white
         
         //automaticallyAdjustsScrollViewInsets = false
         collection.addPullToRefreshWithActionHandler { () -> Void in
@@ -44,54 +44,54 @@ class GDouBanSubViewController: UIViewController,UICollectionViewDataSource,UICo
             })
         }
         
-        collection.pullToRefreshView.setTitle("下拉更新", forState: .Stopped)
-        collection.pullToRefreshView.setTitle("释放更新", forState: .Triggered)
-        collection.pullToRefreshView.setTitle("卖力加载中", forState: .Loading)
-        collection.pullType = .VisibleLogo
+        collection.pullToRefreshView.setTitle("下拉更新", for: .stopped)
+        collection.pullToRefreshView.setTitle("释放更新", for: .triggered)
+        collection.pullToRefreshView.setTitle("卖力加载中", for: .loading)
+        collection.pullType = .visibleLogo
         collection.triggerPullToRefresh()
     }
     
     
     // MARK: - Collection view data source
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return viewModel == nil ? 0 :(viewModel?.numOfItems())!
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("girlCell", forIndexPath: indexPath)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "girlCell", for: indexPath)
         let advImageView = cell.viewWithTag(11) as! UIImageView
-        advImageView.contentMode = .ScaleAspectFill
-        advImageView.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_imageWithColor(UIColor.lightGrayColor(), size: CGSizeMake(1, 1)))
+        advImageView.contentMode = .scaleAspectFill
+        advImageView.kf_setImageWithURL(URL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_image(with: UIColor.lightGray, size: CGSize(width: 1, height: 1)))
         advImageView.layer.cornerRadius = 5.0
         advImageView.layer.masksToBounds = true
         return cell
     }
     //MARK: - UICollectionViewDelegateFlowLayout method
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize{
         
-        return CGSizeMake((UIScreen.mainScreen().bounds.width-30)/2, ((UIScreen.mainScreen().bounds.width-30)/2-30)*(UIScreen.mainScreen().bounds.height/UIScreen.mainScreen().bounds.width))
+        return CGSize(width: (UIScreen.main.bounds.width-30)/2, height: ((UIScreen.main.bounds.width-30)/2-30)*(UIScreen.main.bounds.height/UIScreen.main.bounds.width))
         
     }
     
    
     //左右间距
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
         return CGFloat(0)
     }
     
     //    上下间距
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return CGFloat(10)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let main = UIStoryboard(name: "Main", bundle: nil);
-        let modal=main.instantiateViewControllerWithIdentifier("GDoubanDetailViewController") as! GDoubanDetailViewController
+        let modal=main.instantiateViewController(withIdentifier: "GDoubanDetailViewController") as! GDoubanDetailViewController
         for i in 0 ..< viewModel!.numOfItems()
         {
-            modal.parentImageUrlStr.addObject(viewModel!.imageUrlOfRow(i))
+            modal.parentImageUrlStr.add(viewModel!.imageUrlOfRow(i))
         }
         modal.curIndex = indexPath
         self.navigationController?.pushViewController(modal, animated: true);

@@ -45,7 +45,7 @@ class GGirlsDetailViewModel: RVMViewModel {
         return girls.count
     }
     
-    func imageUrlWithRow(row:Int)->String
+    func imageUrlWithRow(_ row:Int)->String
     {
         return girls[row] as! String
     }

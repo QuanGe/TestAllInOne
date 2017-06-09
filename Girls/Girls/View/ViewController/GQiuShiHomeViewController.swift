@@ -16,10 +16,10 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
-        self.edgesForExtendedLayout = .None
+        self.edgesForExtendedLayout = UIRectEdge()
         // Do any additional setup after loading the view, typically from a nib.
-        tableView.registerNib(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
-        tableView.separatorStyle = .None
+        tableView.register(UINib(nibName: "GQiuBaiTableViewCell", bundle: nil), forCellReuseIdentifier: "GQiuBaiTableViewCell")
+        tableView.separatorStyle = .none
         tableView.allowsSelection = false
         
         viewModel = GQiuBaiViewModel()
@@ -47,46 +47,46 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
             })
         }
         
-        tableView.pullToRefreshView.setTitle("下拉更新", forState: .Stopped)
-        tableView.pullToRefreshView.setTitle("释放更新", forState: .Triggered)
-        tableView.pullToRefreshView.setTitle("卖力加载中", forState: .Loading)
-        tableView.pullType = .VisibleLogo
+        tableView.pullToRefreshView.setTitle("下拉更新", for: .stopped)
+        tableView.pullToRefreshView.setTitle("释放更新", for: .triggered)
+        tableView.pullToRefreshView.setTitle("卖力加载中", for: .loading)
+        tableView.pullType = .visibleLogo
         tableView.triggerPullToRefresh()
         self.title = "糗事百科"
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
        
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         let content = viewModel?.contentOfRow(indexPath.row)
-        let textStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+        let textStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         textStyle.lineSpacing = 12
-        let height: CGFloat = content!.boundingRectWithSize(CGSizeMake(UIScreen.mainScreen().bounds.width-16, CGFloat.infinity), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(14),NSParagraphStyleAttributeName:textStyle], context: nil).size.height
+        let height: CGFloat = content!.boundingRect(with: CGSize(width: UIScreen.main.bounds.width-16, height: CGFloat.infinity), options: NSStringDrawingOptions.usesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: 14),NSParagraphStyleAttributeName:textStyle], context: nil).size.height
       
         let cellheight: CGFloat = height + 8 + 40 + 5 + (viewModel?.imageHeightOfRow(indexPath.row))!+2+7+10
         return cellheight;
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return (viewModel?.numOfItems())!
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        let cell = tableView.dequeueReusableCellWithIdentifier("GQiuBaiTableViewCell") as! GQiuBaiTableViewCell
-        let textStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as! NSMutableParagraphStyle
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GQiuBaiTableViewCell") as! GQiuBaiTableViewCell
+        let textStyle = NSParagraphStyle.default.mutableCopy() as! NSMutableParagraphStyle
         textStyle.lineSpacing = 12
-        cell.contentLabel.attributedText = NSAttributedString(string: (viewModel?.contentOfRow(indexPath.row))!, attributes:  [NSFontAttributeName: UIFont.systemFontOfSize(14),NSParagraphStyleAttributeName:textStyle])
+        cell.contentLabel.attributedText = NSAttributedString(string: (viewModel?.contentOfRow(indexPath.row))!, attributes:  [NSFontAttributeName: UIFont.systemFont(ofSize: 14),NSParagraphStyleAttributeName:textStyle])
         
         if viewModel?.typeOfRow(indexPath.row) != "word"
         {
-           cell.contentImageBtn.kf_setImageWithURL(NSURL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_imageWithColor(UIColor.lightGrayColor(), size: CGSizeMake(UIScreen.mainScreen().bounds.width - 16.0, (viewModel?.imageHeightOfRow(indexPath.row))!)))
+           cell.contentImageBtn.kf_setImageWithURL(URL(string:(viewModel?.imageUrlOfRow(indexPath.row))!)!,placeholderImage: UIImage.qgocc_image(with: UIColor.lightGray, size: CGSize(width: UIScreen.main.bounds.width - 16.0, height: (viewModel?.imageHeightOfRow(indexPath.row))!)))
         }
         else
         {
@@ -96,7 +96,7 @@ class GQiuShiHomeViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.userIconImageView.clipsToBounds = true
         if viewModel?.userIcon(indexPath.row) != ""
         {
-            cell.userIconImageView.kf_setImageWithURL(NSURL(string:(viewModel?.userIcon(indexPath.row))!)!,placeholderImage: UIImage(named: "icon_main"))
+            cell.userIconImageView.kf_setImageWithURL(URL(string:(viewModel?.userIcon(indexPath.row))!)!,placeholderImage: UIImage(named: "icon_main"))
             cell.nickNameLabel.text = viewModel?.userNickName(indexPath.row)
         }
         else

@@ -17,7 +17,7 @@ class GQiuBaiModel: MTLModel,MTLJSONSerializing {
     var high_url :String?
     var imageSize :NSDictionary?
     var modelId : NSNumber?
-    static func JSONKeyPathsByPropertyKey() -> [NSObject : AnyObject]! {
+    static func jsonKeyPathsByPropertyKey() -> [AnyHashable: Any]! {
         return ["format":"format",
         "image":"image",
             "content":"content",

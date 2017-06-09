@@ -22,11 +22,11 @@ class GGirlCollectionViewCell: UICollectionViewCell {
         super.init(coder: aDecoder)
     }
     
-    private func setupView() {
+    fileprivate func setupView() {
 
         addSubview(girlsImageView)
         girlsImageView.frame = bounds
-        girlsImageView.contentMode = .ScaleAspectFit
+        girlsImageView.contentMode = .scaleAspectFit
     }
 
 }

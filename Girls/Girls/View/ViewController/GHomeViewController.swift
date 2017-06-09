@@ -21,11 +21,11 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
                 return
             }
             NSLog(result.value!)
-            let strs = result.value?.componentsSeparatedByString(" ")
+            let strs = result.value?.components(separatedBy: " ")
             let imageUrl = strs?.first;
             let imageClick = strs?.last
             
-            let imageSaveUrl = NSUserDefaults.standardUserDefaults().objectForKey("appSplashUrl") as? String
+            let imageSaveUrl = UserDefaults.standard.object(forKey: "appSplashUrl") as? String
             if (imageSaveUrl == imageUrl && imageSaveUrl != nil)
             {
                 return
@@ -36,12 +36,12 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
             Alamofire.request(.GET,imageUrl!).validate().responseData{
                 (request, response,result) in
                 let imagedata = result.value
-                let dstPath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).first!
-                let imageSavePath = (dstPath as NSString).stringByAppendingPathComponent("appSplashPath")
+                let dstPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first!
+                let imageSavePath = (dstPath as NSString).appendingPathComponent("appSplashPath")
                 
-                if NSFileManager.defaultManager().createFileAtPath(imageSavePath, contents: imagedata, attributes: nil) {
-                    NSUserDefaults.standardUserDefaults().setObject(imageUrl, forKey: "appSplashUrl")
-                    NSUserDefaults.standardUserDefaults().setObject(imageClick, forKey: "appSplashClick")
+                if FileManager.default.createFile(atPath: imageSavePath, contents: imagedata, attributes: nil) {
+                    UserDefaults.standard.set(imageUrl, forKey: "appSplashUrl")
+                    UserDefaults.standard.set(imageClick, forKey: "appSplashClick")
                 }
                 
             }
@@ -49,7 +49,7 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
     
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let childs =  self.childViewControllers as NSArray
@@ -57,29 +57,29 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
         {
             if vc is GQiuShiHomeViewController
             {
-                (vc as? UIViewController)!.tabBarItem.image = UIImage(named: "icon_main")?.imageWithRenderingMode(.AlwaysOriginal)
-                (vc as? UIViewController)!.tabBarItem.selectedImage = UIImage(named: "icon_main_active")?.imageWithRenderingMode(.AlwaysOriginal)
+                (vc as? UIViewController)!.tabBarItem.image = UIImage(named: "icon_main")?.withRenderingMode(.alwaysOriginal)
+                (vc as? UIViewController)!.tabBarItem.selectedImage = UIImage(named: "icon_main_active")?.withRenderingMode(.alwaysOriginal)
             }
             else
             {
-                (vc as? UIViewController)!.tabBarItem.image = UIImage(named: "icon_me")?.imageWithRenderingMode(.AlwaysOriginal)
-                (vc as? UIViewController)!.tabBarItem.selectedImage = UIImage(named: "icon_me_active")?.imageWithRenderingMode(.AlwaysOriginal)
+                (vc as? UIViewController)!.tabBarItem.image = UIImage(named: "icon_me")?.withRenderingMode(.alwaysOriginal)
+                (vc as? UIViewController)!.tabBarItem.selectedImage = UIImage(named: "icon_me_active")?.withRenderingMode(.alwaysOriginal)
 
             }
         }
         
     }
     
-    override func viewWillDisappear(animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.navigationController?.navigationBarHidden = true;
+        self.navigationController?.isNavigationBarHidden = true;
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
-    func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
        
         let frontVc = self.navigationController?.childViewControllers[0]
         let nav:GNavigationController = self.navigationController as! GNavigationController
@@ -89,7 +89,7 @@ class GHomeViewController: UITabBarController,UINavigationControllerDelegate {
         if(frontVc!.view.tag==111)
         {
             let main = UIStoryboard(name: "Main", bundle: nil);
-            let modal=main.instantiateViewControllerWithIdentifier("GAdvDetailViewController");
+            let modal=main.instantiateViewController(withIdentifier: "GAdvDetailViewController");
             self.navigationController?.pushViewController(modal, animated: false);
         }
     }
